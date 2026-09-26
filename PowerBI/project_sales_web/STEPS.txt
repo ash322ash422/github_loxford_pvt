@@ -1,0 +1,13 @@
+1) Load the excel file -> add 4 tables: product, sales, people, locations
+2) Goto model view, u will see products, sales, people are joined -> create joined relationship between locations and sales(it 1-many on Geo - Geography)
+
+3) Blank problem: 
+3.1) create stacked column chart: x-axis=locations.Geo. y-axis=sales.sum_amount
+You will see that there is a blank column that should not be there
+
+3.2) Go to Home -> Transform the data > This will open Power Query Editor: select queries Sales
+ -> select Geography column -> RC -> transform -> trim
+
+close and apply
+
+TODO

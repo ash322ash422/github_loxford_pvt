@@ -1,0 +1,93 @@
+**data cleaning, EDA, visualization, and insights/reporting**.
+
+
+---
+
+# Project Instructions: Vrinda Store Sales Analysis
+
+You are provided with the **Vrinda Store Sales dataset**. Your task is to analyze the sales data and generate meaningful insights. Follow the steps below:
+
+---
+
+## 1. Dataset Understanding
+
+* Load the dataset using pandas.
+* Check the **shape** (rows, columns) and **data types** of each column.
+* Display the first 5 rows.
+
+**Task:** Write a brief description of what each column means.
+
+---
+
+## 2. Data Cleaning
+
+* Check for **missing values** and handle them (drop or impute as needed).
+* Check for **duplicates** and remove if found.
+* Correct **data types** (e.g., date columns should be in datetime format).
+
+---
+
+## 3. Exploratory Data Analysis (EDA)
+
+Perform the following analysis using pandas, matplotlib, and seaborn:
+
+1. **Overall performance**
+
+   * Total sales, total orders, and total customers.
+
+2. **Sales trends**
+
+   * Monthly sales trend (plot sales per month).
+   * Weekly sales trend (optional).
+
+3. **Customer analysis**
+
+   * Gender-wise sales contribution.
+   * Age group-wise sales contribution.
+   * Top states contributing to sales.
+
+4. **Order and sales analysis**
+
+   * Which sales channel (e.g., Amazon, Flipkart, etc.) is most contributing?
+   * Which product categories are performing the best?
+
+---
+
+## 4. Visualization
+
+* Use **bar charts, pie charts, line charts, and heatmaps** wherever necessary.
+* Make sure each visualization has a **title, axis labels, and legend**.
+
+---
+
+## 5. Insights & Recommendations
+
+* Write at least **5 key insights** from your analysis.
+* Suggest **recommendations** that Vrinda Stores could use to improve sales.
+  (e.g., target young females on Amazon in Maharashtra).
+
+---
+
+## 6. Report / Presentation
+
+* Submit your project as either:
+
+  * A Jupyter Notebook (.ipynb) with explanations, or
+  * A PowerPoint/Google Slides presentation with visuals & insights.
+
+---
+
+### Deliverables
+
+* Cleaned dataset (optional).
+* Jupyter Notebook with code, analysis, and plots.
+* 5+ business insights with recommendations.
+
+---
+
+**Note for Students:**
+
+* Focus on **storytelling with data**. Don’t just make charts—explain what they mean.
+* Try to answer: *Who are the customers? What do they buy? When do they buy? How do they buy?*
+
+---

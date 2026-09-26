@@ -1,0 +1,28 @@
+A) Detection: Check for Duplicate Values in all or specific Column
+
+---------------
+
+Using Power Query:
+
+Go to Power Query Editor: Home → Transform data
+
+Select all column or select few column
+
+Right-click → Group By
+
+Group by that column and use Count Rows
+
+Filter the result where count > 1 → these are the duplicate values
+
+
+----------------------------------------------------
+
+B) Removal of duplicates
+
+1)  Hold CTRL
+
+2) Select multiple columns
+
+3)  Click Remove Duplicates
+
+Power BI now keeps unique combinations only.

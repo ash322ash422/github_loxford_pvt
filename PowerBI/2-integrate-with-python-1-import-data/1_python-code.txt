@@ -1,0 +1,41 @@
+Purpose: Load data from sources that might require complex Python logic for extraction or pre-processing, directly into Power BI.
+
+
+Importing Data using Python Scripts:
+1) Make sure you have python. To find python path: 
+
+start -> cmd -> 
+> where python
+
+output:
+C:\Users\hi\AppData\Local\Programs\Python\Python312\python.exe
+
+ 
+
+2) File → Options and Settings → Options → Python scripting
+Paste: C:\Users\hi\AppData\Local\Programs\Python\Python312\
+
+
+3) In Power BI Desktop, select "Get Data" > "Other" > "Python script."
+
+
+4) Paste your Python script into the script field. This script should load or generate a Pandas DataFrame.
+
+
+iris = pandas.read_csv(r""C:\Users\hi\Desktop\projects\Academy\notes\notes_DA_DS\PowerBI\2-integrate-with-python-1-import-data\iris.csv"")
+
+iris['Species'] = iris['Species'].str.removeprefix('Iris-')
+iris.drop('Id', axis='columns', inplace=True)
+
+iris
+
+
+
+To install matplotlib:
+C:\Users\hi\AppData\Local\Programs\Python\Python312\python.exe -m pip install matplotlib
+
+
+5) Power BI will execute the script and allow you to select the resulting DataFrame iris to load into your model.
+
+
+

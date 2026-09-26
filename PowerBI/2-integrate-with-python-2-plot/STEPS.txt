@@ -1,0 +1,35 @@
+NOTE: This project took 1.5 hours
+##########################################
+
+
+1) Load the iris.csv -> transform -> delete Id column -> close+apply
+
+--------------------
+Crete new table All measures: -> Enter data -> table name=all_measures and save
+
+create following measures in table all_measures
+
+1. Mean (Average), Min, Max, Standard Deviation
+These are built-in measures in Power BI.
+
+Go to the "Modeling" tab and create new measures:
+
+Name
+pl_count    = COUNTROWS(iris)
+pl_mean = AVERAGE(iris[PetalLengthCm])
+pl_minimum = MIN(iris[PetalLengthCm])
+pl_maximum =  MAX(iris[PetalLengthCm])
+pl_std_dev = STDEV.S(iris[PetalLengthCm])
+pl_median = MEDIAN(iris[PetalLengthCm])
+pl_q1 = PERCENTILE.INC(iris[PetalLengthCm],0.25)
+
+
+pw_mean = AVERAGE(iris[PetalWidthCm])
+pw_minimum = MIN(iris[PetalWidthCm])
+pw_maximum = MAX(iris[PetalWidthCm])
+pw_std_dev = STDEV.S(iris[PetalWidthCm])
+
+
+2. Then goto Report view -> add a card for all above new measures
+
+

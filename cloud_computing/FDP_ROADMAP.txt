@@ -1,0 +1,170 @@
+---
+
+## FDP Goal
+
+Enable participants to:
+
+* Understand **why cloud exists**
+* Use **real cloud services**
+* Deploy a **simple working application**
+* Gain confidence to **teach or use cloud practically**
+
+---
+
+## DAY 1 – Cloud Fundamentals (Concept + Demo)
+
+**Duration:** 2–2.5 hours
+
+### Concepts
+
+* What is Cloud Computing (in simple terms)
+* On-premise vs Cloud (cost & scalability comparison)
+* Cloud Service Models
+
+  * IaaS
+  * PaaS
+  * SaaS
+* Deployment Models
+
+  * Public
+  * Private
+  * Hybrid
+
+### Practical
+
+* Create **AWS / Azure / GCP Free Tier account**
+* Explore:
+
+  * Cloud Console
+  * Regions & Availability Zones
+* Launch **first virtual machine (EC2 / VM)**
+
+Output: Participants see a **live server running**
+
+---
+
+## 🔹 DAY 2 – Compute & Storage (Hands-on Heavy)
+
+**Duration:** 2–2.5 hours
+
+### Concepts
+
+* Virtual Machines
+* Object Storage vs Block Storage
+* Scaling basics
+
+### Practical
+
+* Connect to VM using SSH / RDP
+* Install:
+
+  * Python OR Nginx OR Apache
+* Create cloud storage:
+
+  * AWS S3 / Azure Blob
+* Upload & download files
+
+Output: Cloud server + cloud storage working together
+
+---
+
+## 🔹 DAY 3 – Networking & Security (Very Important)
+
+**Duration:** 2 hours
+
+### Concepts
+
+* What is VPC / Virtual Network
+* Public vs Private IP
+* Firewalls & Security Groups
+* IAM (Users, Roles, Policies)
+
+### Practical
+
+* Configure:
+
+  * Security Group (open port 80/22)
+  * IAM user with limited access
+* Host a **basic webpage on cloud VM**
+
+Output: Website accessible via **public IP**
+
+---
+
+## DAY 4 – PaaS & Serverless (Modern Cloud)
+
+**Duration:** 2 hours
+
+### Concepts
+
+* Why PaaS & Serverless?
+* Containers vs Serverless (high level)
+* Managed databases
+
+### Practical
+
+* Deploy app using:
+
+  * AWS Elastic Beanstalk / Azure App Service
+* OR
+* Create simple **serverless function (Lambda / Azure Function)**
+
+Output: App running **without managing servers**
+
+---
+
+## DAY 5 – Mini Project + Cloud Cost & Careers
+
+**Duration:** 2–3 hours
+
+### Mini Project (Choose One)
+
+* Deploy a **Python Flask app**
+* Host a **static website**
+* Cloud-based **file upload system**
+
+### Cost & Best Practices
+
+* Cloud pricing basics
+* Free tier & cost monitoring
+* Common mistakes in cloud usage
+
+### Career & Teaching Angle
+
+* Cloud roles:
+
+  * Cloud Engineer
+  * DevOps Engineer
+  * Data Engineer
+* How to teach cloud to students with **free tools**
+
+ Output: End-to-end cloud project
+
+---
+
+## Tools to Use (Simple & Free)
+
+* AWS Free Tier (recommended)
+* GitHub (code hosting)
+* VS Code
+* PuTTY / MobaXterm
+* Browser-based Cloud Shell
+
+---
+
+## Teaching Tips for FDP
+
+* **70% hands-on, 30% theory**
+* Avoid certifications jargon
+* Focus on:
+
+  * “Click → Deploy → See Result”
+* Record live demos for reuse
+
+---
+
+## 📘 Final FDP Outcome
+
+Participants will confidently say:
+
+> “I have deployed an application on the cloud and understand how it works.”

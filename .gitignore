@@ -37,3 +37,4 @@ db.sqlite3
 #*.mp4
 statisticalMethodBased_ZScore_3D-checkpoint.ipynb
 .ipynb_checkpoints/
+not_pushed_to_github/

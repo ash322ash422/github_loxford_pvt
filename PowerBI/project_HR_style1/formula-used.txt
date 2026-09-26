@@ -1,0 +1,36 @@
+Add following new measures:
+prompt: You are a PowerBI expert. Give me the measure formula to calculate XXXXXXX from table HR_Analytics_Data.  
+
+- total_employees = COUNTROWS('HR_Analytics_Data') ….add , option
+- male_count = CALCULATE([total_employees], 'HR_Analytics_Data'[Gender] = "Male")
+- female_count = CALCULATE([total_employees], 'HR_Analytics_Data'[Gender] = "Female")
+
+male_percent = [male_count]/[total_employees]
+
+- male_percent = DIVIDE([male_count],[total_employees],0)  …..change it to the % and decimal=0
+- female_percent = DIVIDE([female_count],[total_employees],0) …..change it to the % and decimal=0
+
+
+
+---------------------------------------------------------------
+
+After adding new columns, create following measures:
+due_for_promotion_count          = CALCULATE([total_employees], HR_Analytics_Data[promotion_status] = "Due for promotion") + 0
+
+not_due_for_promotion_count = CALCULATE([total_employees], HR_Analytics_Data[promotion_status] = "Not due for Promotion")
+
+due_for_promotion_percent          = DIVIDE([due_for_promotion_count],[total_employees], 0) + 0
+
+not_due_for_promotion_percent          = DIVIDE([not_due_for_promotion_count],[total_employees], 0)
+
+------------------------------------------------------------------
+
+After adding new columns, create following measures:
+will_be_retrenchment_count = CALCULATE([total_employees],HR_Analytics_Data[retrenchment_status] = "Will be retrenched") + 0
+
+on_service_count = CALCULATE([total_employees],HR_Analytics_Data[retrenchment_status] = "On service") + 0
+
+will_be_retrenchment_percent = DIVIDE([will_be_retrenchment_count],[total_employees], 0)
+
+on_service_percent = DIVIDE([on_service_count],[total_employees], 0)
+

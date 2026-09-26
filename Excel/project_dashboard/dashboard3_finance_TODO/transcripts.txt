@@ -1,0 +1,377 @@
+
+1) preparing the data set before we start
+designing we need to format and prepare
+our data set 
+select the entire data set ctrl+A -> Home tab click on "format as
+table" and choose a table
+[Music]
+
+2) style select column B date ->Home tab format options
+choose date and click okay 
+
+3) click on the second row freeze
+the header row by going to
+view then freeze panes so it stays
+visible while scrolling 
+
+4) Under The View tab uncheck the
+grid lines
+option for a clean look rename the sheet
+to data for easy reference 
+
+5) the data set includes key
+details like account type,
+date,
+descriptions,
+... category types
+
+6) add a new column named
+month and use the formula = TEXT([@Date],"mmm")
+ to get the
+three-letter short form of the
+month 
+
+and highlight the column for clarity with fill color
+
+7)
+it creating the pivot tables create a
+new sheet and name it
+pvt table creation
+
+8) go to the insert-> pivot table,
+ then select existing worksheet
+place it on the pvt sheet 
+
+9) add category to row section and
+debit to Value section to summarize
+expenses by category
+
+10) select a cell, RC -> pivot table options,
+disable: autofit column widths on update,
+view ->remove grid lines 
+
+11) click row labels-> More sort options -> sort categories in descending order by debit values
+
+12) apply formatting select dollar
+sign and decreasing all decimal
+values
+
+13) name key Matrix
+duplicate the existing table then link
+the pivot table to the category and
+debit
+[Music]
+values add a if farer formula
+[Music]
+apply formatting select dollar sign and
+decreasing all decimal
+values remove Grand
+totals total by account copy the first
+pivot
+table replace category with
+account and add Grand totals totals for
+rows
+columns link the totals to the pivot
+table below row apply formatting select
+dollar sign and decreasing all decimal
+values rename the table header to Total
+by
+[Music]
+account monthly net income versus
+expenses use the month field in rows
+change the value
+format to 0.0 comma
+K to display number values in
+thousands and filter by category type
+[Music]
+expenses duplicate the table for income
+replacing debit with credit and format
+values cleanly
+[Music]
+below Combine results into a table
+showing month income and expenses link
+values using to Pivot use the if error
+formula to handle errors in Excel it
+ensures that if the get pivot data
+function fails an empty result is
+returned instead of an errors or zeros
+with blanks
+[Music]
+change the value format to 0.0 comma K
+to display number values in
+[Music]
+thousands repeat these same steps for
+the salary column
+[Music]
+copy the expenses pivot
+table and replace the month field with
+subcategory Ensure the values show in
+dollar format
+[Music]
+apply use p paste special
+values if error to replace errors or
+zeros with
+[Music]
+blanks all expenses by category
+highlight headers or totals with subtle
+colors for clarity
+copy the pivot table and paste it right
+click on the table and select show field
+list remove the debit field and replace
+it with the amount field in the Valu
+section category in the row section
+finalize and format the table copy the
+table then use paste special to paste as
+values and formats remove the grand
+total row to keep it clean organize
+categories in the following
+order salary living
+expenses
+charity dining
+out
+[Music]
+discretionary medical
+expenses
+transport to make this Dynamic use the
+get pivot data function enter equals get
+pivot data open parenthesis amount close
+parenthesis pivot cell reference to pull
+values automatically drag the formula
+down using cr+ D to apply it to all
+rows next total income versus
+expenses copy an existing pivot table
+and paste it into a new section
+rightclick on the table to open the
+field list adjust the fields to income
+and expenses for
+comparison below make a duplicate table
+as values and formats link
+[Music]
+values ensure proper alignment and
+consistent formatting for a professional
+look
+[Music]
+[Music]
+[Music]
+add a new sheet click the plus button at
+the bottom of the workbook to add a new
+sheet rename the sheet to dashboard for
+clarity go to the view Tab and uncheck
+grid lines to create a clean workspace
+insert a background shape go go to
+insert illustrations shapes and choose a
+rectangular shape drag and resize the
+shape to your desired
+[Music]
+size set the height to
+17.15 and the width to 33.414940
+[Music]
+format the shape change the fill color
+to
+white set the Border color to your
+preferred design color create content
+areas insert a smaller rectangular shape
+go to insert illustrations shapes and
+select a rectangular
+[Music]
+shape and adjust the fill color as
+needed remove the
+outline set the height to
+2.03 and the width to
+3.82 copy and paste the smaller shape to
+create additional sections arrange the
+shapes neatly across the dashboard
+layout add a title insert a text box go
+to insert text box and type your
+dashboard title Finance expenses
+dashboard
+format the text increase the font size
+to
+44 change the text color to white and
+select a bold
+[Music]
+font and apply a shadow effect
+[Music]
+remove the text Box's fill and
+outline Center the title at the top of
+the
+dashboard copy and paste
+shape add key metric sections to
+represent key metrics resize the shapes
+as follows set the height to 2.2 and the
+width to
+4.68 copy and paste shape arrange them
+to align neatly across the dashboard
+layout go to shape format and align
+horizontally vertically and to top
+create graph sections add shapes for
+graphs and resize them as follows first
+graph 48 width equals
+7.99 second graph height equal 5.83
+width equal 12
+22 third graph height equal
+12.19 width equal 8.47
+fourth graph height equals
+5.52 width equals
+7.98 fifth graph height equals 6.64
+width equals
+12.26 final adjustments align all
+elements neatly to ensure a professional
+layout
+let's start by adding
+[Music]
+icons next insert text
+[Music]
+box type living expenses
+color bold white font type calibri
+font size
+[Music]
+14 follow each steps
+[Music]
+then type equals into to the text box go
+to the pivot table sheet example select
+the cell link living expenses to the
+link pivot table
+[Music]
+values color bold
+white finally adjust the font size
+16 follow each steps
+[Music]
+insert a refresh icon to allow automatic
+updates whenever data
+changes add a full screen icon to
+enhance user
+interactivity go to the pivot table for
+total spend by
+account insert a dut
+chart and move it to the dashboard sheet
+format the chart as follows rightclick
+and hide all field buttons on the
+chart set the dut whole size to
+50% add data labels select percentage
+only and uncheck the value option leader
+lines size 10 change the font to calibri
+and make it bold set the label color to
+white remove shape
+fill and
+[Music]
+[Music]
+outline insert a header above the chart
+with the title total spent by account
+format it with font Cali
+size 14 and bold align and adjust the
+layout for a clean
+[Music]
+appearance custom colors first
+[Music]
+section a 9d
+[Music]
+18e second Section 9dc 3 E6
+[Music]
+add the total spend values checking in
+credit at the center of the
+chart go to pivot table link the total
+[Music]
+values next expenses by category insert
+a waterfall chart using the expenses by
+categ y pivot
+table move it to the dashboard
+sheet follow the same formatting steps
+adjust size colors and alignment
+[Music]
+[Music]
+[Music]
+[Music]
+[Music]
+next total income versus expenses insert
+a bar chart using the total income
+versus expenses
+[Music]
+data move it to the dashboard
+sheet follow the same formatting steps
+adjust size colors and alignment
+[Music]
+name the chart total income versus
+expenses
+[Music]
+format it with income color 0 b050
+expenses color ff0000
+[Music]
+[Music]
+next monthly net income first
+expenses use a clustered column chart
+for monthly net income vers expenses
+data
+[Music]
+customize the colors access labels and
+title for
+clarity monthly net income first
+expenses
+[Music]
+[Music]
+[Music]
+[Music]
+next expenses by subc
+ategory insert a clustered bar chart for
+expenses by
+subcategory adjust the charts alignment
+and size
+[Music]
+expenses by
+subcategory customize the colors access
+labels and title
+[Music]
+let's start start by adding the slicer
+option go to the pivot table and click
+anywhere inside it navigate to the
+insert tab click on slicer and select
+the field you need choose month and
+click okay now I'll cut the slicer and
+paste it where I wanted on the dashboard
+the default slicer doesn't match
+dashboard design so let's customize
+it go to the slicer and select duplicate
+give it a new name format the slicer by
+doing the
+following go to Whole
+slicer fill options and select a custom
+color
+44546
+a no
+border update the font to Cali make it
+bold and set the color to
+[Music]
+white next head better repeat this
+process for all slicer States use the
+same color scheme
+44546
+a no border once all the slicer styles
+are updated click okay to
+apply then selected item with data
+repeat this process for all slicer
+States for the Border choose White
+unselected item with data repeat this
+process for all slicer
+States no border
+[Music]
+next let's adjust the slicer to fit
+perfectly into the dashboard
+layout rightclick on the slicer and
+choose report connections to ensure all
+relevant fields are linked go to slicer
+settings and check the option to hide
+items with no data now our slicer setup
+is complete and it matches the dashboard
+design
+[Music]
+beautifully Let's test the functionality
+adjust the view by clicking the zoom
+buttons for a full screen or click again
+for zoomed
+out select refresh button to see the
+dashboard update
+dynamically that completes our finance
+expenses dashboard tutorial thank you
+for watching please like share and
+subscribe to our channel for more
+tutorials
