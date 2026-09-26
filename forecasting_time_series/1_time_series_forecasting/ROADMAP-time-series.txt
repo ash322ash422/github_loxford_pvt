@@ -1,0 +1,35 @@
+From Claude AI
+## Teaching Order for Time Series Forecasting
+
+### Layer 1 — Foundations (Start Here)
+1. What is a Time Series? — components, examples   - DONE
+2. Components of Time Series — Trend, Seasonality, Cyclicality, Noise - DONE
+3. Stationarity — what it is, why it matters, ADF test - DONE
+4. Autocorrelation — ACF & PACF plots (intuition only)
+
+
+
+### Layer 2 — Classical Models
+5. **Naive & Baseline Models** — random walk, seasonal naive *(always start here — sets the benchmark)*
+6. **Moving Average & Exponential Smoothing** — SMA, EMA, Holt-Winters
+7. **ARIMA** — AR, I, MA individually → then combine
+8. **SARIMA** — extend ARIMA with seasonality
+
+
+### Layer 3 — Regression-Based Approach
+9. **Time Series as a Regression Problem** — using lag features, date features
+10. **ARIMAX / SARIMAX** — adding external variables (e.g. interest rates, GDP)
+
+
+### Layer 4 — Modern / ML Models
+11. **Facebook Prophet** — easy, intuitive, great for business forecasting
+12. **Tree-based Models** — XGBoost / LightGBM with lag features
+13. **LSTM (Neural Networks)** — only if audience is technical
+
+
+### Layer 5 — Model Evaluation & Production
+14. **Evaluation Metrics** — MAE, RMSE, MAPE, and when to use which
+15. **Train/Test Split for Time Series** — why random split is wrong, walk-forward validation
+16. **Model Selection & Comparison** — how to pick the best model
+17. **Forecasting in Practice** — retraining, monitoring, drift
+

@@ -1,0 +1,6 @@
+date_key,full_date,day_name,month,month_name,quarter,year,is_weekend
+20260601,2026-06-01,Monday,6,June,Q2,2026,False
+20260602,2026-06-02,Tuesday,6,June,Q2,2026,False
+20260606,2026-06-06,Saturday,6,June,Q2,2026,True
+20260615,2026-06-15,Monday,6,June,Q2,2026,False
+20260701,2026-07-01,Wednesday,7,July,Q3,2026,False

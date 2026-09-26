@@ -1,0 +1,5 @@
+product_key,sku,product_name,category,subcategory,brand
+1,SKU-5001,AeroBuds Pro,Electronics,Audio,Aero
+2,SKU-5002,AeroBuds Pro,Electronics,Audio,Aero
+3,SKU-6010,VoltCharge 65W,Electronics,Power,Volt
+4,SKU-7020,PixelView 24 Monitor,Electronics,Computing,Pixel
