@@ -1,0 +1,14 @@
+{
+  "overall_status": "OK",
+  "services": {
+    "apache": {
+      "status": "OK",
+      "reason": "No issues detected."
+    },
+    "samba": {
+      "status": "OK",
+      "reason": "No issues detected."
+    }
+  },
+  "updated_at": "2026-07-29T13:23:31"
+}

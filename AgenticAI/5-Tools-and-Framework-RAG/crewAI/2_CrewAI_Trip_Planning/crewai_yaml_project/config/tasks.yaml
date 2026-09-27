@@ -1,0 +1,18 @@
+research_task:
+  description: >
+    Search the web to find 3 budget-friendly travel destinations in Southeast Asia
+    suited for someone who loves {theme}. For each, list the destination name and 2
+    bullet points on why it fits.
+  expected_output: >
+    A list of 3 destinations, each with 2 short bullet points.
+  agent: researcher
+
+writing_task:
+  description: >
+    Using the research notes, write a short, upbeat itinerary pitch (under
+    200 words) that a friend could read in one minute and get excited about.
+  expected_output: >
+    A short, friendly itinerary pitch under 200 words.
+  agent: writer
+  context:
+    - research_task

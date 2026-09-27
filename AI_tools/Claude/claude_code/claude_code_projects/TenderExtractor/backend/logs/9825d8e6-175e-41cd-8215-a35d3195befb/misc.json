@@ -1,0 +1,392 @@
+{
+  "terms_and_conditions": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "Terms & Conditions",
+        "source_pages": [
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "The work shall be carried out strictly in conformity with the CPWD General Specification of Electrical Works Part-I (Internal) 2023, and Part-II (External) 2023 for electrical works in force and the Indian Electricity Rule - 1956, as amended upto date."
+          },
+          {
+            "number": "2.",
+            "text": "All the materials, used by the contractor should be got approved from the Engineer-in-Charge or his authorized representative before installation. No payment will be made for any unapproved or sub-standard materials used on the work. Rejected materials should be removed from the site of work within 48 hours, by the contractor."
+          },
+          {
+            "number": "3.",
+            "text": "No T & P shall be issued by the department."
+          },
+          {
+            "number": "4.",
+            "text": "Any damage to the installation/ building during execution of work shall be made good by the contractor at his own cost. Repair work if any, should be done with proper cement and sand ratio and to be match with existing finish."
+          },
+          {
+            "number": "5.",
+            "text": "The rates quoted shall be inclusive of all taxes i.e GST but exclusive of ESI & EPF as it would be reimbursed only (As applicable and eligible) after submitted proper documents of their deposits & to the satisfaction of Engineer-in-charge."
+          },
+          {
+            "number": "6.",
+            "text": "The work shall be carried out in security zone area; hence necessary passes shall have to be arranged by the contractor within Three days award of work for the workers engaged by him."
+          },
+          {
+            "number": "7.",
+            "text": "Lowest Bidder shall submit Police verification of staff/labourers to be employed at site within Five days of the award of work, otherwise panelty of Rs. 500/- per day till submission of Police verification of labourers and start of work. Pending or under process police verification will not be accepted."
+          },
+          {
+            "number": "8.",
+            "text": "The electrical work shall be done strictly in close co-ordination with civil works. No claim for idle labour shall be entertained by the department."
+          },
+          {
+            "number": "9.",
+            "text": "The firm shall submit the type test report for cable & other materials along with all necessary documents like invoice etc. Earth wire to be connected with lugs & thimbles etc."
+          },
+          {
+            "number": "10.",
+            "text": "No item shall be installed having Country of Origin in China."
+          },
+          {
+            "number": "11.",
+            "text": "All termination of electrical cables for sizes higher than 4 Sq. mm shall have to be done with proper thimbles / reducer. Copper thimble / reducer shall be used for copper cable and aluminum ones for Al. cables. Nothing extra shall be paid by the department however end termination of power cables shall be paid extra."
+          },
+          {
+            "number": "12.",
+            "text": "Earth wire in the switch board/DB should be covered with green sleeve for which no extra payment will be made."
+          },
+          {
+            "number": "13.",
+            "text": "Nothing extra shall be paid on account of dismantling the wire, conduit, fittings, fans, DB's & Panel etc. and the same will be deposited to the JE's Store."
+          },
+          {
+            "number": "14.",
+            "text": "All the debris etc. shall be removed from the site of work daily."
+          },
+          {
+            "number": "15.",
+            "text": "Electricity & water shall be supplied by the department free of cost."
+          },
+          {
+            "number": "16.",
+            "text": "The site in much secured important heritage building, so all related bye laws are to be followed."
+          },
+          {
+            "number": "17.",
+            "text": "Normally execution will take place after office hours. & site for the work will be provided one by one."
+          },
+          {
+            "number": "18.",
+            "text": "The watch and ward of the materials installed will be the responsibility of the contractor till handing over to the department on completion of work."
+          },
+          {
+            "number": "19.",
+            "text": "Any accident at site during execution of work to be workman and to the third party shall be responsibility of the contractor and claim if any arises due to such accident shall be on the part of contractor and department shall not entertain any claim in this regard."
+          },
+          {
+            "number": "20.",
+            "text": "Work will be carried out in the occupied building hence labour wastage may be there and no claim in this regard from the contractor shall be entertain by the department."
+          },
+          {
+            "number": "21.",
+            "text": "The site will be provided as and when required."
+          },
+          {
+            "number": "22.",
+            "text": "In order to ensure genuineness of equipment/materials, copy of invoice of each equipment/materials, custom clearance paper in case of imported materials duly authenticated by bidder shall be invariably produce to engineer-in-charge."
+          },
+          {
+            "number": "23.",
+            "text": "The contractor shall submit warranty/ guarantee certificate issued by the manufacturer for 05 (Five) years from the date of completion of work."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  },
+  "acceptable_make": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "Acceptable Make",
+        "source_pages": [
+          53,
+          54
+        ],
+        "items": [
+          {
+            "number": "a)",
+            "text": "MS Pipe: Jindal/Jindal Hissar/Tata/Prakash"
+          },
+          {
+            "number": "b)",
+            "text": "Hydrant Valve: New Age/Padmini/Lifeguard"
+          },
+          {
+            "number": "c)",
+            "text": "Butterfly Valve: Sant/Kirloskar/leader"
+          },
+          {
+            "number": "d)",
+            "text": "Sluice Valve: Kirloskar/Sant/Kartar"
+          },
+          {
+            "number": "e)",
+            "text": "NRV: Sant/Kirloskar/Leader"
+          },
+          {
+            "number": "f)",
+            "text": "Y Strainer: Kirloskar/Sant/Kartar"
+          },
+          {
+            "number": "g)",
+            "text": "RRL Hose Pipe: New Age/Padmini/Lifeguard"
+          },
+          {
+            "number": "h)",
+            "text": "First Aid Hose Reel: New Age/Padmini/Lifeguard"
+          },
+          {
+            "number": "i)",
+            "text": "Hose Cabinet: Life Guard/Padmini/New Age/Mild Steel/Valentino"
+          },
+          {
+            "number": "j)",
+            "text": "Signage: Life Guard/Padmini/New Age/Mild Steel/Valentino"
+          },
+          {
+            "number": "k)",
+            "text": "Fire Extinguishers: Ceasefire/ Safex/ Lifeguard/ Flameklog/ Omex/ Agni/ Padmini."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  },
+  "documents_to_be_scanned_and_uploaded": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "LIST OF DOCUMENTS FOR NON-CPWD REG. SPECIALIZED AGENCIES/MANUFACTURERS/OEM",
+        "source_pages": [
+          6,
+          7
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "Earnest Money Deposit:\nBanker's Cheque of a Commercial Bank / Account Payee Demand Draft of a Commercial Bank / Fixed Deposit\nReceipt (FDR) of a Commercial Bank / Insurance Surety Bonds / Bank Guarantee including e- Bank\nGuarantee (for balance amount as prescribed) from a Commercial Bank against EMD."
+          },
+          {
+            "number": "2.",
+            "text": "Copy of EMD receipt [Form F]:\nCopy of receipt for deposition of original EMD to division office of any EE, CPWD. Scanned copy of original Bank\nGuarantee including e-Bank Guarantee of any commercial Bank against EMD.\n(Note :- EMD is required to deposit in the office of Executive Engineer (E), DED-101, CPWD, Gate No.\n6, North Block, New Delhi who is inviting bid or Division office of any Executive Engineer, CPWD within the period of bid submission)."
+          },
+          {
+            "number": "3.",
+            "text": "Certificate of financial turn over from Chartered Accountant (Form - \"A\"):\nCertificate of Financial Turnover including Profit / Loss duly audited by Charted Accountant for the last 3 financial\nyears ending 31st March 2024, as per Form A."
+          },
+          {
+            "number": "4.",
+            "text": "Banker's Certificate / Net Worth Certificate (Form B/ B-1)\nCopy of Banker's Certificate or Net worth certificate (on the format prescribed in Form B or B1 as applicable)."
+          },
+          {
+            "number": "5.",
+            "text": "Certificates of Work Experience as per Form C:\nDetails of Eligible Similar Nature of Works Completed During the Last Seven Years Ending Previous Day of Last Day of Submission of Tenders.\n[List of eligible similar nature of works completed during the last seven years ending last day of month previous to the one in which bids are invited including extended date, if any, in Form - C. If private works shown in support of eligibility, then certified copy of Tax Deducted at Source (TDS) certificate (Form 16A & 26A) shall be submitted along with experience certificate and the TDS amount shall tally with the actual amount of work done. Otherwise, the amount that tally with the TDS shall only be considered for eligibility.]\nNOTE: * Only eligible similar work fulfilling the eligibility criteria as per NIT shall be uploaded."
+          },
+          {
+            "number": "6.",
+            "text": "Work Experience certificate of Completed works mentioned in Form-C, certified by owner department (Form-G)."
+          },
+          {
+            "number": "7.",
+            "text": "Project under execution as per Form C1."
+          },
+          {
+            "number": "8.",
+            "text": "Bidding capacity as per Form C3."
+          },
+          {
+            "number": "9.",
+            "text": "Affidavit:\nAffidavit for eligible similar works not having been executed on back-to-back basis (Form- H)."
+          },
+          {
+            "number": "10.",
+            "text": "GST Registration GST Registration certificate AND/OR Undertaking (Form \"M\"):\nGST registration certificate of the state where the work is to executed, if already obtained by the bidder.\nIf the bidder has not obtained GST registration as applicable, then in such a case the bidder shall upload the following undertaking with the bid document. \"If work is awarded to me, I/We shall obtain registration certificate as applicable within one month from date of receipt of award letter or before payment of 1st R.A. bill whichever is earlier, falling which, I/We shall be responsible for any delay in payments which will be due towards me on account of the work executed and/ or for any action taken by CPWD or GST department in this regard\"."
+          },
+          {
+            "number": "11.",
+            "text": "PAN Card:\nCopy of the PAN of the Bidder."
+          },
+          {
+            "number": "12.",
+            "text": "Undertaking as per Annexure D1."
+          },
+          {
+            "number": "13.",
+            "text": "ERP training certificate or Undertaking (Annexure \"D2\"):\nCopy of valid ERP training certificate\nOR\nUndertaking, that if we become first lowest in tender, then either myself or our authorized representative will take compulsory ERP training through any of the CPWD Regional Training Institutes (RTIs) at Delhi, Mumbai, Chennai and Kolkata, National CPWD Academy (NCA) Ghaziabad, Training arranged by graduates of ERP \"Train the Trainers Programme\" conducted by NCA, Ghaziabad or through any other special training arranged by ERP Unit of CPWD within two months from the date of issue of Intent Letter."
+          },
+          {
+            "number": "14.",
+            "text": "Undertaking as per Annexure-D3."
+          },
+          {
+            "number": "15.",
+            "text": "Valid Electrical Licence or Undertaking of association:\nCopy of Valid Electrical Licence\nOR\nUndertaking as per Annexure-D4."
+          },
+          {
+            "number": "16.",
+            "text": "Undertaking as per Annexure-D9."
+          },
+          {
+            "number": "17.",
+            "text": "Any other document as specified in bid document."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "LIST OF DOCUMENTS FOR CPWD REG. CONTRACTORS",
+        "source_pages": [
+          8,
+          9
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "Earnest Money Deposit:\nBanker's Cheque of a Commercial Bank / Account Payee Demand Draft of a Commercial Bank / Fixed Deposit\nReceipt (FDR) of a Commercial Bank / Insurance Surety Bonds / Bank Guarantee including e- Bank Guarantee (for\nbalance amount as prescribed) from a Commercial Bank against EMD."
+          },
+          {
+            "number": "2.",
+            "text": "Copy of EMD receipt [Form F]: Copy of receipt for deposition of original EMD to division office of any EE, CPWD. Scanned copy of original Bank Guarantee including e-Bank Guarantee of any commercial Bank against EMD.\n(Note :- EMD is required to deposit in the office of Executive Engineer(E), DED-101, CPWD, Gate No.\n6, North Block, New Delhi who is inviting bid or Division office of any Executive Engineer, CPWD within the period of bid submission)."
+          },
+          {
+            "number": "3.",
+            "text": "Valid Enlistment Order: Contractor of the Composite Category in CPWD in appropriate Class valid on the last date of submission of bid."
+          },
+          {
+            "number": "4.",
+            "text": "Affidavit: Affidavit for eligible similar works not having been executed on back-to-back basis (Form- H)."
+          },
+          {
+            "number": "5.",
+            "text": "GST Registration certificate AND/OR Undertaking (Form \"M\"):\nGST registration certificate of the state where the work is to executed, if already obtained by the bidder.\nIf the bidder has not obtained GST registration as applicable, then in such a case the bidder shall upload the following undertaking with the bid document. \"If work is awarded to me, I/We shall obtain registration certificate as applicable within one month from date of receipt of award letter or before payment of 1st R.A. bill whichever is earlier, falling which, I/We shall be responsible for any delay in payments which will be due towards me on account of the work executed and/ or for any action taken by CPWD or GST department in this regard\"."
+          },
+          {
+            "number": "6.",
+            "text": "PAN Card: Copy of the PAN of the Bidder."
+          },
+          {
+            "number": "7.",
+            "text": "Undertaking as per Annexure D1."
+          },
+          {
+            "number": "8.",
+            "text": "Bidding capacity as per Form C3."
+          },
+          {
+            "number": "9.",
+            "text": "ERP training certificate."
+          },
+          {
+            "number": "10.",
+            "text": "Undertaking as per Annexure D3."
+          },
+          {
+            "number": "11.",
+            "text": "Valid Electrical Licence or Undertaking of association:\nCopy of Valid Electrical Licence\nOR\nUndertaking as per (Annexure \"D-4\")."
+          },
+          {
+            "number": "12.",
+            "text": "Undertaking as per Annexure-D9."
+          },
+          {
+            "number": "13.",
+            "text": "Any other document as specified in bid document."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "DETAIL OF UPLOADED DOCUMENT MARKING IN PDF FILE Annexure-D",
+        "source_pages": [
+          7
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": ""
+          },
+          {
+            "number": "2.",
+            "text": ""
+          },
+          {
+            "number": "3.",
+            "text": ""
+          },
+          {
+            "number": "4.",
+            "text": ""
+          },
+          {
+            "number": "5.",
+            "text": ""
+          },
+          {
+            "number": "6.",
+            "text": ""
+          },
+          {
+            "number": "7.",
+            "text": ""
+          },
+          {
+            "number": "8.",
+            "text": ""
+          },
+          {
+            "number": "9.",
+            "text": ""
+          },
+          {
+            "number": "10.",
+            "text": ""
+          },
+          {
+            "number": "11.",
+            "text": ""
+          },
+          {
+            "number": "12.",
+            "text": ""
+          },
+          {
+            "number": "13.",
+            "text": ""
+          },
+          {
+            "number": "14.",
+            "text": ""
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  }
+}

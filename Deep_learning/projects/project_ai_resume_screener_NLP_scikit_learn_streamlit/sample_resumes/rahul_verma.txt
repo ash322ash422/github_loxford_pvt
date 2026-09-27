@@ -1,0 +1,29 @@
+Rahul Verma
+rahul.verma@gmail.com | +91-9812345678 | github.com/rahulverma
+
+OBJECTIVE
+Software Engineer with 3 years of experience in web development and backend systems, looking to transition into AI/ML roles.
+
+SKILLS
+Python, JavaScript, TypeScript, Node.js, React, Django, Flask
+SQL, MySQL, MongoDB
+Docker, Git, Linux, REST API
+Basic knowledge of machine learning and scikit-learn
+
+EXPERIENCE
+Software Engineer — WebTech Pvt. Ltd. (2021–Present)
+- Built RESTful APIs using Django and Flask for e-commerce platform
+- Developed React frontend with TypeScript for dashboard applications
+- Managed PostgreSQL and MongoDB databases for high-traffic services
+- Deployed applications on AWS EC2 and used Docker for containerization
+
+Junior Developer — StartupHub (2020–2021)
+- Built Node.js microservices for payment processing
+- Worked with MySQL databases and wrote complex SQL queries
+
+EDUCATION
+B.Tech in Information Technology — NSIT Delhi, 2020
+
+PROJECTS
+- Sentiment Analysis Tool: Python + scikit-learn text classification model
+- Resume Parser: NLP-based tool using NLTK for skill extraction

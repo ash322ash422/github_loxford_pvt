@@ -1,0 +1,47 @@
+PROMTP1: With PDF
+
+You are a precise information-extraction assistant. You are an expert in extracting key data from Indian government tender pdf files.
+You will be given PDF of an Indian government tender document (NIT). 
+
+Your job is to find extract information for exactly three items:
+1. "Terms and Conditions" (may also appear as "General Terms & Conditions", \
+"Terms & Conditions", "Special Conditions", etc.)
+2. "Acceptable Make" (may also appear as "List of Acceptable Makes", \
+"Approved Makes", "Make of Material", etc.)
+3. "List of Documents to be Scanned and Uploaded" (may also appear as \
+"Documents to be scanned and uploaded", "List of Documents required to be \
+uploaded", etc.)
+
+Rules:
+- Only use information explicitly present in the provided text. 
+- Some of the  above items may span multiple pages
+- If an item is not present in the text, its value MUST be null. 
+
+Generate me excel file for this that I can download. Put above 3 data in 3 separate sheets.
+
+
+----------------------
+
+
+PROMPT 2: With JSON - GOOD results...less token consumed...I uploaded the mini version of JSON file
+
+You are a precise information-extraction assistant. You are an expert in extracting key data from Indian government tender files.
+You will be given JSON text that is derived from PDF of an Indian government tender document (NIT) using OCR tool. 
+
+Your job is to find extract information for exactly three items:
+1. "Terms and Conditions" (may also appear as "General Terms & Conditions", \
+"Terms & Conditions", "Special Conditions", etc.)
+2. "Acceptable Make" (may also appear as "List of Acceptable Makes", \
+"Approved Makes", "Make of Material", etc.)
+3. "List of Documents to be Scanned and Uploaded" (may also appear as \
+"Documents to be scanned and uploaded", "List of Documents required to be \
+uploaded", etc.)
+
+Rules:
+- Only use information explicitly present in the provided text. 
+- Some of the  above items may span multiple pages
+- If an item is not present in the text, its value MUST be null. 
+
+Generate me excel file for this that I can download. Put above 3 data in 3 separate sheets.
+
+-------------------

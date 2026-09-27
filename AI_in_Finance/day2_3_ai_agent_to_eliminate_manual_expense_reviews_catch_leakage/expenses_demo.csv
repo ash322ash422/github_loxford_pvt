@@ -1,0 +1,21 @@
+expense_id,employee,department,date,category,vendor,amount,payment_method,approver,receipt_attached,justification
+EXP-1001,R. Menon,Sales,2026-07-02,Client Meals,The Oberoi Grand,4200,Corporate Card,S. Rao,Yes,Client dinner - Acme Corp deal
+EXP-1002,R. Menon,Sales,2026-07-02,Client Meals,The Oberoi Grand,3900,Corporate Card,S. Rao,Yes,Client dinner follow-up
+EXP-1003,A. Iyer,Marketing,2026-07-05,Travel,IndiGo Airlines,18500,Corporate Card,K. Sharma,Yes,Mumbai conference travel
+EXP-1004,A. Iyer,Marketing,2026-07-06,Hotel,Taj Lands End,32000,Corporate Card,K. Sharma,Yes,Conference stay 3 nights
+EXP-1005,P. Verma,Procurement,2026-07-08,Office Supplies,Reliable Traders Pvt Ltd,49500,Bank Transfer,P. Verma,No,Bulk stationery order
+EXP-1006,P. Verma,Procurement,2026-07-08,Office Supplies,Reliable Traders Pvt Ltd,49800,Bank Transfer,P. Verma,No,Bulk stationery order - part 2
+EXP-1007,N. Das,Engineering,2026-07-10,Software,CloudTools Inc,12000,Corporate Card,S. Rao,Yes,Team dev tools subscription
+EXP-1008,N. Das,Engineering,2026-07-13,Team Meals,Barbeque Nation,2800,Corporate Card,S. Rao,Yes,Sprint completion team lunch
+EXP-1009,R. Menon,Sales,2026-07-14,Entertainment,Phoenix Mall Cinema,1600,Corporate Card,S. Rao,Yes,Client relationship building
+EXP-1010,V. Kulkarni,Finance,2026-07-15,Travel,Ola Cabs,850,Corporate Card,K. Sharma,Yes,Airport transfer
+EXP-1011,S. Bhatt,Procurement,2026-07-16,Vendor Services,Apex Facility Mgmt,275000,Bank Transfer,S. Bhatt,Yes,Quarterly facility maintenance contract
+EXP-1012,S. Bhatt,Procurement,2026-07-16,Vendor Services,Apex Facility Mgmt,49000,Bank Transfer,S. Bhatt,No,Emergency repair addendum
+EXP-1013,A. Iyer,Marketing,2026-07-18,Client Meals,Wasabi by Morimoto,7800,Corporate Card,K. Sharma,No,Client entertainment
+EXP-1014,R. Menon,Sales,2026-07-20,Travel,Ola Cabs,450,Corporate Card,S. Rao,Yes,Local client visit
+EXP-1015,P. Verma,Procurement,2026-07-21,Office Supplies,New Horizon Supplies,49900,Bank Transfer,P. Verma,No,Stationery restock
+EXP-1016,J. Fernandes,HR,2026-07-22,Team Meals,Barbeque Nation,3100,Corporate Card,K. Sharma,Yes,New hire welcome lunch
+EXP-1017,S. Bhatt,Procurement,2026-07-23,Vendor Services,Trident Consulting Svcs,180000,Bank Transfer,S. Bhatt,Yes,Advisory engagement - Q3
+EXP-1018,N. Das,Engineering,2026-07-25,Travel,Uber,14200,Personal Card,S. Rao,Yes,Weekend hackathon commute (Sat)
+EXP-1019,V. Kulkarni,Finance,2026-07-27,Office Supplies,New Horizon Supplies,49700,Bank Transfer,V. Kulkarni,No,Printer cartridges
+EXP-1020,A. Iyer,Marketing,2026-07-28,Entertainment,Phoenix Mall Cinema,5200,Corporate Card,K. Sharma,No,Team offsite recreation

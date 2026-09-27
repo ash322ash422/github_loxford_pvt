@@ -1,0 +1,145 @@
+{
+  "The Oberoi Grand": {
+    "category": "Hospitality / F&B",
+    "registered_since": "1998-03-11",
+    "gst_number": "19AACCT1234H1Z5",
+    "gst_status": "Active, filings current",
+    "registered_address": "15 J.L. Nehru Road, Kolkata, WB",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 6,
+    "prior_internal_flags": 0,
+    "notes": "Well-known five-star hotel chain. Frequently used for client entertainment across departments."
+  },
+  "IndiGo Airlines": {
+    "category": "Travel - Airline",
+    "registered_since": "2006-08-04",
+    "gst_number": "07AABCI2345B1Z2",
+    "gst_status": "Active, filings current",
+    "registered_address": "Gurugram, Haryana",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 41,
+    "prior_internal_flags": 0,
+    "notes": "Preferred corporate travel carrier under negotiated rate agreement."
+  },
+  "Taj Lands End": {
+    "category": "Hospitality / F&B",
+    "registered_since": "2004-01-20",
+    "gst_number": "27AAACI9012L1ZQ",
+    "gst_status": "Active, filings current",
+    "registered_address": "Mumbai, Maharashtra",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 9,
+    "prior_internal_flags": 0,
+    "notes": "Preferred hotel partner for Mumbai conference travel."
+  },
+  "Reliable Traders Pvt Ltd": {
+    "category": "Office Supplies / Vendor",
+    "registered_since": "2023-02-14",
+    "gst_number": "27ABCDE1111F1Z1",
+    "gst_status": "Active, but no filings in the last 2 quarters",
+    "registered_address": "Shop 4, Andheri Industrial Estate, Mumbai, MH",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 1,
+    "prior_internal_flags": 1,
+    "notes": "Onboarded 18 months ago via procurement's P. Verma. Only ever invoiced by P. Verma. One prior internal note (2026-03) flagged near-duplicate invoice amounts submitted in the same week."
+  },
+  "New Horizon Supplies": {
+    "category": "Office Supplies / Vendor",
+    "registered_since": "2026-05-02",
+    "gst_number": "PENDING - not yet located in GST portal",
+    "gst_status": "Unverified",
+    "registered_address": "Flat 302, Sunrise Apartments, Thane, MH (residential address)",
+    "bank_account_verified": false,
+    "distinct_employee_payers_last_12mo": 2,
+    "prior_internal_flags": 0,
+    "notes": "Vendor onboarded 11 weeks ago. Registered address resolves to a residential flat, not a commercial unit. No GST registration found under this name. Billed by two different employees (P. Verma, V. Kulkarni) in the same month, both procurement/finance."
+  },
+  "Apex Facility Mgmt": {
+    "category": "Facilities / Vendor Services",
+    "registered_since": "2015-06-30",
+    "gst_number": "27AAACA5566K1ZR",
+    "gst_status": "Active, filings current",
+    "registered_address": "Powai, Mumbai, MH",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 2,
+    "prior_internal_flags": 0,
+    "notes": "Long-standing facility maintenance contractor, master service agreement on file."
+  },
+  "Trident Consulting Svcs": {
+    "category": "Professional Services",
+    "registered_since": "2019-11-09",
+    "gst_number": "29AACCT7788M1Z0",
+    "gst_status": "Active, filings current",
+    "registered_address": "Bengaluru, KA",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 3,
+    "prior_internal_flags": 0,
+    "notes": "Advisory firm engaged for quarterly strategy work, statement of work on file."
+  },
+  "CloudTools Inc": {
+    "category": "Software / SaaS",
+    "registered_since": "2012-04-17",
+    "gst_number": "N/A - foreign SaaS vendor, reverse charge applies",
+    "gst_status": "N/A",
+    "registered_address": "Delaware, USA",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 4,
+    "prior_internal_flags": 0,
+    "notes": "Approved SaaS vendor on the engineering tools allowlist."
+  },
+  "Barbeque Nation": {
+    "category": "Hospitality / F&B",
+    "registered_since": "2006-09-01",
+    "gst_number": "29AABCB4455N1Z8",
+    "gst_status": "Active, filings current",
+    "registered_address": "Multiple locations, HQ Bengaluru",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 22,
+    "prior_internal_flags": 0,
+    "notes": "Common venue for team lunches across departments."
+  },
+  "Phoenix Mall Cinema": {
+    "category": "Entertainment",
+    "registered_since": "2010-02-11",
+    "gst_number": "27AABCP3344R1Z6",
+    "gst_status": "Active, filings current",
+    "registered_address": "Mumbai, MH",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 5,
+    "prior_internal_flags": 0,
+    "notes": "Used occasionally for team recreation outings."
+  },
+  "Ola Cabs": {
+    "category": "Travel - Local transport",
+    "registered_since": "2010-12-03",
+    "gst_number": "29AAACO1122P1Z4",
+    "gst_status": "Active, filings current",
+    "registered_address": "Bengaluru, KA",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 38,
+    "prior_internal_flags": 0,
+    "notes": "Standard local transport provider under corporate account."
+  },
+  "Uber": {
+    "category": "Travel - Local transport",
+    "registered_since": "2013-01-01",
+    "gst_number": "27AAACU9988S1Z3",
+    "gst_status": "Active, filings current",
+    "registered_address": "Mumbai, MH",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 19,
+    "prior_internal_flags": 0,
+    "notes": "Not on the default corporate travel app list; reimbursed as a personal expense when used."
+  },
+  "Wasabi by Morimoto": {
+    "category": "Hospitality / F&B",
+    "registered_since": "2015-05-19",
+    "gst_number": "27AABCW6677T1Z9",
+    "gst_status": "Active, filings current",
+    "registered_address": "Mumbai, MH",
+    "bank_account_verified": true,
+    "distinct_employee_payers_last_12mo": 3,
+    "prior_internal_flags": 0,
+    "notes": "Premium restaurant occasionally used for client entertainment."
+  }
+}

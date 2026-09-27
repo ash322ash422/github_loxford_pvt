@@ -1,0 +1,28 @@
+Loxford Technologies – Company Overview
+Loxford Technologies is a global technology solutions provider specializing in
+artificial intelligence, data analytics, and enterprise automation. Founded in 2012,
+the company has grown rapidly into a mid-sized enterprise serving clients across
+North America, Europe, and Asia.
+Loxford Technologies was founded by Daniel Reeves, a former data scientist, and
+Anika Lomax, a software engineer with a background in distributed systems. The
+founders envisioned a company that could bridge the gap between cutting-edge
+AI research and real-world business applications.
+• CEO: Daniel Reeves
+• CTO: Anika Lomax
+The company is headquartered in Austin, Texas, USA, with additional offices in:
+• London, UK
+• Bengaluru, India
+• Berlin, Germany
+As of 2024, Loxford Technologies reported an estimated annual revenue of $180
+million, with a year-over-year growth rate of approximately 22%. The company
+employs over 850 professionals, including engineers, data scientists, and
+consultants.
+. Loxford Technologies offers a wide range of core services, including:
+• AI & Machine Learning Solutions
+Custom AI models for prediction, classification, and automation.
+• Data Engineering & Analytics
+Data pipelines, dashboards, and business intelligence systems.
+• RAG-Based Knowledge Systems
+Enterprise-grade Retrieval-Augmented Generation systems for internal
+knowledge management.
+

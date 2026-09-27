@@ -1,0 +1,58 @@
+2026-07-29 13:21:18 smbd[5813]: ERROR: authentication failed for user 'dave' from 192.168.1.63 (NT_STATUS_ACCOUNT_LOCKED_OUT)
+2026-07-29 13:21:18 smbd[7229]: ERROR: authentication failed for user 'bob' from 192.168.1.52 (NT_STATUS_LOGON_FAILURE)
+2026-07-29 13:21:18 smbd[7952]: ERROR: authentication failed for user 'guest' from 192.168.1.54 (NT_STATUS_ACCESS_DENIED)
+2026-07-29 13:21:18 smbd[3613]: ERROR: authentication failed for user 'svc_backup' from 192.168.1.72 (NT_STATUS_LOGON_FAILURE)
+2026-07-29 13:21:18 smbd[7255]: ERROR: authentication failed for user 'svc_backup' from 192.168.1.75 (NT_STATUS_ACCOUNT_LOCKED_OUT)
+2026-07-29 13:21:18 smbd[8574]: CRITICAL: PANIC: internal error - smbd crashed unexpectedly, restarting
+2026-07-29 13:21:30 smbd[7460]: INFO: user 'carol' authenticated successfully from 192.168.1.63
+2026-07-29 13:21:33 smbd[9622]: INFO: client 192.168.1.61 connected to share 'Public'
+2026-07-29 13:21:34 smbd[5598]: INFO: client 192.168.1.53 connected to share 'Public'
+2026-07-29 13:21:35 smbd[6046]: INFO: client 192.168.1.48 connected to share 'Scans'
+2026-07-29 13:21:37 smbd[1261]: INFO: user 'svc_backup' authenticated successfully from 192.168.1.62
+2026-07-29 13:21:39 smbd[3043]: INFO: client 192.168.1.42 connected to share 'Public'
+2026-07-29 13:21:42 smbd[2607]: INFO: user 'guest' authenticated successfully from 192.168.1.47
+2026-07-29 13:21:46 smbd[6951]: INFO: user 'dave' authenticated successfully from 192.168.1.50
+2026-07-29 13:21:48 smbd[1525]: INFO: client 192.168.1.74 connected to share 'HomeDrives'
+2026-07-29 13:21:52 smbd[6330]: INFO: user 'alice' authenticated successfully from 192.168.1.70
+2026-07-29 13:21:53 smbd[3701]: INFO: user 'dave' authenticated successfully from 192.168.1.79
+2026-07-29 13:21:54 smbd[9982]: INFO: user 'bob' authenticated successfully from 192.168.1.61
+2026-07-29 13:21:57 smbd[7494]: INFO: user 'bob' authenticated successfully from 192.168.1.65
+2026-07-29 13:22:00 smbd[6133]: INFO: user 'alice' authenticated successfully from 192.168.1.67
+2026-07-29 13:22:03 smbd[6744]: INFO: user 'dave' authenticated successfully from 192.168.1.77
+2026-07-29 13:22:06 smbd[6397]: INFO: user 'carol' authenticated successfully from 192.168.1.76
+2026-07-29 13:22:07 smbd[7727]: INFO: client 192.168.1.54 connected to share 'Backups'
+2026-07-29 13:22:11 smbd[9154]: INFO: user 'alice' authenticated successfully from 192.168.1.61
+2026-07-29 13:22:13 smbd[5131]: INFO: client 192.168.1.66 connected to share 'HomeDrives'
+2026-07-29 13:22:15 smbd[8745]: INFO: client 192.168.1.61 connected to share 'HomeDrives'
+2026-07-29 13:22:18 smbd[7720]: INFO: client 192.168.1.68 connected to share 'Backups'
+2026-07-29 13:22:21 smbd[7788]: INFO: client 192.168.1.71 connected to share 'Backups'
+2026-07-29 13:22:23 smbd[3411]: INFO: client 192.168.1.75 connected to share 'Data'
+2026-07-29 13:22:25 smbd[2300]: INFO: user 'bob' authenticated successfully from 192.168.1.73
+2026-07-29 13:22:28 smbd[4334]: INFO: client 192.168.1.46 connected to share 'Scans'
+2026-07-29 13:22:31 smbd[9108]: INFO: client 192.168.1.50 connected to share 'Backups'
+2026-07-29 13:22:33 smbd[1148]: INFO: user 'guest' authenticated successfully from 192.168.1.67
+2026-07-29 13:22:36 smbd[8809]: INFO: user 'carol' authenticated successfully from 192.168.1.57
+2026-07-29 13:22:39 smbd[5638]: INFO: user 'carol' authenticated successfully from 192.168.1.66
+2026-07-29 13:22:43 smbd[2210]: INFO: user 'guest' authenticated successfully from 192.168.1.45
+2026-07-29 13:22:44 smbd[5035]: INFO: client 192.168.1.43 connected to share 'Data'
+2026-07-29 13:22:46 smbd[6570]: INFO: client 192.168.1.44 connected to share 'Public'
+2026-07-29 13:22:49 smbd[4677]: INFO: client 192.168.1.42 connected to share 'Data'
+2026-07-29 13:22:50 smbd[7453]: INFO: user 'svc_backup' authenticated successfully from 192.168.1.43
+2026-07-29 13:22:52 smbd[9117]: INFO: user 'guest' authenticated successfully from 192.168.1.76
+2026-07-29 13:22:55 smbd[8665]: INFO: client 192.168.1.49 connected to share 'Data'
+2026-07-29 13:22:58 smbd[3062]: INFO: client 192.168.1.54 connected to share 'Public'
+2026-07-29 13:23:01 smbd[5237]: INFO: client 192.168.1.64 connected to share 'HomeDrives'
+2026-07-29 13:23:03 smbd[2877]: INFO: client 192.168.1.50 connected to share 'Data'
+2026-07-29 13:23:04 smbd[6008]: INFO: client 192.168.1.49 connected to share 'HomeDrives'
+2026-07-29 13:23:08 smbd[8447]: INFO: user 'dave' authenticated successfully from 192.168.1.74
+2026-07-29 13:23:09 smbd[3184]: INFO: user 'alice' authenticated successfully from 192.168.1.65
+2026-07-29 13:23:10 smbd[3119]: INFO: user 'bob' authenticated successfully from 192.168.1.56
+2026-07-29 13:23:14 smbd[5136]: INFO: client 192.168.1.63 connected to share 'Data'
+2026-07-29 13:23:16 smbd[9482]: INFO: user 'dave' authenticated successfully from 192.168.1.75
+2026-07-29 13:23:20 smbd[8666]: INFO: client 192.168.1.57 connected to share 'HomeDrives'
+2026-07-29 13:23:24 smbd[4927]: INFO: client 192.168.1.69 connected to share 'Data'
+2026-07-29 13:23:25 smbd[2644]: INFO: client 192.168.1.69 connected to share 'HomeDrives'
+2026-07-29 13:23:27 smbd[8974]: INFO: user 'guest' authenticated successfully from 192.168.1.64
+2026-07-29 13:23:30 smbd[6138]: INFO: client 192.168.1.43 connected to share 'Public'
+2026-07-29 13:23:34 smbd[1962]: INFO: client 192.168.1.70 connected to share 'Scans'
+2026-07-29 13:23:38 smbd[9990]: INFO: user 'guest' authenticated successfully from 192.168.1.49

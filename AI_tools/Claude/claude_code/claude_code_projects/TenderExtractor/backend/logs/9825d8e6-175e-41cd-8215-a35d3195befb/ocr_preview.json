@@ -1,0 +1,548 @@
+{
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "1\nNotice Inviting for e-Tender\nName of work: MOEI & fans in C/S Bldg. at South Block, New Delhi. (SH: Replacement of\nexisting damaged fire pipe line and accessories and servicing of Fire Pump.)\nINDEX\nSl. No.\nContents\nPage No.\n1.\nIndex\n1\n2.\nInformation and Instructions to Contractors For E-Tendering Forming Part of NIT\n2-5\n3.\nList of documents to be scanned and uploaded within the period of bid submission\n(Annexure-D)\n6-9\n4.\nCheck List\n10\n5.\nReceipt of EMD (Form-F) & Bank Guarantee for part EMD & PG\n11-13\n6.\nForm A, B, B1, C, C1, G, H & H1 and Annexure- D1, D2, D3, D4, D5, D6, D7, D8,\nD9 & M\n14-32\n7.\nCPWD 6 for e-tendering\n33-37\n8.\nCPWD 7\n38-39\n9.\nSchedule A to F\n40-46\n10.\nTerms & Conditions\n47-58\n11.\nSchedule of Quantity\n59-62\nCertified that this NIT contains pages 1 to 62 only.\nNIT No. 101/EE(E)/DED-101/2026-27 approved for Rs. 17,73,661/- (Rupees Seventeen\nLakh Seventy Three Thousand Six Hundred Sixty One Only)",
+      "width": 8.5,
+      "height": 11.0,
+      "unit": "inch",
+      "angle": null,
+      "tables": [
+        [
+          [
+            "Sl. No.",
+            "Contents",
+            "Page No."
+          ],
+          [
+            "1.",
+            "Index",
+            "1"
+          ],
+          [
+            "2.",
+            "Information and Instructions to Contractors For E-Tendering Forming Part of NIT",
+            "2-5"
+          ],
+          [
+            "3.",
+            "List of documents to be scanned and uploaded within the period of bid submission (Annexure-D)",
+            "6-9"
+          ],
+          [
+            "4.",
+            "Check List",
+            "10"
+          ],
+          [
+            "5.",
+            "Receipt of EMD (Form-F) & Bank Guarantee for part EMD & PG",
+            "11-13"
+          ],
+          [
+            "6.",
+            "Form A, B, B1, C, C1, G, H & H1 and Annexure- D1, D2, D3, D4, D5, D6, D7, D8, D9 & M",
+            "14-32"
+          ],
+          [
+            "7.",
+            "CPWD 6 for e-tendering",
+            "33-37"
+          ],
+          [
+            "8.",
+            "CPWD 7",
+            "38-39"
+          ],
+          [
+            "9.",
+            "Schedule A to F",
+            "40-46"
+          ],
+          [
+            "10.",
+            "Terms & Conditions",
+            "47-58"
+          ],
+          [
+            "11.",
+            "Schedule of Quantity",
+            "59-62"
+          ]
+        ]
+      ],
+      "key_value_pairs": [],
+      "paragraphs": [
+        {
+          "content": "1",
+          "role": "pageNumber"
+        },
+        {
+          "content": "Notice Inviting for e-Tender",
+          "role": null
+        },
+        {
+          "content": "Name of work: MOEI & fans in C/S Bldg. at South Block, New Delhi. (SH: Replacement of existing damaged fire pipe line and accessories and servicing of Fire Pump.)",
+          "role": null
+        },
+        {
+          "content": "INDEX",
+          "role": null
+        },
+        {
+          "content": "Sl. No.",
+          "role": null
+        },
+        {
+          "content": "Contents",
+          "role": null
+        },
+        {
+          "content": "Page No.",
+          "role": null
+        },
+        {
+          "content": "1.",
+          "role": null
+        },
+        {
+          "content": "Index",
+          "role": null
+        },
+        {
+          "content": "1",
+          "role": null
+        },
+        {
+          "content": "2.",
+          "role": null
+        },
+        {
+          "content": "Information and Instructions to Contractors For E-Tendering Forming Part of NIT",
+          "role": null
+        },
+        {
+          "content": "2-5",
+          "role": null
+        },
+        {
+          "content": "3.",
+          "role": null
+        },
+        {
+          "content": "List of documents to be scanned and uploaded within the period of bid submission (Annexure-D)",
+          "role": null
+        },
+        {
+          "content": "6-9",
+          "role": null
+        },
+        {
+          "content": "4.",
+          "role": null
+        },
+        {
+          "content": "Check List",
+          "role": null
+        },
+        {
+          "content": "10",
+          "role": null
+        },
+        {
+          "content": "5.",
+          "role": null
+        },
+        {
+          "content": "Receipt of EMD (Form-F) & Bank Guarantee for part EMD & PG",
+          "role": null
+        },
+        {
+          "content": "11-13",
+          "role": null
+        },
+        {
+          "content": "6.",
+          "role": null
+        },
+        {
+          "content": "Form A, B, B1, C, C1, G, H & H1 and Annexure- D1, D2, D3, D4, D5, D6, D7, D8, D9 & M",
+          "role": null
+        },
+        {
+          "content": "14-32",
+          "role": null
+        },
+        {
+          "content": "7.",
+          "role": null
+        },
+        {
+          "content": "CPWD 6 for e-tendering",
+          "role": null
+        },
+        {
+          "content": "33-37",
+          "role": null
+        },
+        {
+          "content": "8.",
+          "role": null
+        },
+        {
+          "content": "CPWD 7",
+          "role": null
+        },
+        {
+          "content": "38-39",
+          "role": null
+        },
+        {
+          "content": "9.",
+          "role": null
+        },
+        {
+          "content": "Schedule A to F",
+          "role": null
+        },
+        {
+          "content": "40-46",
+          "role": null
+        },
+        {
+          "content": "10.",
+          "role": null
+        },
+        {
+          "content": "Terms & Conditions",
+          "role": null
+        },
+        {
+          "content": "47-58",
+          "role": null
+        },
+        {
+          "content": "11.",
+          "role": null
+        },
+        {
+          "content": "Schedule of Quantity",
+          "role": null
+        },
+        {
+          "content": "59-62",
+          "role": null
+        },
+        {
+          "content": "Certified that this NIT contains pages 1 to 62 only.",
+          "role": null
+        },
+        {
+          "content": "NIT No. 101/EE(E)/DED-101/2026-27 approved for Rs. 17,73,661/- (Rupees Seventeen Lakh Seventy Three Thousand Six Hundred Sixty One Only)",
+          "role": null
+        }
+      ],
+      "headings": [],
+      "selection_marks": []
+    },
+    {
+      "page_number": 2,
+      "text": "2\nANNEXURE-23\nINFORMATION AND INSTRUCTIONS FOR CONTRACTORS FOR\nE-TENDERING FORMING PART OF NIT\n(Applicable for inviting tenders on two bid system)\nThe Executive Engineer (E), DED-101, CPWD, Gate No. 6, North Block, New Delhi\n(Phone No .: 011-23092312), email: deleeepacd.cpwd@nic.in invites on behalf of the\nPresident of India online percentage rate e-tender in two bid system i.e. (i) Eligibility bid & (ii)\nFinancial bid from Eligible CPWD enlisted Buildings & Roads category contractors in appropriate\nclass, non-CPWD specialized firms and manufacturers / OEMs in two bid system for the following\nwork :-\nNIT No.\nName of Work & Location\nEstimated Cost put\nto tender\nEarnest Money\nPeriod of completion\nLast date &\ntime of\nsubmission of\nEligibility,\nEMD, financial\nbids & other\ndocuments\nTime & date\nof opening of\nEligibility bid\nTime & date of\nopening of\nFinancial bid\n2\n3\n4\n5\n7\n8\n9\n101/EE(E)/DED-101/2026-27 __\nMOEI & fans in C/S Bldg.\nat South Block, New\nDelhi. (SH: Replacement\nof existing damaged fire\npipe line and accessories\nand servicing of Fire\nRs. 17,73,661/-\nPump.)\nRs. 35,473/-\n01 Month\nUpto 16:20\non\n14.08.2026\nAt 16:30\non\n14.08.2026\nDate and time\nshall be\nintimated to\nagencies who\nqualify the\neligibility bid\nSeparately.\n1.\nAgencies who fulfil any one of the requirements given below as \"A\" or \"B\" shall be eligible to\napply. Joint ventures / Consortium and Special Purpose Vehicles are not accepted.\nA.\nFor CPWD registered contractors: -\nA1.\nCPWD registered contractor in appropriate class on the last date of receiving the tenders in\nBuilding category (Formerly Composite Category), are eligible to bid for this work.\nB\nFor non-CPWD specialized firms, manufacturers: -\nB1.\nThe non-CPWD specialized firms should have the experience of executing similar work\n\"Repair/Maintenance/SITC of Fire Fighting equipment work.\" as mentioned below\nduring the last 7 years *.\nB2.\nThe\nOEM\nshould\nhave\nthe experience\nof executing\nsimilar\nwork\n\"Repair/Maintenance/SITC of Fire Fighting equipment work.\" as mentioned below\nduring the last 7 years *.",
+      "width": 8.5,
+      "height": 11.0,
+      "unit": "inch",
+      "angle": null,
+      "tables": [
+        [
+          [
+            "NIT No.",
+            "Name of Work & Location",
+            "Estimated Cost put to tender",
+            "Earnest Money",
+            "Period of completion",
+            "Last date & time of submission of Eligibility, EMD, financial bids & other documents",
+            "Time & date of opening of Eligibility bid",
+            "Time & date of opening of Financial bid"
+          ],
+          [
+            "__",
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "8",
+            "9"
+          ],
+          [
+            "101/EE(E)/DED-101/2026-27",
+            "MOEI & fans in C/S Bldg. at South Block, New Delhi. (SH: Replacement of existing damaged fire pipe line and accessories and servicing of Fire\nPump.)",
+            "Rs. 17,73,661/-",
+            "Rs. 35,473/-",
+            "01 Month",
+            "Upto 16:20 on 14.08.2026",
+            "At 16:30 on 14.08.2026",
+            "Date and time shall be intimated to agencies who qualify the eligibility bid Separately."
+          ]
+        ]
+      ],
+      "key_value_pairs": [],
+      "paragraphs": [
+        {
+          "content": "2",
+          "role": "pageNumber"
+        },
+        {
+          "content": "ANNEXURE-23",
+          "role": "title"
+        },
+        {
+          "content": "INFORMATION AND INSTRUCTIONS FOR CONTRACTORS FOR E-TENDERING FORMING PART OF NIT",
+          "role": "title"
+        },
+        {
+          "content": "(Applicable for inviting tenders on two bid system)",
+          "role": "title"
+        },
+        {
+          "content": "The Executive Engineer (E), DED-101, CPWD, Gate No. 6, North Block, New Delhi (Phone No .: 011-23092312), email: deleeepacd.cpwd@nic.in invites on behalf of the President of India online percentage rate e-tender in two bid system i.e. (i) Eligibility bid & (ii) Financial bid from Eligible CPWD enlisted Buildings & Roads category contractors in appropriate class, non-CPWD specialized firms and manufacturers / OEMs in two bid system for the following work :-",
+          "role": null
+        },
+        {
+          "content": "NIT No.",
+          "role": null
+        },
+        {
+          "content": "Name of Work & Location",
+          "role": null
+        },
+        {
+          "content": "Estimated Cost put to tender",
+          "role": null
+        },
+        {
+          "content": "Earnest Money",
+          "role": null
+        },
+        {
+          "content": "Period of completion",
+          "role": null
+        },
+        {
+          "content": "Last date & time of submission of Eligibility, EMD, financial bids & other documents",
+          "role": null
+        },
+        {
+          "content": "Time & date of opening of Eligibility bid",
+          "role": null
+        },
+        {
+          "content": "Time & date of opening of Financial bid",
+          "role": null
+        },
+        {
+          "content": "__",
+          "role": null
+        },
+        {
+          "content": "2",
+          "role": null
+        },
+        {
+          "content": "3",
+          "role": null
+        },
+        {
+          "content": "4",
+          "role": null
+        },
+        {
+          "content": "5",
+          "role": null
+        },
+        {
+          "content": "7",
+          "role": null
+        },
+        {
+          "content": "8",
+          "role": null
+        },
+        {
+          "content": "9",
+          "role": null
+        },
+        {
+          "content": "101/EE(E)/DED-101/2026-27",
+          "role": null
+        },
+        {
+          "content": "MOEI & fans in C/S Bldg. at South Block, New Delhi. (SH: Replacement of existing damaged fire pipe line and accessories and servicing of Fire\nPump.)",
+          "role": null
+        },
+        {
+          "content": "Rs. 17,73,661/-",
+          "role": null
+        },
+        {
+          "content": "Rs. 35,473/-",
+          "role": null
+        },
+        {
+          "content": "01 Month",
+          "role": null
+        },
+        {
+          "content": "Upto 16:20 on 14.08.2026",
+          "role": null
+        },
+        {
+          "content": "At 16:30 on 14.08.2026",
+          "role": null
+        },
+        {
+          "content": "Date and time shall be intimated to agencies who qualify the eligibility bid Separately.",
+          "role": null
+        },
+        {
+          "content": "1. Agencies who fulfil any one of the requirements given below as \"A\" or \"B\" shall be eligible to apply. Joint ventures / Consortium and Special Purpose Vehicles are not accepted.",
+          "role": null
+        },
+        {
+          "content": "A. For CPWD registered contractors: -",
+          "role": null
+        },
+        {
+          "content": "A1. CPWD registered contractor in appropriate class on the last date of receiving the tenders in Building category (Formerly Composite Category), are eligible to bid for this work.",
+          "role": null
+        },
+        {
+          "content": "B For non-CPWD specialized firms, manufacturers: -",
+          "role": null
+        },
+        {
+          "content": "B1. The non-CPWD specialized firms should have the experience of executing similar work \"Repair/Maintenance/SITC of Fire Fighting equipment work.\" as mentioned below during the last 7 years *.",
+          "role": null
+        },
+        {
+          "content": "B2. The",
+          "role": null
+        },
+        {
+          "content": "OEM should",
+          "role": null
+        },
+        {
+          "content": "have the experience of executing similar",
+          "role": null
+        },
+        {
+          "content": "work \"Repair/Maintenance/SITC of Fire Fighting equipment work.\" as mentioned below during the last 7 years *.",
+          "role": null
+        }
+      ],
+      "headings": [
+        "ANNEXURE-23",
+        "INFORMATION AND INSTRUCTIONS FOR CONTRACTORS FOR E-TENDERING FORMING PART OF NIT",
+        "(Applicable for inviting tenders on two bid system)"
+      ],
+      "selection_marks": []
+    },
+    {
+      "page_number": 3,
+      "text": "3\n(* Should have satisfactorily completed the works as mentioned below during the last seven years\nending last day of the month previous to the one in which tenders are invited.)\nThree similar completed works each costing not less than Rs. 7.09 Lakhs\nOR\nTwo similar completed works each costing not less than Rs. 10.64 Lakhs\nOR\nOne similar completed work costing not less than Rs. 14.19 Lakhs.\nSimilar work shall mean \"Repair/Maintenance/SITC of Fire Fighting equipment work.\".\nNote: The value of executed works shall be brought to current costing level by enhancing the\nactual value of work at simple interest rate of 7% per annum; calculated from the date of\ncompletion to previous day of last date of submission of bids.\nB2\nThe bidder should have at least average annual financial turnover of Rs. 5.32 Lakhs\non construction works during the last three years ending 31 March 2024. (Scanned\ncopy of Certificate from CA with Unique Document Identification Number (UDIN) to be\nuploaded). The value of annual turnover figures shall be brought to the current value\nby enhancing the actual turnover figure at simple rate of 7% per annum (on the\nformat prescribed in form A).\nB3\nShould not have incurred any loss (profit after tax should be positive) in more than two\nyears during the last five years ending 31st March, 2024 (on the format prescribed in\nform A).\nB4\nBanker's Certificate of the amount equal to Rs. 7.09 Lakhs or Net worth Certificate of\nminimum net worth of equal to Rs. 1.77 Lakhs issued by certified Chartered\nAccountant with UDIN (on the format prescribed in form B or B1).\nB5\nShould have bidding capacity equal to or more than the estimated cost of the work put\nto tender. The bidding capacity shall be worked out by the following formula:\nBidding Capacity = {[AxNx1.5]-B}\nWhere,\nA = Maximum turnover in construction works executed in any one year during the last\nseven years taking into account the completed as well as works in progress. The\nvalue of completed works shall be brought to current costing level by enhancing\nat a simple rate of 7% per annum.\nN = Number of years prescribed for completion of work for which bids have been\ninvited.\nB = Value of existing commitments and ongoing works to be completed during the\nperiod of completion of work for which bids have been invited.\n(on the format prescribed in form C3).\n(Bidding capacity calculation shall be applicable as per DG, CPWD OM No. DG/SOP-\n2024/20 dt.31.07.2025)\n2.\nThe intending bidder must read the terms and conditions of CPWD-6 carefully. He\nshould only submit his bid if he considers himself eligible and he is in possession of all\nthe documents required.\n3.\nInformation and Instructions for bidders posted on website shall form part of bid\ndocument.",
+      "width": 8.5,
+      "height": 11.0,
+      "unit": "inch",
+      "angle": null,
+      "tables": [],
+      "key_value_pairs": [],
+      "paragraphs": [
+        {
+          "content": "3",
+          "role": "pageNumber"
+        },
+        {
+          "content": "(* Should have satisfactorily completed the works as mentioned below during the last seven years ending last day of the month previous to the one in which tenders are invited.)",
+          "role": null
+        },
+        {
+          "content": "Three similar completed works each costing not less than Rs. 7.09 Lakhs OR",
+          "role": null
+        },
+        {
+          "content": "Two similar completed works each costing not less than Rs. 10.64 Lakhs",
+          "role": null
+        },
+        {
+          "content": "OR",
+          "role": null
+        },
+        {
+          "content": "One similar completed work costing not less than Rs. 14.19 Lakhs.",
+          "role": null
+        },
+        {
+          "content": "Similar work shall mean \"Repair/Maintenance/SITC of Fire Fighting equipment work.\".",
+          "role": "sectionHeading"
+        },
+        {
+          "content": "Note: The value of executed works shall be brought to current costing level by enhancing the actual value of work at simple interest rate of 7% per annum; calculated from the date of completion to previous day of last date of submission of bids.",
+          "role": null
+        },
+        {
+          "content": "B2 The bidder should have at least average annual financial turnover of Rs. 5.32 Lakhs on construction works during the last three years ending 31 March 2024. (Scanned copy of Certificate from CA with Unique Document Identification Number (UDIN) to be uploaded). The value of annual turnover figures shall be brought to the current value by enhancing the actual turnover figure at simple rate of 7% per annum (on the format prescribed in form A).",
+          "role": null
+        },
+        {
+          "content": "B3 Should not have incurred any loss (profit after tax should be positive) in more than two years during the last five years ending 31st March, 2024 (on the format prescribed in form A).",
+          "role": null
+        },
+        {
+          "content": "B4 Banker's Certificate of the amount equal to Rs. 7.09 Lakhs or Net worth Certificate of minimum net worth of equal to Rs. 1.77 Lakhs issued by certified Chartered Accountant with UDIN (on the format prescribed in form B or B1).",
+          "role": null
+        },
+        {
+          "content": "B5 Should have bidding capacity equal to or more than the estimated cost of the work put to tender. The bidding capacity shall be worked out by the following formula:",
+          "role": null
+        },
+        {
+          "content": "Bidding Capacity = {[AxNx1.5]-B} Where,",
+          "role": null
+        },
+        {
+          "content": "A = Maximum turnover in construction works executed in any one year during the last seven years taking into account the completed as well as works in progress. The value of completed works shall be brought to current costing level by enhancing at a simple rate of 7% per annum.",
+          "role": null
+        },
+        {
+          "content": "N = Number of years prescribed for completion of work for which bids have been invited.",
+          "role": null
+        },
+        {
+          "content": "B = Value of existing commitments and ongoing works to be completed during the period of completion of work for which bids have been invited.",
+          "role": null
+        },
+        {
+          "content": "(on the format prescribed in form C3).",
+          "role": null
+        },
+        {
+          "content": "(Bidding capacity calculation shall be applicable as per DG, CPWD OM No. DG/SOP- 2024/20 dt.31.07.2025)",
+          "role": null
+        },
+        {
+          "content": "2. The intending bidder must read the terms and conditions of CPWD-6 carefully. He should only submit his bid if he considers himself eligible and he is in possession of all the documents required.",
+          "role": null
+        },
+        {
+          "content": "3. Information and Instructions for bidders posted on website shall form part of bid document.",
+          "role": null
+        }
+      ],
+      "headings": [
+        "Similar work shall mean \"Repair/Maintenance/SITC of Fire Fighting equipment work.\"."
+      ],
+      "selection_marks": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+session_id,timestamp,question,answer
+255c716a-2204-4873-900a-0dece743c4a6,2026-06-03 09:28:36,"Analyze BlueHoney Academy's financial health using liquidity, profitability, and leverage ratios.","To analyze BlueHoney Academy's financial health, we can look at liquidity, profitability, and leverage ratios based on the information provided in the financial report for Fiscal Year 2025.
+
+### 1. Liquidity Ratios
+Liquidity ratios measure a company's ability to meet its short-term obligations. However, the report does not provide specific current assets or current liabilities, which are necessary to calculate common liquidity ratios like the Current Ratio or Quick Ratio. Therefore, we cannot directly assess liquidity from the available data.
+
+### 2. Profitability Ratios
+Profitability ratios indicate how well a company generates profit relative to its revenue, assets, or equity.
+
+- **Net Profit Margin**: 
+  \[
+  \text{Net Profit Margin} = \frac{\text{Net Profit}}{\text{Total Revenue}} \times 100
+  \]
+  \[
+  \text{Net Profit Margin} = \frac{20 \text{ million}}{120 \text{ million}} \times 100 = 16.67\%
+  \]
+
+- **Return on Assets (ROA)**: 
+  \[
+  \text{ROA} = \frac{\text{Net Profit}}{\text{Total Assets}} 
+  \]
+  \[
+  \text{ROA} = \frac{20 \text{ million}}{110 \text{ million}} = 18.18\%
+  \]
+
+- **Return on Equity (ROE)**: 
+  \[
+  \text{ROE} = \frac{\text{Net Profit}}{\text{Equity}} 
+  \]
+  \[
+  \text{ROE} = \frac{20 \text{ million}}{60 \text{ million}} = 33.33\%
+  \]
+
+### 3. Leverage Ratios
+Leverage ratios assess the degree to which a company is utilizing borrowed money.
+
+- **Debt-to-Equity Ratio**: 
+  \[
+  \text{Debt-to-Equity Ratio} = \frac{\text{Total Debt}}{\text{Equity}} 
+  \]
+  Given that the debt is ₹33 million and equity is ₹60 million:
+  \[
+  \text{Debt-to-Equity Ratio} = \frac{33 \text{ million}}{60 \text{ million}} = 0.55
+  \]
+
+### Summary of Financial Health
+- **Profitability**: BlueHoney Academy shows strong profitability with a net profit margin of 16.67%, ROA of 18.18%, and ROE of 33.33%. These figures indicate that the company is effectively generating profit from its revenues and assets.
+  
+- **Leverage**: The debt-to-equity ratio of 0.55 suggests that the company is not overly reliant on debt to finance its operations, indicating a balanced approach to leveraging.
+
+- **Liquidity**: Without specific liquidity ratios, we cannot assess the company's short-term financial health. However, the overall financial performance and profitability suggest that the company is likely in a stable position.
+
+Overall, BlueHoney Academy appears to be in a strong financial position with good profitability and manageable leverage, although further information on liquidity would be needed for a complete analysis."
+53a5ab71-75dc-4cda-8591-98f7fad5a9de,2026-06-03 09:34:34,"Analyze BlueHoney Academy's financial health using liquidity, profitability, and leverage ratios.
+","To analyze BlueHoney Academy's financial health, we will calculate liquidity, profitability, and leverage ratios based on the provided financial data.
+
+**1. Liquidity Ratios:**
+   - Current Ratio: This ratio measures the company's ability to pay short-term obligations. However, we do not have current asset and current liability figures in the provided data, so we cannot calculate this ratio.
+
+**2. Profitability Ratios:**
+   - Return on Assets (ROA):
+     ROA = Net Profit / Total Assets
+     ROA = 20 / 110 = 18.18%
+     
+   - Return on Equity (ROE):
+     ROE = Net Profit / Equity
+     ROE = 20 / 60 = 33.33%
+
+   These profitability ratios indicate that BlueHoney Academy is generating a good return on both its assets and equity, suggesting strong operational efficiency and effective use of shareholder funds.
+
+**3. Leverage Ratios:**
+   - Debt-to-Equity Ratio:
+     Debt-to-Equity Ratio = Total Debt / Equity
+     Given that total debt is 33 million and equity is 60 million:
+     Debt-to-Equity Ratio = 33 / 60 = 0.55
+
+   This ratio indicates that BlueHoney Academy has a moderate level of debt compared to its equity, suggesting a balanced approach to financing its operations.
+
+**Summary:**
+- The company has a strong profitability profile with ROA at 18.18% and ROE at 33.33%.
+- The debt-to-equity ratio of 0.55 indicates a manageable level of debt, reflecting a sound leverage position.
+- However, without current asset and liability data, liquidity cannot be assessed. Overall, BlueHoney Academy appears to be in good financial health based on the available information."
+feb0326c-ac1b-4094-ae5a-6c765045dce9,2026-06-15 16:22:06,"What percentage of BlueHoney Academy's revenue comes from non-course sales, and what does that imply about revenue diversification?
+","To determine the percentage of BlueHoney Academy's revenue that comes from non-course sales, we first need to identify the revenue sources that are not related to individual course sales. 
+
+The revenue sources are as follows:
+- Individual Course Sales: ₹54 million (45%)
+- Corporate Training Contracts: ₹36 million (30%)
+- Certification Programs: ₹18 million (15%)
+- Learning Subscriptions: ₹12 million (10%)
+
+Non-course sales include:
+- Corporate Training Contracts: ₹36 million
+- Certification Programs: ₹18 million
+- Learning Subscriptions: ₹12 million
+
+Total non-course sales = ₹36 million + ₹18 million + ₹12 million = ₹66 million
+
+Now, we calculate the percentage of total revenue that comes from non-course sales:
+
+Total revenue = ₹120 million
+
+Percentage of non-course sales = (Total non-course sales / Total revenue) * 100
+Percentage of non-course sales = (₹66 million / ₹120 million) * 100 = 55%
+
+This implies that 55% of BlueHoney Academy's revenue comes from non-course sales, indicating a strong diversification in their revenue streams. The company is not solely reliant on individual course sales, which can help mitigate risks associated with fluctuations in course enrollments."

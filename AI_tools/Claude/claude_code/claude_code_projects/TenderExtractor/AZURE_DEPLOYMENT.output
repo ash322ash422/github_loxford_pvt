@@ -1,0 +1,1200 @@
+Microsoft Windows [Version 10.0.22621.4317]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\hi>cd C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set RESOURCE_GROUP=tender
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set LOCATION=centralindia
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set ACR_NAME=tenderregistry123
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set ENV_NAME=tenderextractor-env
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set STORAGE_ACCOUNT=storetender
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set BACKEND_APP=tenderextractor-backend
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set FRONTEND_APP=tenderextractor-frontend
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>docker build -t %ACR_NAME%.azurecr.io/tenderextractor-backend:latest ./backend
+[+] Building 5.4s (15/15) FINISHED                                                                                docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                              0.1s
+ => => transferring dockerfile: 2.29kB                                                                                            0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                               3.1s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                     0.0s
+ => [internal] load .dockerignore                                                                                                 0.0s
+ => => transferring context: 353B                                                                                                 0.0s
+ => [1/9] FROM docker.io/library/python:3.11-slim@sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7         0.0s
+ => [internal] load build context                                                                                                 0.2s
+ => => transferring context: 301.21kB                                                                                             0.2s
+ => CACHED [2/9] WORKDIR /app                                                                                                     0.0s
+ => CACHED [3/9] COPY requirements.txt requirements.lock.txt ./                                                                   0.0s
+ => CACHED [4/9] RUN pip install --no-cache-dir -r requirements.lock.txt                                                          0.0s
+ => [5/9] COPY app ./app                                                                                                          0.1s
+ => [6/9] COPY main.py .                                                                                                          0.1s
+ => [7/9] COPY scripts ./scripts                                                                                                  0.1s
+ => [8/9] RUN mkdir -p data_uploads output logs local_state                                                                       0.5s
+ => [9/9] RUN useradd --create-home --uid 1000 appuser && chown -R appuser:appuser /app                                           0.8s
+ => exporting to image                                                                                                            0.2s
+ => => exporting layers                                                                                                           0.1s
+ => => writing image sha256:a0ac739af46a953a8b23629b6367f2a77af5e4404178cd99723832144e2a11fe                                      0.0s
+ => => naming to tenderregistry123.azurecr.io/tenderextractor-backend:latest                                                      0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/3g8w0qva7cyqedz7cnqdzh7qb
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az acr login --name %ACR_NAME%
+Login Succeeded
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>docker push %ACR_NAME%.azurecr.io/tenderextractor-backend:latest
+The push refers to repository [tenderregistry123.azurecr.io/tenderextractor-backend]
+0bb15e00c854: Pushed
+ba7293410e24: Pushed
+898b3077b8a3: Pushed
+2dd082fbcb74: Pushed
+3dab8a4ead0f: Pushed
+9d166cbe3936: Layer already exists
+f6275c3bf55d: Layer already exists
+ab01dbfacfae: Layer already exists
+1a8800d1b976: Layer already exists
+3d7dddf62be3: Layer already exists
+275f0a9e4758: Layer already exists
+6f9432833129: Layer already exists
+latest: digest: sha256:f07789d76afb44e966535b92ba6e78e77adc676aa3989231cc198b84c064b08e size: 2831
+
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp update --resource-group %RESOURCE_GROUP% --name %BACKEND_APP% --image %ACR_NAME%.azurecr.io/tenderextractor-backend:latest
+The behavior of this command has been altered by the following extension: containerapp
+{
+  "id": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/containerapps/tenderextractor-backend",
+  "identity": {
+    "type": "None"
+  },
+  "location": "Central India",
+  "name": "tenderextractor-backend",
+  "properties": {
+    "configuration": {
+      "activeRevisionsMode": "Single",
+      "dapr": null,
+      "identitySettings": [],
+      "ingress": {
+        "additionalPortMappings": null,
+        "allowInsecure": false,
+        "clientCertificateMode": null,
+        "corsPolicy": null,
+        "customDomains": null,
+        "exposedPort": 0,
+        "external": true,
+        "fqdn": "tenderextractor-backend.ambitiousbeach-2fffab3b.centralindia.azurecontainerapps.io",
+        "ipSecurityRestrictions": null,
+        "stickySessions": null,
+        "targetPort": 8000,
+        "targetPortHttpScheme": null,
+        "traffic": [
+          {
+            "latestRevision": true,
+            "weight": 100
+          }
+        ],
+        "transport": "Auto"
+      },
+      "maxInactiveRevisions": null,
+      "registries": [
+        {
+          "identity": "",
+          "passwordSecretRef": "acr-password",
+          "server": "tenderregistry123.azurecr.io",
+          "username": "tenderregistry123"
+        }
+      ],
+      "revisionTransitionThreshold": null,
+      "runtime": null,
+      "secrets": [
+        {
+          "name": "azure-openai-key"
+        },
+        {
+          "name": "azure-docintel-key"
+        },
+        {
+          "name": "azure-storage-connection-string"
+        },
+        {
+          "name": "azure-email-communications-string"
+        },
+        {
+          "name": "auth-password"
+        },
+        {
+          "name": "jwt-secret-key"
+        },
+        {
+          "name": "acr-password"
+        }
+      ],
+      "service": null,
+      "targetLabel": ""
+    },
+    "customDomainVerificationId": "A7C9D9FFBEC5840B280EC4817F4E26A5358109F468ABE8E64DC1C92E284FA84B",
+    "delegatedIdentities": [],
+    "environmentId": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/managedEnvironments/tenderextractor-env",
+    "eventStreamEndpoint": "https://centralindia.azurecontainerapps.dev/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/containerApps/tenderextractor-backend/eventstream",
+    "latestReadyRevisionName": "tenderextractor-backend--0000002",
+    "latestRevisionFqdn": "tenderextractor-backend--0000002.ambitiousbeach-2fffab3b.centralindia.azurecontainerapps.io",
+    "latestRevisionName": "tenderextractor-backend--0000002",
+    "managedEnvironmentId": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/managedEnvironments/tenderextractor-env",
+    "outboundIpAddresses": [
+      "20.204.252.66",
+      "20.204.255.44",
+      "20.207.112.119",
+      "20.204.254.22",
+      "4.213.194.124",
+      "4.213.194.130",
+      "4.213.194.85",
+      "4.213.194.149",
+      "4.213.194.114",
+      "4.213.194.154",
+      "4.247.194.138",
+      "4.187.234.246",
+      "4.187.244.50",
+      "20.244.61.21",
+      "98.70.236.88",
+      "4.224.112.148",
+      "4.187.188.70",
+      "4.187.244.82",
+      "4.224.233.252",
+      "135.235.244.217",
+      "4.224.186.2",
+      "20.235.196.179",
+      "4.224.89.17",
+      "20.244.61.243",
+      "4.247.194.137",
+      "135.235.145.93",
+      "20.244.60.69",
+      "4.224.112.205",
+      "20.235.192.164",
+      "4.247.194.141",
+      "135.235.145.28",
+      "4.187.243.190",
+      "4.187.245.97",
+      "20.235.196.177",
+      "4.187.242.103",
+      "98.70.236.91",
+      "4.187.244.74",
+      "4.224.119.186",
+      "4.224.113.47",
+      "4.247.194.139",
+      "20.235.196.192",
+      "4.224.233.250",
+      "4.224.233.251",
+      "20.244.61.207",
+      "20.244.60.244",
+      "135.235.244.209",
+      "4.224.89.15",
+      "4.224.112.246",
+      "135.235.145.27",
+      "4.187.242.25",
+      "4.187.235.226",
+      "4.247.194.140",
+      "4.224.185.236",
+      "135.235.144.157",
+      "4.187.235.11",
+      "135.235.144.237",
+      "4.224.185.237",
+      "4.224.185.238",
+      "4.224.89.11",
+      "20.244.58.56",
+      "20.235.214.102",
+      "4.224.185.235",
+      "4.224.88.252",
+      "4.224.233.249",
+      "20.235.214.51",
+      "4.224.185.234",
+      "4.187.233.203",
+      "135.235.144.242",
+      "20.244.60.43",
+      "4.224.112.149",
+      "98.70.236.107",
+      "135.235.145.53",
+      "20.235.214.23",
+      "4.247.194.136",
+      "135.235.244.134",
+      "4.224.185.239",
+      "98.70.236.78",
+      "4.224.233.248",
+      "4.224.112.204",
+      "4.224.115.64",
+      "4.187.221.107",
+      "4.224.75.64",
+      "4.224.128.131",
+      "20.235.215.243",
+      "4.188.89.163",
+      "13.71.53.213",
+      "20.219.205.56",
+      "4.224.156.119",
+      "4.224.154.29",
+      "4.186.36.9",
+      "4.224.110.171",
+      "4.187.187.190",
+      "20.235.194.139",
+      "4.224.113.3",
+      "20.235.208.74",
+      "20.235.208.29",
+      "20.204.221.57",
+      "4.224.185.241",
+      "98.70.232.25",
+      "4.224.233.235",
+      "20.207.113.244",
+      "20.207.114.82",
+      "20.207.113.247",
+      "20.207.113.242",
+      "4.188.105.82",
+      "4.213.216.206",
+      "4.188.110.244",
+      "4.186.33.69",
+      "4.186.36.246",
+      "4.186.37.141",
+      "4.187.190.150",
+      "4.224.185.255",
+      "20.235.212.255",
+      "135.235.243.70",
+      "4.247.194.133",
+      "20.235.212.79",
+      "20.244.57.6",
+      "20.235.213.5",
+      "135.235.243.22",
+      "98.70.213.7",
+      "20.219.169.163",
+      "20.219.228.22",
+      "4.247.194.132",
+      "4.187.233.118",
+      "135.235.144.92",
+      "4.224.233.232",
+      "4.247.194.129",
+      "20.235.211.138",
+      "135.235.243.246",
+      "4.224.233.243",
+      "20.235.196.109",
+      "20.219.169.170",
+      "4.224.185.253",
+      "4.224.185.245",
+      "4.187.241.170",
+      "20.235.196.169",
+      "135.235.244.25",
+      "98.70.236.39",
+      "20.219.169.171",
+      "98.70.236.22",
+      "20.219.231.162",
+      "20.235.196.154",
+      "98.70.236.64",
+      "20.219.169.141",
+      "4.224.185.244",
+      "98.70.236.41",
+      "98.70.236.31",
+      "4.187.232.160",
+      "4.247.194.134",
+      "20.235.196.162",
+      "20.235.212.193",
+      "20.235.196.157",
+      "20.235.208.227",
+      "4.187.241.23",
+      "135.235.144.114",
+      "4.224.233.233",
+      "98.70.236.47",
+      "4.224.185.60",
+      "98.70.212.254",
+      "135.235.243.84",
+      "135.235.243.1",
+      "4.224.185.252",
+      "4.224.185.254",
+      "98.70.236.72",
+      "20.219.231.204",
+      "98.70.235.236",
+      "135.235.144.85",
+      "4.224.233.241",
+      "4.247.194.72",
+      "4.247.194.128",
+      "4.187.136.44",
+      "52.140.92.74",
+      "98.70.212.236",
+      "20.219.169.140",
+      "4.187.188.215",
+      "98.70.212.253",
+      "4.187.240.157",
+      "4.247.194.73",
+      "20.235.196.145",
+      "4.187.187.222",
+      "20.244.65.125"
+    ],
+    "patchingMode": "Automatic",
+    "provisioningState": "Succeeded",
+    "runningStatus": "Running",
+    "template": {
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "ENV"
+            },
+            {
+              "name": "MISC_PAGES_PER_CHUNK"
+            },
+            {
+              "name": "INDEX_CHECK_PAGES"
+            },
+            {
+              "name": "MAX_PAGES_PER_MONTH"
+            },
+            {
+              "name": "MAX_UPLOAD_SIZE_MB"
+            },
+            {
+              "name": "UPLOAD_RETENTION_DAYS"
+            },
+            {
+              "name": "OUTPUT_LOGS_RETENTION_DAYS"
+            },
+            {
+              "name": "CLEANUP_MIN_INTERVAL_DAYS"
+            },
+            {
+              "name": "NOTIFY_ON_COMPLETE"
+            },
+            {
+              "name": "NOTIFY_RECIPIENTS"
+            },
+            {
+              "name": "CORS_ALLOWED_ORIGINS"
+            },
+            {
+              "name": "AZURE_STORAGE_CONNECTION_STRING",
+              "secretRef": "azure-storage-connection-string",
+              "value": ""
+            },
+            {
+              "name": "AZURE_STORAGE_CONTAINER_OUTPUT"
+            },
+            {
+              "name": "URL_EXPIRY_HOURS"
+            },
+            {
+              "name": "AZURE_DOCINTEL_ENDPOINT"
+            },
+            {
+              "name": "AZURE_DOCINTEL_KEY",
+              "secretRef": "azure-docintel-key",
+              "value": ""
+            },
+            {
+              "name": "AZURE_DOCINTEL_MODEL"
+            },
+            {
+              "name": "AZURE_OPENAI_ENDPOINT"
+            },
+            {
+              "name": "AZURE_OPENAI_KEY",
+              "secretRef": "azure-openai-key",
+              "value": ""
+            },
+            {
+              "name": "AZURE_OPENAI_DEPLOYMENT"
+            },
+            {
+              "name": "AZURE_EMAIL_COMMUNICATIONS_STRING",
+              "secretRef": "azure-email-communications-string",
+              "value": ""
+            },
+            {
+              "name": "AZURE_EMAIL_SENDER"
+            },
+            {
+              "name": "AUTH_USERNAME"
+            },
+            {
+              "name": "AUTH_PASSWORD",
+              "secretRef": "auth-password",
+              "value": ""
+            },
+            {
+              "name": "JWT_SECRET_KEY",
+              "secretRef": "jwt-secret-key",
+              "value": ""
+            },
+            {
+              "name": "ACCESS_TOKEN_EXPIRE_MINUTES"
+            }
+          ],
+          "image": "tenderregistry123.azurecr.io/tenderextractor-backend:latest",
+          "imageType": "ContainerImage",
+          "name": "backend",
+          "resources": {
+            "cpu": 0.5,
+            "ephemeralStorage": "2Gi",
+            "memory": "1Gi"
+          },
+          "volumeMounts": [
+            {
+              "mountPath": "/app/data_uploads",
+              "volumeName": "data-uploads-vol"
+            },
+            {
+              "mountPath": "/app/output",
+              "volumeName": "output-vol"
+            },
+            {
+              "mountPath": "/app/logs",
+              "volumeName": "logs-vol"
+            }
+          ]
+        }
+      ],
+      "customMetricsSettings": null,
+      "initContainers": null,
+      "revisionSuffix": "",
+      "scale": {
+        "cooldownPeriod": 300,
+        "maxReplicas": 1,
+        "minReplicas": 1,
+        "pollingInterval": 30,
+        "rules": null
+      },
+      "serviceBinds": null,
+      "terminationGracePeriodSeconds": null,
+      "volumes": [
+        {
+          "name": "data-uploads-vol",
+          "storageName": "data-uploads-storage",
+          "storageType": "AzureFile"
+        },
+        {
+          "name": "output-vol",
+          "storageName": "output-storage",
+          "storageType": "AzureFile"
+        },
+        {
+          "name": "logs-vol",
+          "storageName": "logs-storage",
+          "storageType": "AzureFile"
+        }
+      ]
+    },
+    "workloadProfileName": "Consumption"
+  },
+  "resourceGroup": "tender",
+  "systemData": {
+    "createdAt": "2026-08-13T13:02:26.0576272",
+    "createdBy": "ash322.ash422@gmail.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2026-08-18T05:36:09.2964475",
+    "lastModifiedBy": "ash322.ash422@gmail.com",
+    "lastModifiedByType": "User"
+  },
+  "type": "Microsoft.App/containerApps"
+}
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>docker build -t %ACR_NAME%.azurecr.io/tenderextractor-frontend:latest ./frontend
+[+] Building 3.1s (12/12) FINISHED                                                                                docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                              0.0s
+ => => transferring dockerfile: 1.26kB                                                                                            0.0s
+ => [internal] load metadata for docker.io/library/python:3.11-slim                                                               2.0s
+ => [auth] library/python:pull token for registry-1.docker.io                                                                     0.0s
+ => [internal] load .dockerignore                                                                                                 0.0s
+ => => transferring context: 86B                                                                                                  0.0s
+ => [1/6] FROM docker.io/library/python:3.11-slim@sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7         0.0s
+ => => resolve docker.io/library/python:3.11-slim@sha256:9c900dea9e8fb7e16277c179b555cc72d29a352dbc33cff48ad5a0412fd5bfc7         0.0s
+ => [internal] load build context                                                                                                 0.0s
+ => => transferring context: 6.12kB                                                                                               0.0s
+ => CACHED [2/6] WORKDIR /app                                                                                                     0.0s
+ => CACHED [3/6] COPY requirements.txt requirements.lock.txt ./                                                                   0.0s
+ => CACHED [4/6] RUN pip install --no-cache-dir -r requirements.lock.txt                                                          0.0s
+ => [5/6] COPY streamlit_app.py .                                                                                                 0.0s
+ => [6/6] RUN useradd --create-home --uid 1000 appuser && chown -R appuser:appuser /app                                           0.5s
+ => exporting to image                                                                                                            0.3s
+ => => exporting layers                                                                                                           0.2s
+ => => writing image sha256:97e74c9780d598db89393cf844d3526e392a5706af616a4700d2fda404b64b65                                      0.0s
+ => => naming to tenderregistry123.azurecr.io/tenderextractor-frontend:latest                                                     0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/xl0mnx7zf24di086i290tcxlg
+
+What's next:
+    View a summary of image vulnerabilities and recommendations → docker scout quickview
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az acr login --name %ACR_NAME%
+Login Succeeded
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>docker push %ACR_NAME%.azurecr.io/tenderextractor-frontend:latest
+The push refers to repository [tenderregistry123.azurecr.io/tenderextractor-frontend]
+a5206158ee96: Pushed
+c6c253c89b48: Pushed
+6c6cdc373671: Layer already exists
+574df64aa387: Layer already exists
+ab01dbfacfae: Layer already exists
+1a8800d1b976: Layer already exists
+3d7dddf62be3: Layer already exists
+275f0a9e4758: Layer already exists
+6f9432833129: Layer already exists
+latest: digest: sha256:7974f5a5fbd4c0cd684f86c9cfa53cec72c6772240b1ae2a003898ece1344990 size: 2201
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>set FRONTEND_APP=tenderextractor-frontend
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp update --resource-group %RESOURCE_GROUP% --name %FRONTEND_APP% --image %ACR_NAME%.azurecr.io/tenderextractor-frontend:latest
+The behavior of this command has been altered by the following extension: containerapp
+{
+  "id": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/containerapps/tenderextractor-frontend",
+  "identity": {
+    "type": "None"
+  },
+  "location": "Central India",
+  "name": "tenderextractor-frontend",
+  "properties": {
+    "configuration": {
+      "activeRevisionsMode": "Single",
+      "dapr": null,
+      "identitySettings": [],
+      "ingress": {
+        "additionalPortMappings": null,
+        "allowInsecure": false,
+        "clientCertificateMode": null,
+        "corsPolicy": null,
+        "customDomains": null,
+        "exposedPort": 0,
+        "external": true,
+        "fqdn": "tenderextractor-frontend.ambitiousbeach-2fffab3b.centralindia.azurecontainerapps.io",
+        "ipSecurityRestrictions": null,
+        "stickySessions": null,
+        "targetPort": 8501,
+        "targetPortHttpScheme": null,
+        "traffic": [
+          {
+            "latestRevision": true,
+            "weight": 100
+          }
+        ],
+        "transport": "Auto"
+      },
+      "maxInactiveRevisions": 100,
+      "registries": [
+        {
+          "identity": "",
+          "passwordSecretRef": "tenderregistry123azurecrio-tenderregistry123",
+          "server": "tenderregistry123.azurecr.io",
+          "username": "tenderregistry123"
+        }
+      ],
+      "revisionTransitionThreshold": null,
+      "runtime": null,
+      "secrets": [
+        {
+          "name": "tenderregistry123azurecrio-tenderregistry123"
+        }
+      ],
+      "service": null,
+      "targetLabel": ""
+    },
+    "customDomainVerificationId": "A7C9D9FFBEC5840B280EC4817F4E26A5358109F468ABE8E64DC1C92E284FA84B",
+    "delegatedIdentities": [],
+    "environmentId": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/managedEnvironments/tenderextractor-env",
+    "eventStreamEndpoint": "https://centralindia.azurecontainerapps.dev/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/containerApps/tenderextractor-frontend/eventstream",
+    "latestReadyRevisionName": "tenderextractor-frontend--le3cufq",
+    "latestRevisionFqdn": "tenderextractor-frontend--le3cufq.ambitiousbeach-2fffab3b.centralindia.azurecontainerapps.io",
+    "latestRevisionName": "tenderextractor-frontend--le3cufq",
+    "managedEnvironmentId": "/subscriptions/f91d1895-ec52-4bc5-9438-547971c4b420/resourceGroups/tender/providers/Microsoft.App/managedEnvironments/tenderextractor-env",
+    "outboundIpAddresses": [
+      "20.204.252.66",
+      "20.204.255.44",
+      "20.207.112.119",
+      "20.204.254.22",
+      "4.213.194.124",
+      "4.213.194.130",
+      "4.213.194.85",
+      "4.213.194.149",
+      "4.213.194.114",
+      "4.213.194.154",
+      "4.247.194.138",
+      "4.187.234.246",
+      "4.187.244.50",
+      "20.244.61.21",
+      "98.70.236.88",
+      "4.224.112.148",
+      "4.187.188.70",
+      "4.187.244.82",
+      "4.224.233.252",
+      "135.235.244.217",
+      "4.224.186.2",
+      "20.235.196.179",
+      "4.224.89.17",
+      "20.244.61.243",
+      "4.247.194.137",
+      "135.235.145.93",
+      "20.244.60.69",
+      "4.224.112.205",
+      "20.235.192.164",
+      "4.247.194.141",
+      "135.235.145.28",
+      "4.187.243.190",
+      "4.187.245.97",
+      "20.235.196.177",
+      "4.187.242.103",
+      "98.70.236.91",
+      "4.187.244.74",
+      "4.224.119.186",
+      "4.224.113.47",
+      "4.247.194.139",
+      "20.235.196.192",
+      "4.224.233.250",
+      "4.224.233.251",
+      "20.244.61.207",
+      "20.244.60.244",
+      "135.235.244.209",
+      "4.224.89.15",
+      "4.224.112.246",
+      "135.235.145.27",
+      "4.187.242.25",
+      "4.187.235.226",
+      "4.247.194.140",
+      "4.224.185.236",
+      "135.235.144.157",
+      "4.187.235.11",
+      "135.235.144.237",
+      "4.224.185.237",
+      "4.224.185.238",
+      "4.224.89.11",
+      "20.244.58.56",
+      "20.235.214.102",
+      "4.224.185.235",
+      "4.224.88.252",
+      "4.224.233.249",
+      "20.235.214.51",
+      "4.224.185.234",
+      "4.187.233.203",
+      "135.235.144.242",
+      "20.244.60.43",
+      "4.224.112.149",
+      "98.70.236.107",
+      "135.235.145.53",
+      "20.235.214.23",
+      "4.247.194.136",
+      "135.235.244.134",
+      "4.224.185.239",
+      "98.70.236.78",
+      "4.224.233.248",
+      "4.224.112.204",
+      "4.224.115.64",
+      "4.187.221.107",
+      "4.224.75.64",
+      "4.224.128.131",
+      "20.235.215.243",
+      "4.188.89.163",
+      "13.71.53.213",
+      "20.219.205.56",
+      "4.224.156.119",
+      "4.224.154.29",
+      "4.186.36.9",
+      "4.224.110.171",
+      "4.187.187.190",
+      "20.235.194.139",
+      "4.224.113.3",
+      "20.235.208.74",
+      "20.235.208.29",
+      "20.204.221.57",
+      "4.224.185.241",
+      "98.70.232.25",
+      "4.224.233.235",
+      "20.207.113.244",
+      "20.207.114.82",
+      "20.207.113.247",
+      "20.207.113.242",
+      "4.188.105.82",
+      "4.213.216.206",
+      "4.188.110.244",
+      "4.186.33.69",
+      "4.186.36.246",
+      "4.186.37.141",
+      "4.187.190.150",
+      "4.224.185.255",
+      "20.235.212.255",
+      "135.235.243.70",
+      "4.247.194.133",
+      "20.235.212.79",
+      "20.244.57.6",
+      "20.235.213.5",
+      "135.235.243.22",
+      "98.70.213.7",
+      "20.219.169.163",
+      "20.219.228.22",
+      "4.247.194.132",
+      "4.187.233.118",
+      "135.235.144.92",
+      "4.224.233.232",
+      "4.247.194.129",
+      "20.235.211.138",
+      "135.235.243.246",
+      "4.224.233.243",
+      "20.235.196.109",
+      "20.219.169.170",
+      "4.224.185.253",
+      "4.224.185.245",
+      "4.187.241.170",
+      "20.235.196.169",
+      "135.235.244.25",
+      "98.70.236.39",
+      "20.219.169.171",
+      "98.70.236.22",
+      "20.219.231.162",
+      "20.235.196.154",
+      "98.70.236.64",
+      "20.219.169.141",
+      "4.224.185.244",
+      "98.70.236.41",
+      "98.70.236.31",
+      "4.187.232.160",
+      "4.247.194.134",
+      "20.235.196.162",
+      "20.235.212.193",
+      "20.235.196.157",
+      "20.235.208.227",
+      "4.187.241.23",
+      "135.235.144.114",
+      "4.224.233.233",
+      "98.70.236.47",
+      "4.224.185.60",
+      "98.70.212.254",
+      "135.235.243.84",
+      "135.235.243.1",
+      "4.224.185.252",
+      "4.224.185.254",
+      "98.70.236.72",
+      "20.219.231.204",
+      "98.70.235.236",
+      "135.235.144.85",
+      "4.224.233.241",
+      "4.247.194.72",
+      "4.247.194.128",
+      "4.187.136.44",
+      "52.140.92.74",
+      "98.70.212.236",
+      "20.219.169.140",
+      "4.187.188.215",
+      "98.70.212.253",
+      "4.187.240.157",
+      "4.247.194.73",
+      "20.235.196.145",
+      "4.187.187.222",
+      "20.244.65.125"
+    ],
+    "patchingMode": "Automatic",
+    "provisioningState": "Succeeded",
+    "runningStatus": "Running",
+    "template": {
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "TENDEREXTRACTOR_API_URL"
+            }
+          ],
+          "image": "tenderregistry123.azurecr.io/tenderextractor-frontend:latest",
+          "imageType": "ContainerImage",
+          "name": "tenderextractor-frontend",
+          "resources": {
+            "cpu": 0.5,
+            "ephemeralStorage": "2Gi",
+            "memory": "1Gi"
+          }
+        }
+      ],
+      "customMetricsSettings": null,
+      "initContainers": null,
+      "revisionSuffix": "",
+      "scale": {
+        "cooldownPeriod": 300,
+        "maxReplicas": 1,
+        "minReplicas": 0,
+        "pollingInterval": 30,
+        "rules": null
+      },
+      "serviceBinds": null,
+      "terminationGracePeriodSeconds": null,
+      "volumes": null
+    },
+    "workloadProfileName": "Consumption"
+  },
+  "resourceGroup": "tender",
+  "systemData": {
+    "createdAt": "2026-08-13T13:08:25.5935797",
+    "createdBy": "ash322.ash422@gmail.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2026-08-18T05:39:58.2280881",
+    "lastModifiedBy": "ash322.ash422@gmail.com",
+    "lastModifiedByType": "User"
+  },
+  "type": "Microsoft.App/containerApps"
+}
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision list --resource-group %RESOURCE_GROUP% --name %FRONTEND_APP% -o table
+CreatedTime                Active    Replicas    TrafficWeight    HealthState    ProvisioningState    Name
+-------------------------  --------  ----------  ---------------  -------------  -------------------  ---------------------------------
+2026-08-13T13:08:32+00:00  True      0           100              Healthy        Provisioned          tenderextractor-frontend--le3cufq
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp logs show --resource-group %RESOURCE_GROUP% --name %FRONTEND_APP% --tail 50
+{"TimeStamp": "2026-08-18T05:43:36.20564", "Log": "Connecting to the container 'tenderextractor-frontend'..."}
+{"TimeStamp": "2026-08-18T05:43:36.25965", "Log": "Successfully Connected to container: 'tenderextractor-frontend' [Revision: 'tenderextractor-frontend--le3cufq', Replica: 'tenderextractor-frontend--le3cufq-5df58b48b4-l6jfm']"}
+{"TimeStamp": "2026-08-18T05:43:21.4985643+00:00", "Log": "F"}
+{"TimeStamp": "2026-08-18T05:43:21.4986371+00:00", "Log": "F Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false."}
+{"TimeStamp": "2026-08-18T05:43:21.4986675+00:00", "Log": "F"}
+{"TimeStamp": "2026-08-18T05:43:21.6757775+00:00", "Log": "F 2026-08-18 05:43:21.675 Uvicorn server started on 0.0.0.0:8501"}
+{"TimeStamp": "2026-08-18T05:43:21.8466552+00:00", "Log": "F"}
+{"TimeStamp": "2026-08-18T05:43:21.8467322+00:00", "Log": "F   You can now view your Streamlit app in your browser."}
+{"TimeStamp": "2026-08-18T05:43:21.8467542+00:00", "Log": "F"}
+{"TimeStamp": "2026-08-18T05:43:21.8467569+00:00", "Log": "F   Local URL: http://localhost:8501"}
+{"TimeStamp": "2026-08-18T05:43:21.846759+00:00", "Log": "F   Network URL: http://100.100.206.111:8501"}
+{"TimeStamp": "2026-08-18T05:43:21.8467613+00:00", "Log": "F   External URL: http://4.213.194.124:8501"}
+{"TimeStamp": "2026-08-18T05:43:21.8467633+00:00", "Log": "F"}
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision list --resource-group %RESOURCE_GROUP% --name %BACKEND_APP% -o table
+CreatedTime                Active    Replicas    TrafficWeight    HealthState    ProvisioningState    Name
+-------------------------  --------  ----------  ---------------  -------------  -------------------  --------------------------------
+2026-08-14T12:54:34+00:00  True      1           100              Healthy        Provisioned          tenderextractor-backend--0000002
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision list --resource-group %RESOURCE_GROUP% --name %FRONTEND_APP% -o table
+CreatedTime                Active    Replicas    TrafficWeight    HealthState    ProvisioningState    Name
+-------------------------  --------  ----------  ---------------  -------------  -------------------  ---------------------------------
+2026-08-13T13:08:32+00:00  True      1           100              Healthy        Provisioned          tenderextractor-frontend--le3cufq
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision list --resource-group %RESOURCE_GROUP% --name %BACKEND_APP% -o table
+CreatedTime                Active    Replicas    TrafficWeight    HealthState    ProvisioningState    Name
+-------------------------  --------  ----------  ---------------  -------------  -------------------  --------------------------------
+2026-08-14T12:54:34+00:00  True      1           100              Healthy        Provisioned          tenderextractor-backend--0000002
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>docker run --rm %ACR_NAME%.azurecr.io/tenderextractor-backend:latest cat app/services/tender_soq_extract_service.py
+# tender_soq_extract_service.py
+"""
+Extracts Schedule of Quantity (a.k.a. Schedule of Work, Bill of
+Quantities/BOQ) from OCR page data - standalone from
+tender_misc_extraction_service.py's three fields (Terms and Conditions,
+Acceptable Make, Documents to be Scanned and Uploaded), following the same
+extract-service/export-service split used for NIT data
+(tender_nit_extract_service.py / tender_nit_export_excel.py).
+
+Schedule of Quantity used to be a fourth field on that shared extraction
+call, scanning the whole document alongside the other three - but it lives
+in a predictable spot (the LAST few pages) in practice, and sharing one
+big multi-purpose call with everything else meant it kept getting
+misattributed with unrelated content found elsewhere in the document. This
+module gets its own narrow, focused call instead: only the last
+config.SOQ_LAST_PAGES pages, extracting exactly one thing.
+
+To run this as standalone: python -m app.services.tender_soq_extract_service
+"""
+from __future__ import annotations
+
+import json
+import re
+from typing import Callable, Optional
+
+from langchain_core.messages import HumanMessage, SystemMessage
+from pydantic import BaseModel, Field, model_validator
+from langchain_community.callbacks.manager import get_openai_callback
+
+from app.services.llm import get_llm
+from app.utils.logging_config import get_logger
+
+logger = get_logger(__name__)
+
+TARGET_HEADING = "Schedule of Quantity"
+
+SYSTEM_PROMPT = """
+You are a precise information-extraction assistant. You are an expert in extracting key data from Indian
+government tender files.
+
+You will be given JSON-derived OCR text from the LAST few pages of a PDF of an Indian government tender
+document (NIT), broken into pages. Each page may also include a separate list of tables already parsed
+into rows and columns - use those when present instead of re-parsing table-like text yourself, since they
+are more reliable.
+
+Your only job is to extract the "Schedule of Quantity" - it may appear under headings such as "Schedule of
+Quantities", "Schedule of Work", "Bill of Quantities", "BOQ", "Schedule of Rates", etc. It is usually a
+large tabular section listing items with columns such as S.No./Item No., Description of Item/Work, Unit,
+Quantity, Rate, and Amount. Extract it as one or more tables (use multiple tables if the source splits it
+into distinct headed sub-schedules, e.g. by trade or section) - preserve every row and column exactly as
+printed rather than summarizing or flattening it into prose.
+
+A table only qualifies as Schedule of Quantity if it has an explicit Quantity (or "Qty") column - that is
+what makes it a schedule of QUANTITY. If none of the supplied pages contain such a table, mark it as not
+present and leave sections empty - do not guess, and do not force-fit an unrelated table (e.g. a small
+rate table with no Quantity column, or a signature block) into this field just because it's the only table
+around.
+
+Rules:
+- Only use information explicitly present in the provided text. Do not infer, fabricate, or summarize -
+  every cell's text must be copied from the source, not composed by you.
+- CRITICAL for tables: every row must have exactly as many cells as there are columns - never omit, merge,
+  or reorder a cell, even if its value is a lone number, is blank, or is annotated with an OCR
+  selection-mark artifact (e.g. ":selected:"). If a cell's true content is genuinely blank, still include it
+  as an empty string rather than skipping it and shifting every later cell in that row to the left. When a
+  page supplies an already-parsed table block (`[Page N parsed table K]`), copy it cell-for-cell exactly as
+  given rather than re-reading the raw text above it - it is more reliable than your own re-parsing.
+- Preserve footnotes/notes attached to the schedule (e.g. "Note: ...") separately from the table rows.
+- Record which page number(s) each table's content came from.
+"""
+
+
+class ScheduleOfQuantityTable(BaseModel):
+    caption: Optional[str] = Field(
+        None, description="Short label for the table if the source gives one, else null."
+    )
+    columns: list[str] = Field(
+        default_factory=list, description="Column headers, in order, exactly as printed."
+    )
+    rows: list[list[str]] = Field(
+        default_factory=list, description="Table rows; each row's cells align with `columns`."
+    )
+
+    @model_validator(mode="after")
+    def _warn_on_ragged_rows(self) -> "ScheduleOfQuantityTable":
+        """Same defensive check as tender_misc_extraction_service.ExtractedTable
+        - the LLM occasionally drops or duplicates a cell while re-typing a
+        table, silently shifting every later cell in that row into the
+        wrong column in the exported Excel. No reliable way to guess which
+        cell is missing, so this just makes it loud instead of silent."""
+        expected = len(self.columns)
+        if not expected:
+            return self
+        for i, row in enumerate(self.rows, start=1):
+            if len(row) != expected:
+                logger.warning(
+                    "Schedule of Quantity table %r: row %d has %d cell(s) but there are %d column(s) "
+                    "(%s) - likely misaligned in the exported Excel. Row content: %r",
+                    self.caption or "(untitled)", i, len(row), expected, self.columns, row,
+                )
+        return self
+
+
+class ScheduleOfQuantitySection(BaseModel):
+    heading: Optional[str] = Field(
+        None, description="Exact heading text this table appears under, e.g. 'Schedule of Work'. "
+        "Null if the table has no heading of its own."
+    )
+    source_pages: list[int] = Field(
+        default_factory=list, description="Page numbers this table's content was found on."
+    )
+    tables: list[ScheduleOfQuantityTable] = Field(
+        default_factory=list, description="Tables belonging to this section."
+    )
+    notes: list[str] = Field(
+        default_factory=list, description="Footnotes/asterisked notes/caveats attached to this section."
+    )
+
+
+class ScheduleOfQuantityExtraction(BaseModel):
+    present: bool = Field(description="True if a genuine Schedule of Quantity table was found.")
+    sections: list[ScheduleOfQuantitySection] = Field(
+        default_factory=list,
+        description="One entry per distinct heading/sub-schedule found. Empty when `present` is False.",
+    )
+
+
+def _build_user_prompt(pages: list[dict]) -> str:
+    blocks = []
+    for p in pages:
+        block = [f"--- Page {p['page_number']} ---", p.get("text", "")]
+        tables = p.get("tables") or []
+        for i, table in enumerate(tables, start=1):
+            if not table:
+                continue
+            block.append(f"[Page {p['page_number']} parsed table {i}]")
+            block.append(json.dumps(table, ensure_ascii=False))
+        blocks.append("\n".join(block))
+
+    excerpt = "\n\n".join(blocks)
+    return f"OCR text (with parsed tables where available) from {len(pages)} page(s):\n\n{excerpt}"
+
+
+def _call_llm_structured(
+    system_prompt: str,
+    user_prompt: str,
+    token_callback: Optional[Callable[[int], None]] = None,
+) -> ScheduleOfQuantityExtraction:
+    logger.info("Using _call_llm_structured (native structured output) for this LLM call.")
+    llm = get_llm()
+    structured_llm = llm.with_structured_output(ScheduleOfQuantityExtraction)
+
+    with get_openai_callback() as cb:
+        response = structured_llm.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_prompt),
+        ])
+        total_tokens = cb.total_tokens
+        logger.info("Total Tokens Usage: %d", total_tokens)
+
+    if token_callback:
+        token_callback(total_tokens)
+
+    if isinstance(response, ScheduleOfQuantityExtraction):
+        return response
+    return ScheduleOfQuantityExtraction.model_validate(response)
+
+
+def _call_llm_fallback(
+    system_prompt: str,
+    user_prompt: str,
+    token_callback: Optional[Callable[[int], None]] = None,
+) -> ScheduleOfQuantityExtraction:
+    """Fallback path for LLM backends that don't support with_structured_output."""
+    logger.info("Using _call_llm_fallback (raw JSON parsing - this LLM backend has no with_structured_output).")
+    llm = get_llm()
+    schema_hint = (
+        "\n\nRespond with ONLY a single JSON object matching exactly this schema "
+        "(no markdown fences, no commentary):\n"
+        f"{json.dumps(ScheduleOfQuantityExtraction.model_json_schema(), indent=2)}"
+    )
+
+    with get_openai_callback() as cb:
+        response = llm.invoke([
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=user_prompt + schema_hint),
+        ])
+        total_tokens = cb.total_tokens
+        logger.info("Total Tokens Usage: %d", total_tokens)
+
+    if token_callback:
+        token_callback(total_tokens)
+
+    raw = response.content.strip()
+    if raw.startswith("```"):
+        raw = raw.strip("`")
+        if raw.lower().startswith("json"):
+            raw = raw.split("\n", 1)[-1]
+    try:
+        return ScheduleOfQuantityExtraction.model_validate_json(raw)
+    except Exception as e:
+        raise ValueError(f"LLM did not return JSON matching the expected schema: {raw!r}") from e
+
+
+_QUANTITY_COLUMN_HINT = re.compile(r"qty|quantity", re.IGNORECASE)
+
+
+def _drop_non_quantity_tables(extraction: ScheduleOfQuantityExtraction) -> ScheduleOfQuantityExtraction:
+    """
+    Deterministic backstop for the SYSTEM_PROMPT's "must have a Quantity
+    column" rule - LLM prompt compliance isn't guaranteed. A real Schedule
+    of Quantity always has a Quantity/Qty column, so any table missing one
+    (e.g. an unrelated small rate table that slipped into the last few
+    pages) gets dropped here before it ever reaches Excel export.
+    """
+    if not extraction.present:
+        return extraction
+
+    kept_sections = []
+    for section in extraction.sections:
+        kept_tables = [
+            table for table in section.tables
+            if any(_QUANTITY_COLUMN_HINT.search(col) for col in table.columns)
+        ]
+        dropped = len(section.tables) - len(kept_tables)
+        if dropped:
+            logger.warning(
+                "Schedule of Quantity: dropped %d table(s) with no Quantity column from section %r "
+                "(pages %s) - not a real schedule of quantities.",
+                dropped, section.heading, section.source_pages,
+            )
+        if kept_tables or section.notes:
+            kept_sections.append(section.model_copy(update={"tables": kept_tables}))
+
+    return ScheduleOfQuantityExtraction(present=bool(kept_sections), sections=kept_sections)
+
+
+def extract_data(
+    pages: list[dict],
+    token_callback: Optional[Callable[[int], None]] = None,
+) -> dict:
+    """
+    Extract Schedule of Quantity from the given OCR pages (the caller is
+    expected to have already narrowed `pages` to the last config.SOQ_LAST_PAGES
+    pages - see app.pipeline.stages.stage_extract_schedule_of_quantity),
+    returning a JSON-ready dict matching the ScheduleOfQuantityExtraction
+    schema: {"present": bool, "sections": [ {heading, source_pages, tables, notes}, ... ]}.
+
+    A "present": false result means the LLM genuinely could not find a
+    Schedule of Quantity table in the supplied pages - an expected, valid
+    result, not an error. Raises ValueError only if the LLM call itself
+    fails or its output can't be validated against the schema.
+    """
+    user_prompt = _build_user_prompt(pages)
+    try:
+        llm = get_llm()
+        if hasattr(llm, "with_structured_output"):
+            extraction = _call_llm_structured(SYSTEM_PROMPT, user_prompt, token_callback=token_callback)
+        else:
+            extraction = _call_llm_fallback(SYSTEM_PROMPT, user_prompt, token_callback=token_callback)
+    except ValueError:
+        raise
+    except Exception as e:
+        raise ValueError(f"LLM call failed while extracting schedule of quantity: {e}") from e
+
+    extraction = _drop_non_quantity_tables(extraction)
+    if not extraction.present:
+        logger.warning("LLM could not find a Schedule of Quantity table in %d page(s).", len(pages))
+
+    return extraction.model_dump(mode="json")
+
+
+if __name__ == "__main__":
+    # Quick manual test with fake OCR pages - hits the real LLM (needs valid
+    # AZURE_OPENAI_* env vars, or whatever get_llm() is configured for).
+    fake_pages = [
+        {
+            "page_number": 25,
+            "text": "SCHEDULE OF QUANTITIES\n"
+            "S.No. Description of Item Unit Quantity Rate Amount",
+            "tables": [
+                [
+                    ["S.No.", "Description of Item", "Unit", "Quantity", "Rate", "Amount"],
+                    ["1", "Excavation in ordinary soil", "Cum", "120", "150", "18000"],
+                    ["2", "PCC 1:4:8 in foundation", "Cum", "40", "4500", "180000"],
+                ]
+            ],
+        },
+    ]
+
+    result = extract_data(fake_pages)
+    print(json.dumps(result, indent=2))
+
+
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision list --resource-group %RESOURCE_GROUP% --name %BACKEND_APP% -o table
+CreatedTime                Active    Replicas    TrafficWeight    HealthState    ProvisioningState    Name
+-------------------------  --------  ----------  ---------------  -------------  -------------------  --------------------------------
+2026-08-14T12:54:34+00:00  True      1           100              Healthy        Provisioned          tenderextractor-backend--0000002
+
+C:\Users\hi\Desktop\projects\python_projects\tutorial\tut_youtube\AI_tools\Claude\claude_code\TenderExtractor>az containerapp revision restart --resource-group %RESOURCE_GROUP% --name %BACKEND_APP% --revision  tenderextractor-backend--0000002
+"Restart succeeded"
+
+
+

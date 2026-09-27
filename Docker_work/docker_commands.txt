@@ -1,0 +1,24 @@
+common docker_commands
+
+To see all images -> docker images ( or -> docker image ls)
+To see all containers -> docker container ls -a
+To see running images and containers -> docker ps
+To see all images with their containers -> docker ps -a
+
+To get into REPOSITORY/images -> docker run -it <REPOSITORY_NAME_HERE> /bin/sh
+
+To open container shell:             docker exec -it <container_id_and_NOT_image_id> /bin/sh  
+To exec commands in container shell: docker exec -u 0 -i fca4b472b510 pwd
+##################
+To stop a container: docker stop <container_id>
+
+To remove container -> docker container rm [container_id]
+To remove unwanted images -> docker image rm [image_id1] [image_id2]
+
+To remove all stopped container(CAUTION)(Note it prompts)-> docker container prune
+###########################
+docker-compose build --no-cache <- Build or rebuild services w/o using cache. Make sure docker engine(via docker Desktop) is running.
+
+docker-compose up <- Builds, (re)creates, starts, and attaches to containers for a service.
+
+docker-compose down <- Stops containers and removes containers, networks, volumes, and images created by up.

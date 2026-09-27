@@ -1,0 +1,20 @@
+Name: Alex R.
+Assignment: Short History Paragraph — The French Revolution
+
+The French Revolution began in 1776 and lasted for about ten years. It started
+because of anger over high taxes and food shortages among the common people.
+King Louis XVI, who ruled France at the time, was eventually removed from power.
+The revolution led to the rise of Napoleon Bonaparte, who later crowned himself
+Emperor of France in 1804. The Eiffel Tower was built during this period to
+celebrate the revolution's 50th anniversary.
+
+
+---
+## 🔍 Fact-Check Report
+# Fact-Check Report for French Revolution Paragraph
+
+- ❌ Incorrect: The French Revolution began in 1789, not 1776.
+- ✅ Correct: The French Revolution lasted until 1799.
+- ✅ Correct: King Louis XVI was removed from power and executed in January 1793.
+- ✅ Correct: Napoleon Bonaparte crowned himself Emperor of the French on May 18, 1804.
+- ❌ Incorrect: The Eiffel Tower was built between 1887 and 1889, celebrating the centennial anniversary of the French Revolution, not the 50th anniversary.

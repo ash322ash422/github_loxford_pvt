@@ -1,0 +1,26 @@
+employee_id,name,department,role
+EMP-000,Allison Hill,R&D,Requester
+EMP-001,Noah Rhodes,Facilities,Requester
+EMP-002,Angie Henderson,IT,Requester
+EMP-003,Daniel Wagner,IT,Requester
+EMP-004,Cristian Santos,R&D,Requester
+EMP-005,Connie Lawrence,Logistics,Approver
+EMP-006,Abigail Shaffer,Facilities,Requester
+EMP-007,Gina Moore,Facilities,Requester
+EMP-008,Gabrielle Davis,IT,Requester
+EMP-009,Ryan Munoz,Logistics,Requester
+EMP-010,Monica Herrera,R&D,Approver
+EMP-011,Jamie Arnold,IT,Approver
+EMP-012,Lisa Hensley,Logistics,Requester
+EMP-013,Michele Williams,Facilities,Requester
+EMP-014,Dylan Miller,R&D,Approver
+EMP-015,Brian Ramirez,Marketing,Requester
+EMP-016,Holly Wood,IT,Requester
+EMP-017,Derek Zuniga,Marketing,Requester
+EMP-018,Lisa Jackson,Facilities,Approver
+EMP-019,Carla Gray,Facilities,Requester
+EMP-020,Margaret Hawkins DDS,Marketing,Requester
+EMP-021,Patty Perez,Facilities,Approver
+EMP-022,Ethan Adams,Logistics,Requester
+EMP-023,Tommy Walter,Operations,Requester
+EMP-024,Matthew Foster,Logistics,Requester

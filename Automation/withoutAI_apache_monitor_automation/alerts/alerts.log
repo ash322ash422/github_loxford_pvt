@@ -1,0 +1,20 @@
+[2026-07-29 12:55:22] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 12:55:52] [INFO] Apache recovered - Apache health returned to normal.
+[2026-07-29 12:59:13] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 12:59:44] [INFO] Apache recovered - Apache health returned to normal.
+[2026-07-29 13:00:48] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:01:18] [INFO] Apache recovered - Apache health returned to normal.
+[2026-07-29 13:01:33] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:02:04] [INFO] Samba recovered - Samba health returned to normal.
+[2026-07-29 13:02:07] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:02:37] [INFO] Apache recovered - Apache health returned to normal.
+[2026-07-29 13:08:37] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:09:08] [INFO] Samba recovered - Samba health returned to normal.
+[2026-07-29 13:18:49] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:19:19] [INFO] Samba recovered - Samba health returned to normal.
+[2026-07-29 13:19:53] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:20:17] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:20:23] [INFO] Apache recovered - Apache health returned to normal.
+[2026-07-29 13:20:47] [INFO] Samba recovered - Samba health returned to normal.
+[2026-07-29 13:21:25] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+[2026-07-29 13:21:55] [INFO] Samba recovered - Samba health returned to normal.

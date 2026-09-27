@@ -1,0 +1,213 @@
+{
+  "name": "PDF RAG Chat Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "chat-trigger-node"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful research assistant. Your task is to answer user queries using ONLY the information retrieved from the uploaded PDF document. Always provide clear, accurate information based strictly on the text provided."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        220,
+        0
+      ],
+      "id": "ai-agent-node"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        220
+      ],
+      "id": "openai-chat-model"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryWindowBuffer",
+      "typeVersion": 1.3,
+      "position": [
+        280,
+        220
+      ],
+      "id": "window-buffer-memory"
+    },
+    {
+      "parameters": {
+        "name": "pdf_search_tool",
+        "description": "Use this tool to search the uploaded scientific PDF document for relevant facts, data, methodologies, and context."
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolVectorStoreInfo",
+      "typeVersion": 1,
+      "position": [
+        460,
+        220
+      ],
+      "id": "vector-store-tool"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1,
+      "position": [
+        460,
+        420
+      ],
+      "id": "in-memory-vector-store"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        380,
+        620
+      ],
+      "id": "openai-embeddings"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        560,
+        620
+      ],
+      "id": "default-data-loader"
+    },
+    {
+      "parameters": {
+        "options": {
+          "chunkOverlap": 200,
+          "chunkSize": 1000
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        560,
+        820
+      ],
+      "id": "recursive-text-splitter"
+    }
+  ],
+  "connections": {
+    "chat-trigger-node": {
+      "main": [
+        [
+          {
+            "node": "ai-agent-node",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "openai-chat-model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "ai-agent-node",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "window-buffer-memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "ai-agent-node",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vector-store-tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "ai-agent-node",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "in-memory-vector-store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "vector-store-tool",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "openai-embeddings": {
+      "ai_embeddings": [
+        [
+          {
+            "node": "in-memory-vector-store",
+            "type": "ai_embeddings",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "default-data-loader": {
+      "ai_document": [
+        [
+          {
+            "node": "in-memory-vector-store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "recursive-text-splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "default-data-loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "pdf-rag-chat-agent-workflow",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

@@ -1,0 +1,9 @@
+item,cost,qty,on_discount
+orange,2,3,y
+spoons,4,4,n
+plates,1,9,y
+boomerang,10,2,n
+banana,5,3,n
+bottle,3,1,n
+tank,,,y
+fish,4,3,n

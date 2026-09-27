@@ -1,0 +1,40 @@
+
+// Insert few documents
+> db.students.insertOne({"name": "Arthur", "age": 32, "gpa": 3.2, "fullTime": false})
+> db.students.insertOne({"name": "David",  "age": 38, "gpa": 2.9, "fullTime": false})
+> db.students.insertOne({"name": "Elena",  "age": 27, "gpa": 3.5, "fullTime": true})
+
+
+
+// To view all documents
+> db.students.find()
+
+
+
+// To insert many documents
+> db.students.insertMany([
+  {name:"Patrick", age:38, gpa:1.5}, 
+  {name:"Sandy",   age:27, gpa:4.0}, 
+  {name:"Gary",    age:18, gpa:2.5}
+])
+
+
+
+// To view all documents
+> db.students.find()
+
+
+
+// Data type -> String, int, float, boolean, Datetime, Null, array, nested
+> db.students.insertOne({
+   name:"Larry",
+   age: 32,
+   gpa: 2.8,
+   fullTime: false,
+   registerDate: new Date(),
+   gradutionDate: null,
+   courses: ["Biology", "Chemistry", "Calculus"],
+   address: {street : "123 Juniper St.", city : "Mumbai", zip : 12345}
+})
+
+

@@ -1,0 +1,5 @@
+TechHub is a major software company managed by its CEO, Alice. The company developed a popular messaging application called ChatApp. Alice closely manages Bob, who works as the Lead Developer for ChatApp. Bob is married to Charlie, a Product Designer who also works at TechHub. Charlie shares an office with Diana, a Data Scientist at the company.
+
+Beyond work, this group forms a tight social circle. Alice, Bob, and Charlie are all members of a professional organization called TechAssociation. Diana recently joined this same organization. Socially, Bob and Diana are co-organizers of a local community group called DataClub. Charlie is also a member of DataClub, where she frequently interacts with Diana.
+
+The team heavily utilizes online platforms. Bob regularly follows Diana on GitHub to review her open-source code. Meanwhile, Diana follows Charlie on Behance to look at her design portfolios. Both Bob and Charlie are active users of LinkedIn for professional networking. Alice also uses LinkedIn, where she frequently views posts by Bob and Charlie. Additionally, TechHub maintains an official corporate profile on LinkedIn to post company updates.

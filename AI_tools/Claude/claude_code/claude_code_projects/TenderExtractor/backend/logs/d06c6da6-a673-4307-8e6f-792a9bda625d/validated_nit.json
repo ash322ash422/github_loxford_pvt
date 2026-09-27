@@ -1,0 +1,31 @@
+{
+  "NIT Number": {
+    "original": "20/EE(E)/DED-302/AE-2/2026-27/Delhi"
+  },
+  "Name Of Work Location": {
+    "original": "RMO of E&M services of trikoot-1,2&3 buildings at Bhikaji Cama place New Delhi-66 dg-2026-27.(Repairing of fire alarm system of trikoot 1&2 buildings)"
+  },
+  "Estimated Cost": {
+    "original": "Rs. 5,29,995/-",
+    "normalized": 529995.0,
+    "valid": true
+  },
+  "Earnest Money": {
+    "original": "Rs. 10,600/-",
+    "normalized": 10600.0,
+    "valid": true
+  },
+  "Completion Period": {
+    "original": "1 Month"
+  },
+  "Submission Deadline": {
+    "original": "Upto 17:00 hrs. on 17.07.2026",
+    "normalized": "2026-07-17",
+    "valid": true
+  },
+  "Bid Opening Date": {
+    "original": "17:30 hrs. on 17.07.2026",
+    "normalized": "2026-07-17",
+    "valid": true
+  }
+}

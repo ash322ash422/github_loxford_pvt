@@ -1,0 +1,31 @@
+version: "3.12"
+
+services:
+   app:
+      container_name: my_first_django_container
+      
+      #Build from  CWD
+      build: .
+      
+      #map the CWD in local m/c with folder /django in container
+      volumes:
+      - .:/django
+      
+      #map container 8000 port to local m/c port 8000
+      #You can comment this line out and use "docker run --publish 8000:8000 my_first_django_container"
+      ports:
+      - 8000:8000
+      
+      #Following only works after above "volumes" is disabled and rerun "docker compose watch" cmd again.
+      #develop:
+      #  watch:
+      #   - action: sync
+      #     path: .
+      #     target: /django
+      
+      #Following is the  name of image:tag
+      image: app:django
+      
+      #Run following cmd
+      command: python manage.py runserver 0.0.0.0:8000
+  

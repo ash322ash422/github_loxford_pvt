@@ -1,0 +1,6 @@
+langchain==1.3.6
+langchain-community==0.4.2
+langchain-openai==1.2.2
+langchain-text-splitters==1.1.2
+langchain-pinecone==0.2.13
+pypdf==6.10.2

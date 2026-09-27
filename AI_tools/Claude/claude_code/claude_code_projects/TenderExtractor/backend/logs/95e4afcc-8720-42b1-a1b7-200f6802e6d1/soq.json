@@ -1,0 +1,64 @@
+{
+  "present": true,
+  "sections": [
+    {
+      "heading": "SCHEDULE OF QUANTITY",
+      "source_pages": [
+        66
+      ],
+      "tables": [
+        {
+          "caption": null,
+          "columns": [
+            "Sl.No.",
+            "Bhavan).\\nDescription of Items",
+            "Qty",
+            "",
+            "Rate",
+            "Unit",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "1",
+              "Running, Operation and Routine Maintenance of fire fighting and sprinkler system by deputing the staff as per inventory, terms and conditions attached etc. complete as required.",
+              "12.00",
+              "Month",
+              "162920.00",
+              "Per Month",
+              "19,55,040.00"
+            ],
+            [
+              "2",
+              "Running, Operation and Routine Maintenance of fire Alarm system by deputing the staff as per inventory, terms and conditions attached etc. complete as required.",
+              "12.00",
+              "Month",
+              "235308.00",
+              "Per Month",
+              "28,23,696.00"
+            ],
+            [
+              "3",
+              "Annual comprehensive maintenance of following intelligent addressable fire alarm/ detection & PA system installed at Main building i/c Major/Minor repairing & replacement of all defective detectors, wiring & other accessories etc with upkeep & cleaning the panels, detectors and its accessories complete (Inventory attached) as per terms & conditions enclosed as reqd.",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "a)",
+              "Intelligent addressable fire alarm system (Bosch, Notifier & Edward)",
+              "12.00",
+              "Month",
+              "90408.00",
+              "Per Month",
+              "10,84,896.00"
+            ]
+          ]
+        }
+      ],
+      "notes": []
+    }
+  ]
+}

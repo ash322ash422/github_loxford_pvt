@@ -1,0 +1,181 @@
+================================================================================
+STEP 1 : SEMANTIC CHUNKING
+================================================================================
+
+Total Chunks : 3
+
+--------------------------------------------------------------------------------
+Chunk ID   : 1
+Paragraph  : 1
+Length     : 347
+
+TechHub is a major software company managed by its CEO, Alice. The company developed a popular messaging application called ChatApp. Alice closely manages Bob, who works as the Lead Developer for ChatApp. Bob is married to Charlie, a Product Designer who also works at TechHub. Charlie shares an office with Diana, a Data Scientist at the company.
+
+--------------------------------------------------------------------------------
+Chunk ID   : 2
+Paragraph  : 2
+Length     : 360
+
+Beyond work, this group forms a tight social circle. Alice, Bob, and Charlie are all members of a professional organization called TechAssociation. Diana recently joined this same organization. Socially, Bob and Diana are co-organizers of a local community group called DataClub. Charlie is also a member of DataClub, where she frequently interacts with Diana.
+
+--------------------------------------------------------------------------------
+Chunk ID   : 3
+Paragraph  : 3
+Length     : 448
+
+The team heavily utilizes online platforms. Bob regularly follows Diana on GitHub to review her open-source code. Meanwhile, Diana follows Charlie on Behance to look at her design portfolios. Both Bob and Charlie are active users of LinkedIn for professional networking. Alice also uses LinkedIn, where she frequently views posts by Bob and Charlie. Additionally, TechHub maintains an official corporate profile on LinkedIn to post company updates.
+
+
+
+================================================================================
+STEP 2 : KNOWLEDGE GRAPH EXTRACTION
+================================================================================
+
+Processing Chunk 1...
+ERROR:root:Failed to log tokens: 'GraphDocument' object has no attribute 'response_metadata'
+
+Entities
+----------------------------------------
+{'id': 'organization_techhub', 'label': 'Organization', 'name': 'TechHub'}
+{'id': 'person_alice', 'label': 'Person', 'name': 'Alice'}
+{'id': 'product_chatapp', 'label': 'Product', 'name': 'ChatApp'}
+{'id': 'person_bob', 'label': 'Person', 'name': 'Bob'}
+{'id': 'person_charlie', 'label': 'Person', 'name': 'Charlie'}
+{'id': 'person_diana', 'label': 'Person', 'name': 'Diana'}
+
+Relationships
+----------------------------------------
+{'relation': 'CEO_OF',
+ 'source': 'person_alice',
+ 'target': 'organization_techhub'}
+{'relation': 'MANAGES',
+ 'source': 'person_alice',
+ 'target': 'organization_techhub'}
+{'relation': 'DEVELOPED',
+ 'source': 'organization_techhub',
+ 'target': 'product_chatapp'}
+{'relation': 'MANAGES', 'source': 'person_alice', 'target': 'person_bob'}
+{'relation': 'WORKS_ON', 'source': 'person_bob', 'target': 'product_chatapp'}
+{'relation': 'MARRIED_TO', 'source': 'person_bob', 'target': 'person_charlie'}
+{'relation': 'MARRIED_TO', 'source': 'person_charlie', 'target': 'person_bob'}
+{'relation': 'WORKS_AT',
+ 'source': 'person_charlie',
+ 'target': 'organization_techhub'}
+{'relation': 'SHARES_OFFICE_WITH',
+ 'source': 'person_charlie',
+ 'target': 'person_diana'}
+{'relation': 'SHARES_OFFICE_WITH',
+ 'source': 'person_diana',
+ 'target': 'person_charlie'}
+{'relation': 'WORKS_AT',
+ 'source': 'person_diana',
+ 'target': 'organization_techhub'}
+
+Processing Chunk 2...
+ERROR:root:Failed to log tokens: 'GraphDocument' object has no attribute 'response_metadata'
+
+Entities
+----------------------------------------
+{'id': 'person_alice', 'label': 'Person', 'name': 'Alice'}
+{'id': 'person_bob', 'label': 'Person', 'name': 'Bob'}
+{'id': 'person_charlie', 'label': 'Person', 'name': 'Charlie'}
+{'id': 'person_diana', 'label': 'Person', 'name': 'Diana'}
+{'id': 'organization_techassociation',
+ 'label': 'Organization',
+ 'name': 'TechAssociation'}
+{'id': 'group_dataclub', 'label': 'Group', 'name': 'DataClub'}
+
+Relationships
+----------------------------------------
+{'relation': 'MEMBER_OF',
+ 'source': 'person_alice',
+ 'target': 'organization_techassociation'}
+{'relation': 'MEMBER_OF',
+ 'source': 'person_bob',
+ 'target': 'organization_techassociation'}
+{'relation': 'MEMBER_OF',
+ 'source': 'person_charlie',
+ 'target': 'organization_techassociation'}
+{'relation': 'MEMBER_OF',
+ 'source': 'person_diana',
+ 'target': 'organization_techassociation'}
+{'relation': 'ORGANIZES', 'source': 'person_bob', 'target': 'group_dataclub'}
+{'relation': 'ORGANIZES', 'source': 'person_diana', 'target': 'group_dataclub'}
+{'relation': 'MEMBER_OF',
+ 'source': 'person_charlie',
+ 'target': 'group_dataclub'}
+{'relation': 'CO_ORGANIZES_WITH',
+ 'source': 'person_bob',
+ 'target': 'person_diana'}
+{'relation': 'CO_ORGANIZES_WITH',
+ 'source': 'person_diana',
+ 'target': 'person_bob'}
+{'relation': 'INTERACTS_WITH',
+ 'source': 'person_charlie',
+ 'target': 'person_diana'}
+{'relation': 'INTERACTS_WITH',
+ 'source': 'person_diana',
+ 'target': 'person_charlie'}
+
+Processing Chunk 3...
+ERROR:root:Failed to log tokens: 'GraphDocument' object has no attribute 'response_metadata'
+
+Entities
+----------------------------------------
+{'id': 'person_bob', 'label': 'Person', 'name': 'Bob'}
+{'id': 'person_diana', 'label': 'Person', 'name': 'Diana'}
+{'id': 'person_charlie', 'label': 'Person', 'name': 'Charlie'}
+{'id': 'person_alice', 'label': 'Person', 'name': 'Alice'}
+{'id': 'organization_techhub', 'label': 'Organization', 'name': 'TechHub'}
+{'id': 'platform_github', 'label': 'Platform', 'name': 'GitHub'}
+{'id': 'platform_behance', 'label': 'Platform', 'name': 'Behance'}
+{'id': 'platform_linkedin', 'label': 'Platform', 'name': 'LinkedIn'}
+{'id': 'group_team', 'label': 'Group', 'name': 'team'}
+
+Relationships
+----------------------------------------
+{'relation': 'FOLLOWS', 'source': 'person_bob', 'target': 'person_diana'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_bob',
+ 'target': 'platform_github'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_diana',
+ 'target': 'platform_github'}
+{'relation': 'FOLLOWS', 'source': 'person_diana', 'target': 'person_charlie'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_diana',
+ 'target': 'platform_behance'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_charlie',
+ 'target': 'platform_behance'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_bob',
+ 'target': 'platform_linkedin'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_charlie',
+ 'target': 'platform_linkedin'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'person_alice',
+ 'target': 'platform_linkedin'}
+{'relation': 'VIEWS_POSTS', 'source': 'person_alice', 'target': 'person_bob'}
+{'relation': 'VIEWS_POSTS',
+ 'source': 'person_alice',
+ 'target': 'person_charlie'}
+{'relation': 'USES_PLATFORM',
+ 'source': 'organization_techhub',
+ 'target': 'platform_linkedin'}
+{'relation': 'MAINTAINS_PROFILE_ON',
+ 'source': 'organization_techhub',
+ 'target': 'platform_linkedin'}
+
+Saved 3 GraphDocuments -> L02_extracted_graph_documents.json
+Loaded 3 GraphDocuments from L02_extracted_graph_documents.json
+
+
+================================================================================
+SUMMARY
+================================================================================
+Chunks Processed      : 3
+Graph Documents       : 3
+Entities Extracted    : 21
+Relationships Created : 35

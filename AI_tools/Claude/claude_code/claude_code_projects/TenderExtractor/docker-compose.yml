@@ -1,0 +1,54 @@
+# Local orchestration for testing both containers together - not tied to
+# any particular hosting choice. Run from the repo root:
+#
+#   docker compose up --build
+#
+# Backend -> http://localhost:8000  (docs at /docs)
+# Frontend -> http://localhost:8501
+#
+# Backend secrets come from the repo-root .env (gitignored). Named volumes
+# keep the SQLite job store (local_state/) and generated Excel files
+# across container restarts/rebuilds - without them every
+# `docker compose up --build` would start from a blank database.
+#
+# Old-job cleanup isn't a separate container - the backend triggers it
+# itself, opportunistically, after each upload's pipeline finishes (see
+# app/api/main.py: _maybe_run_cleanup and scripts/cleanup_old_jobs.py:
+# cleanup_if_due). No extra service or scheduler to run here.
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - backend_data:/app/data_uploads
+      - backend_output:/app/output
+      - backend_logs:/app/logs
+      - backend_state:/app/local_state
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"
+    environment:
+      TENDEREXTRACTOR_API_URL: http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  backend_data:
+  backend_output:
+  backend_logs:
+  backend_state:

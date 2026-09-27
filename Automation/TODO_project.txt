@@ -1,0 +1,26 @@
+Project Details
+₹12,500.00 – 37,500.00 INR
+
+ Bidding ends in 5 days, 17 hours
+I want a single, well-structured codebase that lets me spin up my own AI-driven bot. The core language must be Python, and the engine behind it should rely on a modern large-language-model stack (OpenAI, Llama 2, or anything comparable you are comfortable fine-tuning).
+
+Primary goals
+• The bot must answer natural-language questions drawn from my private knowledge base just as a customer-service agent would.
+• It should also trigger or carry out repetitive tasks I specify—think updating a sheet, generating a quick summary, or pushing a notification—so that day-to-day busywork is removed from my plate.
+
+Context of use
+This is for my own personal workflows, not a public website, so I do not need a glossy front end. A clean CLI, a lightweight desktop window, or a simple local web panel is enough as long as I can extend it later.
+
+Key expectations
+• Modular Python code with clear separation between the LLM interface, the prompt/knowledge-base retrieval logic, and the task-automation hooks.
+• Ability to load my documents (PDF, DOCX, plain text) or scrape a folder and create embeddings so the bot replies with accurate, citation-backed answers.
+• Reusable functions or an event queue where I can drop in new “automation snippets” (for instance, write entry to Google Sheet, rename files, send a pre-written email).
+• Config file or environment variables for all API keys and model options—no secrets hard-coded.
+• A concise README that lets me install dependencies, run the bot locally, and add new tasks in under 10 minutes on a fresh machine.
+
+Acceptance criteria
+1. I can type a question in the interface and receive a context-aware answer sourced from my documents.
+2. When a trigger phrase or slash-command is used, the relevant automation runs and returns a confirmation message.
+3. All functions are covered by basic unit tests and pass with one command (pytest preferred).
+
+If you have demonstrable experience combining Python automation with LLMs, I’d love to see a quick outline of how you would structure this and which open-source libraries you’d lean on (LangChain, llama-cpp-python, etc.). I’m ready to start as soon as the approach is clear.

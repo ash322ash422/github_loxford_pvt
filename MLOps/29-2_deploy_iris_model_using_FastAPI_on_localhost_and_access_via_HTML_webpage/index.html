@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iris Classifier</title>
+  
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    label { display: block; margin-top: 10px; }
+    input { padding: 5px; margin: 5px 0; }
+    button { margin-top: 15px; padding: 10px; cursor: pointer; }
+    #result { margin-top: 20px; font-weight: bold; }
+  </style>
+
+</head>
+
+<body>
+  <h2>Iris Flower Classifier</h2>
+
+  <label>Sepal Length: <input type="number" id="sepal_length" step="0.1"></label>
+  <label>Sepal Width:  <input type="number" id="sepal_width" step="0.1"></label>
+  <label>Petal Length: <input type="number" id="petal_length" step="0.1"></label>
+  <label>Petal Width:  <input type="number" id="petal_width" step="0.1"></label>
+
+  <button onclick="predict()">Predict</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function predict() {
+      const data = {
+        sepal_length: parseFloat(document.getElementById("sepal_length").value),
+        sepal_width: parseFloat(document.getElementById("sepal_width").value),
+        petal_length: parseFloat(document.getElementById("petal_length").value),
+        petal_width: parseFloat(document.getElementById("petal_width").value),
+      };
+
+      const response = await fetch("http://127.0.0.1:8000/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      document.getElementById("result").innerText = "Prediction: " + result.prediction;
+    }
+  </script>
+</body>
+</html>

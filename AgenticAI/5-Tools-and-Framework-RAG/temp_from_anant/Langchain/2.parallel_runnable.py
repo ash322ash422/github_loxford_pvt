@@ -1,0 +1,33 @@
+# Parallel - RunnableParallel allows us to run multiple chains in parallel and then combine their outputs. 
+
+from langchain_groq import ChatGroq
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from dotenv import load_dotenv
+from langchain_core.runnables import RunnableSequence, RunnableParallel
+
+load_dotenv()
+
+model = ChatGroq(model="qwen/qwen3-32b", temperature=0)
+
+prompt1 = PromptTemplate(
+    template='Generate a tweet about a school AI workshop on {topic}',
+    input_variables=['topic']
+)
+
+prompt2 = PromptTemplate(
+    template='Generate a professional LinkedIn post about a school AI workshop on {topic}',
+    input_variables=['topic']
+)
+
+parser = StrOutputParser()
+
+parallel_chain = RunnableParallel({
+    'tweet': RunnableSequence(prompt1, model, parser),
+    'linkedin': RunnableSequence(prompt2, model, parser)
+})
+
+result = parallel_chain.invoke({'topic':'Linear Regression'})
+
+print(result['tweet'])
+print(result['linkedin'])

@@ -1,0 +1,82 @@
+(.venv) PS C:\Users\hi\Desktop\projects\python_projects\tutorial\play_langchain_llamaindex_langgraph> python .\Langchain_invsetigator_agent.py EXP-1015
+==============================================================================
+ LLM INVESTIGATOR AGENT (LangChain / LangGraph) - LIVE INVESTIGATION
+==============================================================================
+ Model            : gpt-4o-mini
+ Investigating    : EXP-1015  (P. Verma, New Horizon Supplies, Rs.49,900)
+------------------------------------------------------------------------------
+
+[Agent] calls get_transaction(expense_id='EXP-1015')
+[Tool result: get_transaction]
+{
+  "expense_id": "EXP-1015",
+  "employee": "P. Verma",
+  "department": "Procurement",
+  "date": "2026-07-21",
+  "category": "Office Supplies",
+  "vendor": "New Horizon Supplies",
+  "amount": "49900",
+  "payment_method": "Bank Transfer",
+  "approver": "P. Verma",
+  "receipt_attached": "No",
+  "justification": "Stationery restock"
+}
+
+[Agent] calls get_vendor_registry_info(vendor='New Horizon Supplies')
+
+[Agent] calls get_approval_pattern(employee='P. Verma')
+
+[Agent] calls list_transactions_by_employee(employee='P. Verma')
+
+[Agent] calls list_transactions_by_vendor(vendor='New Horizon Supplies')
+[Tool result: list_transactions_by_vendor]
+{
+  "vendor": "New Horizon Supplies",
+  "count": 2,
+  "transactions": [
+    {
+      "expense_id": "EXP-1015",
+      "employee": "P. Verma",
+      "department": "Procurement",
+      "date": "2026-07-21",
+      "category": "Office Supplies",
+      "vendor": "New Horizon Supplies",
+      "amount": "49900",
+      "payment_method": "Bank Transfer",
+      "approver": "P. Verma",
+      "receipt_attached": "No",
+      "justification": "Stationery restock"
+    },
+    {
+      "expense_id": "EXP-1019",
+      "employee": "V. Kulkarni",
+      "department": "Finance",
+      "date": "2026-07-27",
+      "category": "Office Supplies",
+      "vendor": "New Horizon Supplies",
+      "amount": "49700",
+      "payment_method": "Bank Transfer",
+      "approver": "V. Kulkarni",
+      "receipt_attached": "No",
+      "justification": "Printer cartridges"
+    }
+  ]
+}
+[Tool result: InvestigationJudgment]
+Returning structured response: risk_level='High' headline='High risk of procurement fraud due to self-approval and vendor profile issues.' evidence=["Vendor 'New Horizon Supplies' registered at a residential address and has unverified GST status.", 'P. Verma has self-approved all 3 of their transactions, including EXP-1015.', "Two employees (P. Verma and V. Kulkarni) billed 'New Horizon Supplies' within the same month for similar office supplies.", 'Vendor was onboarded only 11 weeks ago, raising concerns about legitimacy.', 'No receipts attached for any of the transactions filed by P. Verma. '] recommended_action="Conduct a detailed audit of all transactions involving New Horizon Supplies and review P. Verma's procurement activities." confidence='High'
+
+==============================================================================
+ INVESTIGATION JUDGMENT
+==============================================================================
+ Risk level   : High
+ Confidence   : High
+ Headline     : High risk of procurement fraud due to self-approval and vendor profile issues.
+ Evidence:
+   - Vendor 'New Horizon Supplies' registered at a residential address and has unverified GST status.
+   - P. Verma has self-approved all 3 of their transactions, including EXP-1015.
+   - Two employees (P. Verma and V. Kulkarni) billed 'New Horizon Supplies' within the same month for similar office supplies.
+   - Vendor was onboarded only 11 weeks ago, raising concerns about legitimacy.
+   - No receipts attached for any of the transactions filed by P. Verma. 
+ Recommended action: Conduct a detailed audit of all transactions involving New Horizon Supplies and review P. Verma's procurement activities.
+==============================================================================
+(.venv) PS C:\Users\hi\Desktop\projects\python_projects\tutorial\play_langchain_llamaindex_langgraph> 

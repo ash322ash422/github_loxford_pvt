@@ -1,0 +1,34 @@
+Aisha Khan
+aisha.khan@outlook.com | +91-9901234567 | linkedin.com/in/aishakhan | github.com/aishakhan
+
+PROFILE
+Data Scientist with 4 years of experience in machine learning, NLP and statistical modelling. Strong background in Python, deep learning frameworks, and cloud deployment.
+
+TECHNICAL SKILLS
+Languages: Python, R, SQL
+ML/DL Frameworks: Scikit-learn, TensorFlow, PyTorch, Keras, XGBoost, LightGBM
+NLP: NLTK, spaCy, Huggingface Transformers, BERT, GPT, Text Classification, NER
+Data: Pandas, NumPy, Matplotlib, Seaborn, Plotly
+Cloud & DevOps: GCP, AWS, Docker, Kubernetes, Airflow
+Databases: PostgreSQL, BigQuery, MongoDB, Elasticsearch
+
+EXPERIENCE
+Data Scientist — Analytics Corp (2022–Present)
+- Designed NLP pipeline for automated resume screening and candidate ranking
+- Built deep learning models for demand forecasting (LSTM, Transformer)
+- Developed recommendation systems using collaborative filtering and BERT embeddings
+- Deployed models on GCP using Docker and Kubernetes
+
+Data Analyst — Insight Analytics (2020–2022)
+- Built predictive models for sales forecasting using scikit-learn and XGBoost
+- Created interactive dashboards in Plotly and Tableau
+- Performed large-scale data processing with Apache Spark and BigQuery
+
+EDUCATION
+M.Sc. Data Science — IIT Bombay, 2020
+B.Sc. Statistics — Miranda House, Delhi University, 2018
+
+CERTIFICATIONS
+- Google Professional Data Engineer
+- TensorFlow Developer Certificate
+- NLP with Classification and Vector Spaces — Coursera

@@ -1,0 +1,124 @@
+John Doe
+Haryana (India) Tel.  9893450456     john@gmail.com   
+www.linkedin.com/in/fhsjkda    
+SKILLS
+•	Python/Java/C++	•	MySQL/MongoDB/PineDB/Neo4J 	•	Training/Fine tuning AI Models
+•	Django REST API’s	•	Linux OS – Debian 	•	Natural Language Processing
+•	RDB/VectorDB/GraphDB	•	Data Science	•	Scikit-learn for Machine Learning
+
+EXPERIENCE
+2025-present
+AI Developer and Trainer at IOT Academy, Noida ( https://www.jerry.com )
+●	Providing hands-on training on Python, Machine Learning and Artificial Intelligence to Engineering Colleges Faculty like GCET in Greater Noida (UP), IPEC in Ghaziabad (UP), GEC in Munger (Bihar), GLBITM in Greater Noida (UP), PIET in Samalkha (HR), NERIST in Nirjuli (Arunachal Pradesh), etc.
+●	Provided hands on training on implementation of algorithm in python related to Mathematics and Engineering field like Mechanical, Signal, etc. to faculty through online training.
+●	Presently I conduct online classes on data analysis, machine learning, generative AI and statistics course.
+
+2023-2025
+Free Lance (Shuaib Tel +1 256 457 7180 and Angelo Straight +1 708 270 4550)
+●	Designed and deployed AI-powered agents using LangChain, OpenAI, and Docker to manage tools like Grafana, PostgreSQL, and QuestDB. Built functionalities for dynamic dashboard creation, secure authentication, and interactive troubleshooting via REST APIs and direct database queries. Leveraged containerized environments, robust error handling, and environment variables for scalable, secure AI-driven solutions.
+●	Developed a Yoga pose detection and classification system using MediaPipe, OpenCV, and Scikit-Learn. Extracted pose landmarks from images, optimized a Random Forest classifier through GridSearchCV, and evaluated performance with confusion matrices and accuracy metrics. Integrated the model for real-time Yoga pose prediction and feedback on video streams.
+●	Developed a C++ application integrating the Ollama API to interact with local LLMs, utilizing libcurl and nlohmann::json for HTTP requests and JSON parsing. Implemented streaming responses and real-time console interactions for natural language tasks.
+●	Developed a movie recommendation system using user-based collaborative filtering in C++ and Eigen library. Implemented functions to load ratings, calculate Pearson correlation-based user similarity, predict ratings, and recommend top N movies based on predicted ratings.
+●	Developed a pipeline using transformers and deep learning pre-trained models that processed an input image to segment, identify, and analyze objects within the image, and output a summary table with mapped data for each object. Implemented this pipeline in streamlit UI.
+●	Developed a custom Generative AI agent using LangChain and OpenAI to generate, execute, and validate Python code dynamically, enhancing task automation.
+●	Developed a RAG system leveraging LangChain, Neo4j vector DB, OpenAI, and knowledge graphs for question answering within Google Colab. Implemented hybrid search, entity extraction, and question-condensing pipelines, enhancing information retrieval and user experience. 
+●	Leveraged LangChain, OpenAI GPT models, and Neo4j for graph-based medical document indexing, Cypher query generation, and natural language query resolution, with an interactive Streamlit UI.
+●	Designed and implemented a pipeline to extract text from Wikipedia and generate knowledge graphs using LLAMA3.2 and Neo4j. Automated Cypher query generation to create and store graph structures in the database, enhancing data representation and retrieval
+●	Built and fine-tuned a pre-trained YOLOv8 model on the 'Labeled Surgical Tools and Images' dataset, achieving detection and classification of surgical tools. Leveraged data augmentation and Transfer Learning to optimize performance on domain-specific data.
+●	Developed an AI-powered video analytics system using pre-trained YOLOv8 to detect and analyze crowd events by identifying clusters of individuals in real-time with custom logic for proximity and persistence
+●	Implemented transfer learning and fine-tuning on pre-trained ResNet-18 model to classify image on the CIFAR-10 dataset, achieving significant improvements in model accuracy
+●	Analyzed a pre trained AI model from Hugging Face for leaf detection and border detection in images
+●	Developed a convolutional neural network CNN) model using TensorFlow and Keras to classify handwritten medical prescriptions. The model was trained and validated on a dataset of labeled images of 78 prescription words. Explored various techniques, including data augmentation, batch normalization and hyper parameter tuning using RandomizedSearchCV to optimize model performance.
+●	Taught machine learning topics like Stochastics Gradient Classifier, Linear/Logistic Regression, LDA, QDA, Neural Network, SVM, etc.
+●	Engineered a document similarity checker leveraging OCR and diverse similarity algorithms, including Jaccard, Cosine, LCS, 4-Gram, Locally Sensitive Hashing, SimHash and Pinecone vector DB. The system preprocessed documents using OCR to extract text, enabling efficient identification of duplicate content.
+●	Performed prompt optimization on Chat GPT-4o to create medical chronology from text strings
+●	Developed a working model of Retrieval Augmented Generation (RAG) for a QA bot for a business, leveraging the OpenAI API, embeddings and a vector database (Pinecone DB)
+●	Built an LLM RAG Chatbot with LangChain
+●	Implemented a Vendor Management System with Django REST APIs with various endpoints allowing access to performance metrics of the vendor.  
+●	Implemented a web scraping application that gathered real-estate agent tabular data across 4,000+ pages and another application that scraped titles, prices, images and description of Lenovo products 
+●	Designed static site for a friend on AWS EC2 using Django web framework.
+●	Implemented and integrated Cashfree API into FatMug API Gateway using Django REST Framework
+•	Designed export/import functionality for data transfer between Odoo ERP Web Framework and RazorpayX
+
+Technology stack:
+•	Languages:  Python, C, C++, Java, React JS.
+•	Python Packages: Scikit-learn, tensorflow, Xlsxwriter, Pandas, NumPy, ReportLab, Faker, Lxml, BeautifulSoup, Selenium, Scrapy, Django web framework, Django REST API’s with Token Authentication OAUTH2.0, Odoo ERP framework, PyTest, FastAPI, LangChain, Streamlit, etc.,
+•	Database / Data analysis: MySQL, Oracle (10.2), SQLite, PostgreSQL, MongoDB (NoSQL DB), PineDB (Vector Database), Neo4J (Graph DB), PowerBI
+•	Others: Linux/Unix BASh shell scripts, Statistical program R,  JQuery, BootStrap, MicroSoft VisualBasic/Access, Oracle VirtualBox, Docker, GitHub. Amazon Web Services AWS (S3, EC2), Google Colab, etc
+
+
+
+2017-2023
+Software Developer | Dixon ICI Optical | Dixon, IL USA
+Worked in mid-sized company that fabricated prescription eye glasses. The fabrication process was semi-automated that required 23 networked devices communicating with each other through Linux server. I worked as Software Developer, IT/Backup Administrator and Network technician. Wore many hats.
+As software developer, designed following applications in Python, Java and C++:
+1.	App for predicting probability of a product failing quality-control. It used machine learning concepts like Logistic Regression, SGD Classifier, Decision Tree Classifier, Support Vector Classifier and Multilayer Perceptron Classifier. Found some interesting pattern and communicated it to Foreman.
+2.	Machine learning app for predicting probability of a job going to S/F department, based on Doctor’s eye prescription. The accuracy rate of the model was almost 100%.
+3.	Machine learning app for predicting the probability of job being a duplicate. Key feature was HFS and age. Then designed an app to search and destroy duplicate jobs while keeping records of them. Saved legal cost
+4.	App for work notes that allowed employees to share their work knowledge. It helped with efficient operation of Laboratory. Interns were glad.
+5.	Designed apps that computed hourly pay rate, punch out time, update payroll hours, download work-hours, create / retrieve records from archives starting 2018, generate alert message on past due back-order, generate alert on delayed orders, create report on production statistics for all stations, view statistics on site visits, view/download training videos. Higher ups were happy.
+6.	Designed app to generate/download PDF report on shipped jobs (current and previous month), quarterly usage of photo-gray/polarized lenses, lenses usage matched with OPC and SAP. The reports were grouped by department.
+7.	Generate lens/frame order template in Excel sheet with future forecast to replenish.
+8.	Designed app to find all previous jobs associated with the original freed trays and view their workflow history. Saved shop lot of man hours.
+9.	Generate job queue for the Xerox printer to automate printing of labels on envelopes and cover letters every morning. The backend was implemented in C++ that used Xerox APIs. Brought a smile on Shipping clerk face.
+10.	Designed a small ecommerce website for maintenance dept. for in-house use. Also partially designed and maintained Django site for record keeping of orders, invoices, receivers, vouchers, and inventory
+11.	Designed app. to process/rectify CSV files that were received daily from healthcare.
+12.	Designed following in-house applications in MS Access: Pending order tracker, Inventory tracker, Hiring tracker, Worker activity participation tracker and payroll tracker. These applications were connected to DB like SQLite and MySQL.
+
+As IT/Backup Administrator, performed following task:
+1.	Installed and configured machines with Linux (Deb 9.7) OS. Configured services like MongoDB/MySQL DB server, Samba file sharing server, Apache web server, CUPS printing server and NFS server. Saved shop money on running cost.
+2.	Web app to monitor disk usage of server and display statistics for last 10 days on file-systems and heavily used directories. Saved myself headache.
+3.	Wrote Bash shell scripts to perform daily backups. Designed a browser app with ability to recover employees lost files with rdiff-backup utility running in the background. Employees were appreciative.
+4.	Designed app. that logged user activity on restricted directories/files. Administration was happy.
+5.	Designed customized Java GUI terminal for users to execute restricted Linux shell commands. Another app to monitor changes in SQLite/MySQL database which was backend for administrative site.
+6.	Designed Java GUI to monitor processes running on remote/local machine and stop/restart them on demand. It monitored log files for Linux services: MySQL, CUPS, Apache and Samba services.
+7.	Designed a TKinter GUI to monitor/stop/restart processes running on main server with RedHat Linux OS. These processes were initialized by outside vendors and were crucial for proper functioning of 23+ networked devices.
+8.	Designed a python-based mail server-client system from ground up to view messages pertaining to backup, duplicate jobs, directory usage, etc. I was happy.
+9.	Troubleshoot software/hardware issues related with computers and workflow at the various stations in laboratory. Installed Linux (Debian9.7) on various computers that crashed over the years and installed virtual box for windows. Created and managed user accounts on Windows/Linux. Saved labor cost.
+10.	Configured 2 desktops into Linux servers with one as primary-servers and others as backup-servers. Wrote python scripts that performed daily sync of file system and database of primary-server with the backup-server. It was essential from backup perspective.
+
+As a Network Technician, connected different devices using RJ45 connecter (class A compliant). Troubleshoot issues with Xerox printer, Digi Port and computers. Configured 4 printer to enable printing from 23 computers, swapped/added hard drive, added RAM, cleaned up servers, etc.
+
+
+1997 – 2017
+•	Worked as a Lecturer in Electrical Engineering department at Deenbandhu Chhotu Ram University of Science and Technology, Sonepat, Haryana (1997 - 1998).
+•	Worked as Teachers Assistant in Computer Science Department, University of Miami, Florida, USA (1998 - 2000)
+•	Worked For Lucent Technologies, Illinois, Naperville, USA (2001)
+○	Designed, maintained and updated C program which generated any number of phone calls to test load capacity and feature availability of cell-phone services on base-stations towers owned by Lucent Technologies.
+○	Designed, maintained and updated TCL/TK GUI to view status of various processes running and stop/restart them as needed. The GUI also generated and displayed log messages pertaining to each process that were responsible for generating simulated phone calls in Lucent Technologies.
+
+•	Wrote complete solution manual for even numbered problem of textbook Elementary Statistics by Allan G. Bluman
+•	Gained knowledge in following field of computer science and mathematics: Computational Geometry, Algorithms, Statistical Learning, Reinforcement Learning, Linear Programming, Computer Graphics, Logic, Statistics, Probability, Advanced Calculus, Calculus of Variations, Topology, Number Fields, Number Theory-Analytical/Algebraic, Abstract Algebra, Cryptography, Riemannian Geometry, Manifolds, General Relativity, Special Relativity, Quantum Mechanics, Quantum Field theory, Combinatorics, Graph Theory, Network Flows, Data Structure, etc.
+
+
+
+
+
+
+
+
+EDUCATION
+•	Masters in Computer Science, year 2001: University of Miami, Coral Gables, Florida – USA 
+o	CGPA 3.171
+o	Awarded Scholarship
+o	Worked as Teaching Assistant for 2 years 
+
+•	Bachelors in Electrical Engineering, year 1997: Guru Jambheshwar University, Hisar, Haryana- India
+o	Scored 65.5%
+o	Worked as lecturer for 1 year
+
+
+
+LANGUAGES
+•	Fluent in English and Hindi
+
+
+REFERENCES
+•	Dr. Vic gerry, Professor and Chair, Department of Computer Science, University of Sydney, Florida, USA Tel 323-456-3333
+•	Diego Fajardo (HR) Nokia of America Corporation. Email: hrservmericas@nokia.com
+
+
+
+
+    
+

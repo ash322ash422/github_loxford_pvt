@@ -1,0 +1,5 @@
+Tech Hub recently launched a new internal analytics tool called DataFlow, led by Diana, the company's Data Scientist. Diana coordinates closely with Bob, the Lead Developer for ChatApp, since DataFlow feeds usage metrics back into the ChatApp team.
+
+Diana and Charlie remain active members of Data Club, the community group they co-organize with Bob. At a recent Data Club meetup, Diana presented an early demo of DataFlow to fellow members.
+
+Eve, a new Backend Engineer, joined Tech Hub last month to support the DataFlow project. Eve reports to Diana and has already started following Bob on GitHub to learn the ChatApp codebase.

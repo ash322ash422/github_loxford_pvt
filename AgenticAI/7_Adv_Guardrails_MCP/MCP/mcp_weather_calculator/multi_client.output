@@ -1,0 +1,35 @@
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\mcp_weather_calculator> python -m multi_client
+Launching and connecting to Multi-Tool Server...
+Successfully Connected! Handshake completed.
+
+=========================================
+DISCOVERED 2 TOOLS ON THIS SERVER:
+=========================================
+🛠️ Tool Name: calculate_expression
+   Description: Evaluates basic mathematical expressions precisely to prevent
+       LLM calculation errors.
+
+    Args:
+        expression: A math string containing numbers
+                    and operators +, -, *, /, ** (e.g., '2 * (3 + 4) ** 2')
+
+
+🛠️ Tool Name: get_live_weather
+   Description: Fetch current weather for a location using latitude and longitude.
+
+    Args:
+        latitude: Decimal latitude, e.g. 40.7128.
+        longitude: Decimal longitude, e.g. -74.0060.
+
+
+=========================================
+RUNNING DEMO EXECUTION ACTIONS:
+=========================================
+
+👉 Simulating LLM Request: Calling 'calculate_expression' with {'expression': '12.5 * (40 + 2) ** 2'}
+📥 Response from Server: Calculation Successful! Result: 22050.0
+
+👉 Simulating LLM Request: Calling 'get_live_weather' with {'latitude': 28.4595, 'longitude': 77.0266}
+📥 Response from Server: Live Weather Data: Current Temperature: 28.0°C. Wind Speed: 7.1 km/h.
+
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\mcp_weather_calculator>

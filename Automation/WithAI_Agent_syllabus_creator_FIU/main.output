@@ -1,0 +1,27 @@
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\automation_using_ai_agent> ..\.venv\Scripts\python.exe main.py "Prepare next week's DBMS class."
+
+Draft created at: C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\automation_using_ai_agent\output\draft_teaching_package.json
+Next topic: **Next Topic:** Functional Dependencies and Normalization
+
+**Evidence:** According to the CS301 Database Management Systems syllabus, the completed topics include "Database fundamentals and data models," "Relational model and relational algebra," and "SQL fundamentals: DDL, DML, joins, and aggregation." The next topic to teach is "Functional dependencies and normalization."
+
+**Measurable Learning Objectives:**
+1. Define and explain the concept of functional dependencies in the context of relational databases.
+2. Identify and apply the rules of normalization to design a database schema that minimizes redundancy.
+3. Evaluate a given database schema for normalization and suggest improvements based on functional dependencies.
+4. Demonstrate the ability to convert an unnormalized relation into a normalized form (1NF, 2NF, 3NF).
+5. Analyze the impact of normalization on database performance and integrity.
+Announcement: Dear Students,
+
+In our upcoming lecture, we will explore the topic of Functional Dependencies and Normalization. This session is crucial for understanding how to design efficient database schemas that minimize redundancy and maintain data integrity. We will cover key concepts such as Armstrong's Axioms, normal forms, and the attribute closure algorithm. Additionally, there will be an in-class exercise where you will practice identifying dependencies and normalizing a given relation.
+
+Please ensure you have reviewed the previous topics on SQL fundamentals and the relational model, as they will be foundational for our discussion. 
+
+Looking forward to seeing you all there!
+
+Best,
+[Your Name]
+
+Approve and publish this package to the LMS? [y/N]: y
+Approved and published to LMS adapter: C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\automation_using_ai_agent\output\lms\CS301_next_class.json
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\automation_using_ai_agent> 

@@ -1,0 +1,12 @@
+.env
+azure/backend.yaml
+__pycache__/
+*.pyc
+.venv/
+backend/output/*.xlsx
+backend/data_uploads/*.pdf
+backend/local_state/
+backend/logs/*.log
+backend/**/job_flow_status.db*
+!backend/data_uploads/.gitkeep
+!backend/output/.gitkeep

@@ -1,0 +1,16 @@
+🚀 Initializing live news ingestion pipeline via OpenAI API...
+🧠 Querying OpenAI for headline: 'Global Tech Stocks Plunge Amid New Regul...'
+   -> Computed Risk Score: 0.8
+🧠 Querying OpenAI for headline: 'Central Bank Announces Surprise Rate Cut...'
+   -> Computed Risk Score: 0.1
+🧠 Querying OpenAI for headline: 'Supply Chain Disruptions Threaten Holida...'
+   -> Computed Risk Score: 0.7
+🧠 Querying OpenAI for headline: 'Breakthrough in Renewable Energy Sector ...'
+   -> Computed Risk Score: 0.1
+🧠 Querying OpenAI for headline: 'Geopolitical Tensions Escalate in Key Tr...'
+   -> Computed Risk Score: 0.75
+🧠 Querying OpenAI for headline: 'Major Corporation Reports Record-Breakin...'
+   -> Computed Risk Score: 0.0
+processed_articles: [{'title': 'Global Tech Stocks Plunge Amid New Regulatory Scrutiny', 'source': 'Financial Times', 'date': datetime.datetime(2026, 6, 2, 16, 53, 13, 159834), 'risk_score': 0.8}, {'title': 'Central Bank Announces Surprise Rate Cut, Boosting Market Confidence', 'source': 'Bloomberg', 'date': datetime.datetime(2026, 6, 2, 16, 53, 14, 287659), 'risk_score': 0.1}, {'title': 'Supply Chain Disruptions Threaten Holiday Sales Forecasts', 'source': 'Reuters', 'date': datetime.datetime(2026, 6, 2, 16, 53, 15, 211112), 'risk_score': 0.7}, {'title': 'Breakthrough in Renewable Energy Sector Promises Massive Growth', 'source': 'Eco Times', 'date': datetime.datetime(2026, 6, 2, 16, 53, 16, 191026), 'risk_score': 0.1}, {'title': 'Geopolitical Tensions Escalate in Key Trade Region', 'source': 'Global News', 'date': datetime.datetime(2026, 6, 2, 16, 53, 17, 166613), 'risk_score': 0.75}, {'title': 'Major Corporation Reports Record-Breaking Quarterly Earnings', 'source': 'Wall Street Journal', 'date': datetime.datetime(2026, 6, 2, 16, 53, 17, 899606), 'risk_score': 0.0}]
+
+✅ Successfully processed and stored 6 articles into SQLite database.

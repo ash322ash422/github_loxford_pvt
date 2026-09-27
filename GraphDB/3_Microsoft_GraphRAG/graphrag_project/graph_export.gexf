@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-08-01">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="3" title="value" type="double" />
+      <attribute id="4" title="title" type="string" />
+      <attribute id="5" title="width" type="long" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="title" type="string" />
+      <attribute id="1" title="group" type="long" />
+      <attribute id="2" title="size" type="long" />
+    </attributes>
+    <nodes>
+      <node id="MERIDIAN HEALTH SYSTEMS" label="MERIDIAN HEALTH SYSTEMS">
+        <attvalues>
+          <attvalue for="0" value="ORGANIZATION: Meridian Health Systems is a hospital network based in Austin, Texas that has partnered to deploy surgical assistance robots across its twelve facilities." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="NOVACARE ROBOTICS" label="NOVACARE ROBOTICS">
+        <attvalues>
+          <attvalue for="0" value="ORGANIZATION: NovaCare Robotics is a company founded in 2018 that supplies robotic systems to healthcare facilities, known for its surgical assistance robots." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="DR. AMARA OSEI" label="DR. AMARA OSEI">
+        <attvalues>
+          <attvalue for="0" value="PERSON: Dr. Amara Osei is the Chief Innovation Officer at Meridian Health Systems, previously involved in a robotics initiative at Cedar Ridge Medical." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="WEI ZHANG" label="WEI ZHANG">
+        <attvalues>
+          <attvalue for="0" value="PERSON: Wei Zhang is the engineer who founded NovaCare Robotics and has contributed significantly to robotic surgery technology." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="TEXAS NURSES COALITION" label="TEXAS NURSES COALITION">
+        <attvalues>
+          <attvalue for="0" value="ORGANIZATION: The Texas Nurses Coalition is a group that raised concerns about the implications of robotic surgery, particularly regarding job displacement and patient safety." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="CEDAR RIDGE MEDICAL" label="CEDAR RIDGE MEDICAL">
+        <attvalues>
+          <attvalue for="0" value="ORGANIZATION: Cedar Ridge Medical is a hospital that signed a robotics agreement with NovaCare Robotics and was Dr. Osei's former employer." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="NATIONAL HEALTHCARE INNOVATION SUMMIT" label="NATIONAL HEALTHCARE INNOVATION SUMMIT">
+        <attvalues>
+          <attvalue for="0" value="EVENT: The National Healthcare Innovation Summit is an event in Chicago where innovations in healthcare technology are discussed and showcased, including contributions from Wei Zhang." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="AUSTIN" label="AUSTIN">
+        <attvalues>
+          <attvalue for="0" value="GEO: Austin is the city in Texas where Meridian Health Systems is located and where public hearings regarding robotic surgery took place." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="2024" label="2024">
+        <attvalues>
+          <attvalue for="0" value="EVENT: March 2024 is when Meridian Health Systems announced its partnership with NovaCare Robotics." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+      <node id="2025" label="2025">
+        <attvalues>
+          <attvalue for="0" value="EVENT: By the end of 2025, NovaCare Robotics emerged as a leading supplier and Meridian noted improvements in surgery times." />
+          <attvalue for="1" value="-1" />
+          <attvalue for="2" value="12" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="MERIDIAN HEALTH SYSTEMS" target="DR. AMARA OSEI" id="0" label="Dr. Amara Osei is the Chief Innovation …">
+        <attvalues>
+          <attvalue for="3" value="9.0" />
+          <attvalue for="4" value="Dr. Amara Osei is the Chief Innovation Officer at Meridian Health Systems, responsible for the partnership that introduced surgical robots" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="MERIDIAN HEALTH SYSTEMS" target="NOVACARE ROBOTICS" id="1" label="Meridian Health Systems partnered with …">
+        <attvalues>
+          <attvalue for="3" value="8.0" />
+          <attvalue for="4" value="Meridian Health Systems partnered with NovaCare Robotics to deploy surgical assistance robots in its facilities" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="MERIDIAN HEALTH SYSTEMS" target="TEXAS NURSES COALITION" id="2" label="The Texas Nurses Coalition raised conce…">
+        <attvalues>
+          <attvalue for="3" value="6.0" />
+          <attvalue for="4" value="The Texas Nurses Coalition raised concerns regarding the implementation of robotics at Meridian Health Systems" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="MERIDIAN HEALTH SYSTEMS" target="AUSTIN" id="3" label="Austin is the location of Meridian Heal…">
+        <attvalues>
+          <attvalue for="3" value="1.0" />
+          <attvalue for="4" value="Austin is the location of Meridian Health Systems, where the partnership and public hearings took place" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="NOVACARE ROBOTICS" target="WEI ZHANG" id="4" label="Wei Zhang is the founder of NovaCare Ro…">
+        <attvalues>
+          <attvalue for="3" value="9.0" />
+          <attvalue for="4" value="Wei Zhang is the founder of NovaCare Robotics, overseeing the development and distribution of surgical robots" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="NOVACARE ROBOTICS" target="CEDAR RIDGE MEDICAL" id="5" label="Cedar Ridge Medical signed a robotics a…">
+        <attvalues>
+          <attvalue for="3" value="5.0" />
+          <attvalue for="4" value="Cedar Ridge Medical signed a robotics agreement with NovaCare Robotics, similar to the agreement with Meridian Health Systems" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="NOVACARE ROBOTICS" target="2024" id="6" label="NovaCare Robotics announced its partner…">
+        <attvalues>
+          <attvalue for="3" value="5.0" />
+          <attvalue for="4" value="NovaCare Robotics announced its partnership with Meridian Health Systems to begin deploying surgical robots in March 2024" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="DR. AMARA OSEI" target="WEI ZHANG" id="7" label="Dr. Amara Osei and Wei Zhang co-hosted …">
+        <attvalues>
+          <attvalue for="3" value="7.0" />
+          <attvalue for="4" value="Dr. Amara Osei and Wei Zhang co-hosted a town hall addressing concerns during the rollout of the surgical robots" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="WEI ZHANG" target="NATIONAL HEALTHCARE INNOVATION SUMMIT" id="8" label="Wei Zhang was invited to speak at the N…">
+        <attvalues>
+          <attvalue for="3" value="8.0" />
+          <attvalue for="4" value="Wei Zhang was invited to speak at the National Healthcare Innovation Summit due to the success of the partnership with Meridian" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+      <edge source="CEDAR RIDGE MEDICAL" target="2025" id="9" label="Cedar Ridge Medical signed its own robo…">
+        <attvalues>
+          <attvalue for="3" value="1.0" />
+          <attvalue for="4" value="Cedar Ridge Medical signed its own robotics agreement with NovaCare in early 2025" />
+          <attvalue for="5" value="1" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

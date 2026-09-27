@@ -1,0 +1,447 @@
+{
+  "name": "customer_lead_workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Contact Us",
+        "formDescription": "Please enter your details",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Company Name"
+            },
+            {
+              "fieldLabel": "Contact name"
+            },
+            {
+              "fieldLabel": "Contact Email",
+              "fieldType": "email"
+            },
+            {
+              "fieldLabel": "Budget",
+              "fieldType": "number"
+            },
+            {
+              "fieldLabel": "Notes",
+              "fieldType": "textarea"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        16
+      ],
+      "id": "6ff750b4-d181-4aed-b4bf-06ab76895de6",
+      "name": "On form submission",
+      "webhookId": "9b09ae90-179e-471b-af7c-69605113fba5"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.Budget }}",
+                    "rightValue": 3000,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    },
+                    "id": "f87fd203-4f17-4959-8b2b-786fbaf14cf0"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "f310c078-e81f-485f-8657-7077d8f6a6fe",
+                    "leftValue": "={{ $json.Budget }}",
+                    "rightValue": 3000,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        16
+      ],
+      "id": "6afdcf7e-257b-47b0-b43f-ae6189ff70a1",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json['Contact Email'] }}",
+        "subject": "Thank you",
+        "emailType": "text",
+        "message": "=Thank you  {{ $('On form submission').item.json['Contact name'] }}. We will get back to you in 5 hour",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        -80
+      ],
+      "id": "baf6f88e-ed0f-42bc-a3c9-e12601023da2",
+      "name": "Send a message",
+      "webhookId": "3666cdae-d481-4574-bdd1-b37d42b0a84f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6mCmWk6xnnVnIJy1",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('On form submission').item.json['Contact Email'] }}",
+        "subject": "Thank you",
+        "emailType": "text",
+        "message": "=Thank you  {{ $('On form submission').item.json['Contact name'] }}. We will get back to you in 1 hour",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        448,
+        112
+      ],
+      "id": "f01b92fc-0b0a-41b3-9039-9e563e012b69",
+      "name": "Send a message1",
+      "webhookId": "3666cdae-d481-4574-bdd1-b37d42b0a84f",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6mCmWk6xnnVnIJy1",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1IFmkvczeRfh1x_iVrx01Nhvmlwv5-ulrFyw0A0ofCtM/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "client",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IFmkvczeRfh1x_iVrx01Nhvmlwv5-ulrFyw0A0ofCtM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ $('On form submission').item.json.submittedAt }}",
+            "company": "={{ $('On form submission').item.json['Company Name'] }}",
+            "contact_name": "={{ $('On form submission').item.json['Contact name'] }}",
+            "contact_email": "={{ $('On form submission').item.json['Contact Email'] }}",
+            "budget": "={{ $('On form submission').item.json.Budget }}",
+            "notes": "={{ $('On form submission').item.json.Notes }}",
+            "lead_priority": "Low"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "company",
+              "displayName": "company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contact_name",
+              "displayName": "contact_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contact_email",
+              "displayName": "contact_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "budget",
+              "displayName": "budget",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "lead_priority",
+              "displayName": "lead_priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        -80
+      ],
+      "id": "2aeac8ec-d9fb-4bed-84ce-3f502cb8c26e",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "t0kUvUwj7KE1nafM",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1IFmkvczeRfh1x_iVrx01Nhvmlwv5-ulrFyw0A0ofCtM/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "client",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IFmkvczeRfh1x_iVrx01Nhvmlwv5-ulrFyw0A0ofCtM/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ $('On form submission').item.json.submittedAt }}",
+            "company": "={{ $('On form submission').item.json['Company Name'] }}",
+            "contact_name": "={{ $('On form submission').item.json['Contact name'] }}",
+            "contact_email": "={{ $('On form submission').item.json['Contact Email'] }}",
+            "budget": "={{ $('On form submission').item.json.Budget }}",
+            "notes": "={{ $('On form submission').item.json.Notes }}",
+            "lead_priority": "High"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "company",
+              "displayName": "company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contact_name",
+              "displayName": "contact_name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contact_email",
+              "displayName": "contact_email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "budget",
+              "displayName": "budget",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "notes",
+              "displayName": "notes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "lead_priority",
+              "displayName": "lead_priority",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        672,
+        112
+      ],
+      "id": "fc2c6596-1915-4ee8-9181-3a6bf3d9310d",
+      "name": "Append row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "t0kUvUwj7KE1nafM",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message1": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "7c2a9b8e-e0d8-481b-bdd2-3b228253182c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "1be4f6b099b1ae9b3bf460a8ce1565e4062ba24e55c76c7a5c2c84fc9f05f762"
+  },
+  "nodeGroups": [],
+  "id": "3AP0YpFTcc1hh6Lx",
+  "tags": []
+}

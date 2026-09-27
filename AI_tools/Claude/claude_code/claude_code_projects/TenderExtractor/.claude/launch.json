@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backend-api",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "uvicorn", "app.api.main:app", "--app-dir", "backend", "--port", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "streamlit-frontend",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "streamlit", "run", "frontend/streamlit_app.py", "--server.headless=true"],
+      "port": 8501
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+langgraph>=1.2
+langgraph-checkpoint-sqlite
+langchain-anthropic>=1.4
+langchain-core
+python-dotenv
+pytest

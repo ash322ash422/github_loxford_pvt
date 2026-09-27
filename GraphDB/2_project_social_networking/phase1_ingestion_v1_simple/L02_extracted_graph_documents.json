@@ -1,0 +1,303 @@
+[
+    {
+        "chunk_id": 1,
+        "entities": [
+            {
+                "id": "organization_techhub",
+                "name": "TechHub",
+                "label": "Organization"
+            },
+            {
+                "id": "person_alice",
+                "name": "Alice",
+                "label": "Person"
+            },
+            {
+                "id": "product_chatapp",
+                "name": "ChatApp",
+                "label": "Product"
+            },
+            {
+                "id": "person_bob",
+                "name": "Bob",
+                "label": "Person"
+            },
+            {
+                "id": "person_charlie",
+                "name": "Charlie",
+                "label": "Person"
+            },
+            {
+                "id": "person_diana",
+                "name": "Diana",
+                "label": "Person"
+            }
+        ],
+        "relationships": [
+            {
+                "source": "person_alice",
+                "target": "organization_techhub",
+                "relation": "CEO_OF"
+            },
+            {
+                "source": "person_alice",
+                "target": "organization_techhub",
+                "relation": "MANAGES"
+            },
+            {
+                "source": "organization_techhub",
+                "target": "product_chatapp",
+                "relation": "DEVELOPED"
+            },
+            {
+                "source": "person_alice",
+                "target": "person_bob",
+                "relation": "MANAGES"
+            },
+            {
+                "source": "person_bob",
+                "target": "product_chatapp",
+                "relation": "WORKS_ON"
+            },
+            {
+                "source": "person_bob",
+                "target": "person_charlie",
+                "relation": "MARRIED_TO"
+            },
+            {
+                "source": "person_charlie",
+                "target": "person_bob",
+                "relation": "MARRIED_TO"
+            },
+            {
+                "source": "person_charlie",
+                "target": "organization_techhub",
+                "relation": "WORKS_AT"
+            },
+            {
+                "source": "person_charlie",
+                "target": "person_diana",
+                "relation": "SHARES_OFFICE_WITH"
+            },
+            {
+                "source": "person_diana",
+                "target": "person_charlie",
+                "relation": "SHARES_OFFICE_WITH"
+            },
+            {
+                "source": "person_diana",
+                "target": "organization_techhub",
+                "relation": "WORKS_AT"
+            }
+        ]
+    },
+    {
+        "chunk_id": 2,
+        "entities": [
+            {
+                "id": "person_alice",
+                "name": "Alice",
+                "label": "Person"
+            },
+            {
+                "id": "person_bob",
+                "name": "Bob",
+                "label": "Person"
+            },
+            {
+                "id": "person_charlie",
+                "name": "Charlie",
+                "label": "Person"
+            },
+            {
+                "id": "person_diana",
+                "name": "Diana",
+                "label": "Person"
+            },
+            {
+                "id": "organization_techassociation",
+                "name": "TechAssociation",
+                "label": "Organization"
+            },
+            {
+                "id": "group_dataclub",
+                "name": "DataClub",
+                "label": "Group"
+            }
+        ],
+        "relationships": [
+            {
+                "source": "person_alice",
+                "target": "organization_techassociation",
+                "relation": "MEMBER_OF"
+            },
+            {
+                "source": "person_bob",
+                "target": "organization_techassociation",
+                "relation": "MEMBER_OF"
+            },
+            {
+                "source": "person_charlie",
+                "target": "organization_techassociation",
+                "relation": "MEMBER_OF"
+            },
+            {
+                "source": "person_diana",
+                "target": "organization_techassociation",
+                "relation": "MEMBER_OF"
+            },
+            {
+                "source": "person_bob",
+                "target": "group_dataclub",
+                "relation": "ORGANIZES"
+            },
+            {
+                "source": "person_diana",
+                "target": "group_dataclub",
+                "relation": "ORGANIZES"
+            },
+            {
+                "source": "person_charlie",
+                "target": "group_dataclub",
+                "relation": "MEMBER_OF"
+            },
+            {
+                "source": "person_bob",
+                "target": "person_diana",
+                "relation": "CO_ORGANIZES_WITH"
+            },
+            {
+                "source": "person_diana",
+                "target": "person_bob",
+                "relation": "CO_ORGANIZES_WITH"
+            },
+            {
+                "source": "person_charlie",
+                "target": "person_diana",
+                "relation": "INTERACTS_WITH"
+            },
+            {
+                "source": "person_diana",
+                "target": "person_charlie",
+                "relation": "INTERACTS_WITH"
+            }
+        ]
+    },
+    {
+        "chunk_id": 3,
+        "entities": [
+            {
+                "id": "person_bob",
+                "name": "Bob",
+                "label": "Person"
+            },
+            {
+                "id": "person_diana",
+                "name": "Diana",
+                "label": "Person"
+            },
+            {
+                "id": "person_charlie",
+                "name": "Charlie",
+                "label": "Person"
+            },
+            {
+                "id": "person_alice",
+                "name": "Alice",
+                "label": "Person"
+            },
+            {
+                "id": "organization_techhub",
+                "name": "TechHub",
+                "label": "Organization"
+            },
+            {
+                "id": "platform_github",
+                "name": "GitHub",
+                "label": "Platform"
+            },
+            {
+                "id": "platform_behance",
+                "name": "Behance",
+                "label": "Platform"
+            },
+            {
+                "id": "platform_linkedin",
+                "name": "LinkedIn",
+                "label": "Platform"
+            },
+            {
+                "id": "group_team",
+                "name": "team",
+                "label": "Group"
+            }
+        ],
+        "relationships": [
+            {
+                "source": "person_bob",
+                "target": "person_diana",
+                "relation": "FOLLOWS"
+            },
+            {
+                "source": "person_bob",
+                "target": "platform_github",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_diana",
+                "target": "platform_github",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_diana",
+                "target": "person_charlie",
+                "relation": "FOLLOWS"
+            },
+            {
+                "source": "person_diana",
+                "target": "platform_behance",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_charlie",
+                "target": "platform_behance",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_bob",
+                "target": "platform_linkedin",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_charlie",
+                "target": "platform_linkedin",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_alice",
+                "target": "platform_linkedin",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "person_alice",
+                "target": "person_bob",
+                "relation": "VIEWS_POSTS"
+            },
+            {
+                "source": "person_alice",
+                "target": "person_charlie",
+                "relation": "VIEWS_POSTS"
+            },
+            {
+                "source": "organization_techhub",
+                "target": "platform_linkedin",
+                "relation": "USES_PLATFORM"
+            },
+            {
+                "source": "organization_techhub",
+                "target": "platform_linkedin",
+                "relation": "MAINTAINS_PROFILE_ON"
+            }
+        ]
+    }
+]

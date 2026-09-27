@@ -1,0 +1,54 @@
+Researchers train AI to read minds—by decoding brain signals into text
+Download PDF Copy
+Dr. Chinta Sidharthan
+By Dr. Chinta Sidharthan
+Reviewed by Susha Cheriyedath, M.Sc.
+Mar 4 2025
+Researchers have successfully trained AI to generate natural language directly from brain recordings, bringing us closer to seamless brain-to-text communication.
+
+Research: Generative language reconstruction from brain recordings. Image Credit: Jackie Niam / ShutterstockResearch: Generative language reconstruction from brain recordings. Image Credit: Jackie Niam / Shutterstock
+
+Imagine being able to translate thoughts into words without speaking or typing. Scientists are getting closer to making this a reality. A recent study published in the journal Communications Biology explored how brain recordings can be used to generate language. This advances our understanding of how the brain processes language, with potential applications in model training, artificial intelligence (AI)-based communication, and perhaps even in speech impairment therapies.
+
+Decoding language and thoughts
+BrainLLM was tested on three different datasets, and its ability to generate text was strongest when trained with larger neurological datasets, showing that more brain data improves AI-driven language prediction.
+
+The human brain is capable of complex language processing, but decoding thoughts directly from brain activity has long been a challenge. Previous research has attempted this by using classification models that match brain activity to predefined language options. While these methods have shown some success, they are limited in flexibility and fail to capture the full complexity of human expression.
+
+Recent advances in large language models (LLMs), such as those powering AI chatbots like ChatGPT, have revolutionized text generation by predicting likely word sequences. However, these models have not been seamlessly integrated with brain recordings. The challenge is to determine whether we can directly generate natural language from brain activity without relying on a restricted set of predefined options.
+
+About the study
+In the present study, the researchers developed a new system called BrainLLM, which integrates brain recordings with an LLM to generate natural language. The study used non-invasive functional magnetic resonance imaging (fMRI) data collected from participants while they listened to or read language stimuli.
+
+The model was trained on three public datasets containing fMRI recordings of participants exposed to various linguistic stimuli. The researchers designed a "brain adapter," a neural network that translates brain activity into a format understandable by an LLM. This adapter extracted features from brain signals and combined them with traditional text-based inputs, allowing the LLM to generate words that aligned closely with the linguistic information encoded in brain activity.
+
+The researchers first collected brain activity data while the participants processed written or spoken language. These recordings were then converted into a mathematical representation of brain activity. A specialized neural network mapped these representations onto a space compatible with the LLM's text embeddings.
+
+The model then processed these combined inputs and generated sequences of words based on both brain activity and prior text prompts. By training the system on thousands of brain scans and corresponding linguistic inputs, the researchers fine-tuned BrainLLM to better predict and generate words aligned with brain activity.
+
+Unlike earlier methods, which required selecting words from a predefined set, BrainLLM could generate continuous text without predefined constraints.
+
+The study then evaluated BrainLLM’s performance against existing models. The team tested the system on a variety of language tasks, including predicting the next word in a sequence, reconstructing entire passages, and comparing generated text with human-perceived language continuations.
+
+Major findings
+Unlike previous models that only classified brain activity into pre-set words, BrainLLM creates open-ended sentences, making it a major step toward practical brain-to-text communication.
+
+The researchers demonstrated that BrainLLM was significantly better at generating language that closely aligned with brain activity compared to traditional classification-based methods. Specifically, it produced more coherent and contextually appropriate text when processing brain recordings. The model showed the highest accuracy when trained with larger datasets, suggesting that increasing the amount of brain data could further enhance performance.
+
+One of the key breakthroughs was BrainLLM's ability to generate continuous text rather than selecting from predefined options. Unlike earlier methods that relied on classification—where the system chose from a limited set of words—BrainLLM could produce open-ended sentences based on brain input. This represented a major advancement toward real-world applications, where unrestricted communication is crucial.
+
+Furthermore, human evaluators preferred the text generated by BrainLLM over baseline models, indicating that it captured meaningful linguistic patterns. Notably, BrainLLM was particularly effective at reconstructing ‘surprising’ language—words or phrases that an LLM alone would struggle to predict. This demonstrates that brain signals enhance language modeling in unexpected ways.
+
+The system performed best when analyzing brain activity from regions known to be involved in language processing, such as Broca’s area and the auditory cortex. The highest accuracy was observed when using signals from Broca’s area, suggesting its central role in natural language reconstruction. This suggested that refining brain signal mapping could further boost accuracy and reliability.
+
+However, although the model performed well, its accuracy varied across individuals, and open-ended language reconstruction from brain recordings was not optimal. The study also discussed the limitations of fMRI, which is not a practical tool for real-time applications due to its high cost and complexity.
+
+Conclusions
+BrainLLM performed best when reconstructing text that was unexpected or difficult for standard AI models to predict, suggesting that brain signals add valuable context beyond what AI alone can infer.
+
+Overall, the study marked an important step toward brain-to-text technology, demonstrating that integrating brain recordings with large language models can enhance natural language generation. While real-world applications may still be years away, this research lays the groundwork for brain-computer interfaces that could one day help individuals with speech disabilities communicate seamlessly.
+
+The researchers believe that future research will need to explore alternative brain-imaging techniques, such as electroencephalography (EEG), which could allow for real-time decoding of language from brain activity. Additionally, they suggest integrating BrainLLM with motor-based brain-computer interfaces (BCIs), which have been used successfully for movement-related communication, to develop more robust neuroprosthetic systems. These advancements in brain signal decoding and machine learning could bring us closer to a world where thoughts can be directly translated into words.
+
+Journal reference:
+Ye, Z., Ai, Q., Liu, Y. et al. (2025). Generative language reconstruction from brain recordings. Communications Biology 8, 346. DOI: 10.1038/s42003-025-07731-7, https://www.nature.com/articles/s42003-025-07731-7

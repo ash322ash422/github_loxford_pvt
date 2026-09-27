@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+scripts/*.ipynb
+scripts/extracted_tables.xlsx
+
+# Runtime data - real deployments mount volumes over these; never bake
+# dev-machine uploads/output/logs into the image.
+data_uploads/*
+output/*
+logs/*
+!data_uploads/.gitkeep
+!output/.gitkeep
+
+.env
+.env.example
+.venv/
+*.db

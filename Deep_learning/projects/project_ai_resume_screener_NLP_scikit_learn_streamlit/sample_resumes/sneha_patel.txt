@@ -1,0 +1,28 @@
+Sneha Patel
+sneha.patel@email.com | +91-9823456789 | linkedin.com/in/snehapatel | github.com/snehapatel
+
+SUMMARY
+DevOps and Cloud Engineer with 6 years of experience in infrastructure automation, CI/CD pipelines, and cloud-native deployments. Expert in Docker, Kubernetes, Terraform, and AWS.
+
+SKILLS
+Cloud: AWS (EC2, S3, Lambda, SageMaker, EKS), Azure, GCP
+DevOps: Docker, Kubernetes, Terraform, Ansible, Jenkins, GitHub Actions, CI/CD
+Programming: Python, Bash, Go
+Monitoring: Prometheus, Grafana, ELK Stack, Datadog
+Databases: PostgreSQL, Redis, Elasticsearch, DynamoDB
+OS: Linux (Ubuntu, CentOS), Windows Server
+
+EXPERIENCE
+Senior DevOps Engineer — CloudSys Technologies (2021–Present)
+- Architected multi-region Kubernetes clusters on AWS EKS serving 50M+ requests/day
+- Automated infrastructure provisioning using Terraform and Ansible
+- Built CI/CD pipelines with GitHub Actions and Jenkins for 20+ microservices
+- Set up monitoring and alerting with Prometheus, Grafana, and PagerDuty
+
+DevOps Engineer — InfoTech Solutions (2018–2021)
+- Migrated legacy applications to Docker containers and Kubernetes
+- Configured auto-scaling policies on AWS for cost optimization (saved 40%)
+- Implemented blue-green deployment strategies for zero-downtime releases
+
+EDUCATION
+B.E. in Electronics and Communication — Gujarat University, 2018

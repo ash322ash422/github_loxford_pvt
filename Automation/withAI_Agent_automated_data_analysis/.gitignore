@@ -1,0 +1,5 @@
+.env
+output/
+.crew_state/
+__pycache__/
+.pytest_cache/

@@ -1,0 +1,31 @@
+Priya Sharma
+priya.sharma@email.com | +91-9876543210 | linkedin.com/in/priyasharma | github.com/priyasharma
+
+SUMMARY
+Machine Learning Engineer with 5 years of experience building production NLP and deep learning systems. Passionate about deploying scalable AI models on cloud infrastructure.
+
+SKILLS
+Python, TensorFlow, PyTorch, Keras, Scikit-learn, Huggingface, BERT, Transformers, NLP, Deep Learning
+SQL, PostgreSQL, MongoDB, Redis
+AWS, Docker, Kubernetes, Git, CI/CD
+Pandas, NumPy, Matplotlib, Plotly
+
+EXPERIENCE
+Senior ML Engineer — TechCorp AI (2021–Present)
+- Built a BERT-based document classification pipeline processing 1M+ docs/day
+- Designed and deployed NLP models for sentiment analysis, named entity recognition
+- Led team of 4 engineers building deep learning recommendation systems
+- Used PyTorch and Huggingface Transformers for fine-tuning LLMs
+
+ML Engineer — DataSoft Solutions (2019–2021)
+- Developed machine learning models for customer churn prediction (XGBoost, LightGBM)
+- Built ETL pipelines using Apache Spark and Airflow
+- Deployed models on AWS SageMaker with Docker containers
+
+EDUCATION
+M.Tech in Computer Science (AI Specialization) — IIT Delhi, 2019
+B.Tech in Computer Science — Delhi University, 2017
+
+CERTIFICATIONS
+- AWS Certified Machine Learning Specialty
+- Deep Learning Specialization — Coursera (Andrew Ng)

@@ -1,0 +1,74 @@
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex> & c:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex\.venv\Scripts\python.exe c:/Users/Ash/Desktop/educational/play_langchain_langgraph_llamaindex/1_CrewAI_Crash_Course/step5_WIP_yaml_ORIGINAL.py
+SERPER_API_KEY 359131687b89c1154a7bf151c30a3c7f0f520c9f
+╭──────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────╮
+│                                                                                                          │
+│  Agent: Research Specialist                                                                              │
+│                                                                                                          │
+│  Task: Find 3-5 interesting and recent facts about Major contribution of Carl Friedrich Gauss as of      │
+│  year 2025.                                                                                              │
+│                                                                                                          │
+│                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Tool search_the_internet_with_serper executed with result: {'searchParameters': {'q': 'Carl Friedrich Gauss major contributions number theory Disquisitiones Arithmeticae Britannica Gaussian distribution least squares Theorema Egregium intrinsic curvature sour...
+Tool search_the_internet_with_serper executed with result: {'searchParameters': {'q': 'Theorema Egregium intrinsic curvature Gauss 1827 Britannica', 'type': 'search', 'num': 10, 'engine': 'google'}, 'organic': [{'title': 'Theorema Egregium', 'link': 'https://...
+[Finalize] todos_count=0, todos_with_results=0
+╭───────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────╮
+│                                                                                                          │
+│  Agent: Research Specialist                                                                              │
+│                                                                                                          │
+│  Final Answer:                                                                                           │
+│  - Foundation of modern number theory: In the Disquisitiones Arithmeticae (1801) Gauss laid the          │
+│  groundwork for the modern theory of integers, introducing systematic use of congruences, quadratic      │
+│  residues, Gaussian integers, and laying the groundwork that would lead to later results like the law    │
+│  of quadratic reciprocity and powerful techniques in algebraic number theory.                            │
+│                                                                                                          │
+│  - Theorema Egregium (intrinsic curvature): In 1827 Gauss proved that Gaussian curvature is an           │
+│  intrinsic property of a surface, determined entirely by measurements on the surface itself, without     │
+│  reference to its embedding in space. This theorem revolutionized differential geometry and the study    │
+│  of curved surfaces.                                                                                     │
+│                                                                                                          │
+│  - Least-squares method and orbital astronomy: Gauss developed and popularized the method of least       │
+│  squares for estimating unknown quantities from imperfect data. He used this approach to determine the   │
+│  orbit of the asteroid Ceres and to predict its location, enabling its subsequent recovery—a milestone   │
+│  in celestial mechanics.                                                                                 │
+│                                                                                                          │
+│  - Gaussian elimination (a cornerstone of linear algebra): Gauss refined and popularized the             │
+│  elimination method for solving systems of linear equations, an algorithm now universally taught as      │
+│  Gaussian elimination and foundational to computational linear algebra.                                  │
+│                                                                                                          │
+│  - Normal distribution and law of errors: Gauss formulated and promoted the law of errors, which         │
+│  underpins the normal (Gaussian) distribution. This work established the probabilistic basis for         │
+│  measurement errors in science and gave rise to the widespread use of the Gaussian distribution in       │
+│  statistics and data analysis.                                                                           │
+│                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────╮
+│                                                                                                          │
+│  Agent: Creative Writer                                                                                  │
+│                                                                                                          │
+│  Task: Write a 100-word blog post summary about Major contribution of Carl Friedrich Gauss using the     │
+│  facts from the research.                                                                                │
+│                                                                                                          │
+│                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+[Finalize] todos_count=0, todos_with_results=0
+╭───────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────╮
+│                                                                                                          │
+│  Agent: Creative Writer                                                                                  │
+│                                                                                                          │
+│  Final Answer:                                                                                           │
+│  Carl Friedrich Gauss reshaped mathematics across number theory, geometry, and statistics. In the        │
+│  Disquisitiones Arithmeticae (1801) he laid the groundwork for modern integer theory, introducing        │
+│  congruences, quadratic residues, Gaussian integers, and the seeds of quadratic reciprocity and          │
+│  algebraic number theory. In differential geometry, his Theorema Egregium showed that Gaussian           │
+│  curvature is intrinsic to a surface, independent of its embedding. He popularized the least-squares     │
+│  method, using it to compute the asteroid Ceres’s orbit and predict its position. He refined Gaussian    │
+│  elimination for solving linear systems and formulated the normal distribution’s law of errors,          │
+│  anchoring statistical reasoning and data analysis. For science.                                         │
+│                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+(.venv) PS C:\Users\Ash\Desktop\educational\play_langchain_langgraph_llamaindex> 

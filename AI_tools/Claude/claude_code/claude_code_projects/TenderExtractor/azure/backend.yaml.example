@@ -1,0 +1,113 @@
+# Template for azure/backend.yaml (gitignored, holds real values - see
+# .env for what each of these corresponds to). Copy this file to
+# azure/backend.yaml and fill in the placeholders, or let Claude do it
+# from your local .env.
+#
+# Deploy:
+#   az containerapp create --resource-group tender --name tenderextractor-backend --environment tenderextractor-env --yaml azure/backend.yaml
+# Update after a code change (rebuild/push the image first):
+#   az containerapp update --resource-group tender --name tenderextractor-backend --image tenderregistry123.azurecr.io/tenderextractor-backend:latest
+
+properties:
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8000
+      transport: auto
+      allowInsecure: false
+    secrets:
+      - name: azure-openai-key
+        value: "<AZURE_OPENAI_KEY>"
+      - name: azure-docintel-key
+        value: "<AZURE_DOCINTEL_KEY>"
+      - name: azure-storage-connection-string
+        value: "<AZURE_STORAGE_CONNECTION_STRING>"
+      - name: azure-email-communications-string
+        value: "<AZURE_EMAIL_COMMUNICATIONS_STRING>"
+      - name: auth-password
+        value: "<AUTH_PASSWORD>"
+      - name: jwt-secret-key
+        value: "<JWT_SECRET_KEY>"
+  template:
+    containers:
+      - image: <ACR_NAME>.azurecr.io/tenderextractor-backend:latest
+        name: backend
+        env:
+          - name: ENV
+            value: "production"
+          - name: MISC_PAGES_PER_CHUNK
+            value: "30"
+          - name: MAX_UPLOAD_SIZE_MB
+            value: "10"
+          - name: INDEX_CHECK_PAGES
+            value: "3"
+          - name: MAX_PAGES_PER_MONTH
+            value: "10000"
+          - name: UPLOAD_RETENTION_DAYS
+            value: "7"
+          - name: OUTPUT_LOGS_RETENTION_DAYS
+            value: "30"
+          - name: CLEANUP_MIN_INTERVAL_DAYS
+            value: "1"
+          - name: NOTIFY_ON_COMPLETE
+            value: "false"
+          - name: NOTIFY_RECIPIENTS
+            value: "<comma-separated recipients>"
+          - name: CORS_ALLOWED_ORIGINS
+            value: "http://localhost:3000,http://localhost:8501"
+          - name: AZURE_STORAGE_CONNECTION_STRING
+            secretRef: azure-storage-connection-string
+          - name: AZURE_STORAGE_CONTAINER_OUTPUT
+            value: "<AZURE_STORAGE_CONTAINER_OUTPUT>"
+          - name: URL_EXPIRY_HOURS
+            value: "24"
+          - name: AZURE_DOCINTEL_ENDPOINT
+            value: "<AZURE_DOCINTEL_ENDPOINT>"
+          - name: AZURE_DOCINTEL_KEY
+            secretRef: azure-docintel-key
+          - name: AZURE_DOCINTEL_MODEL
+            value: "prebuilt-layout"
+          - name: AZURE_OPENAI_ENDPOINT
+            value: "<AZURE_OPENAI_ENDPOINT>"
+          - name: AZURE_OPENAI_KEY
+            secretRef: azure-openai-key
+          - name: AZURE_OPENAI_DEPLOYMENT
+            value: "<AZURE_OPENAI_DEPLOYMENT>"
+          - name: AZURE_EMAIL_COMMUNICATIONS_STRING
+            secretRef: azure-email-communications-string
+          - name: AZURE_EMAIL_SENDER
+            value: "<AZURE_EMAIL_SENDER>"
+          - name: AUTH_USERNAME
+            value: "admin"
+          - name: AUTH_PASSWORD
+            secretRef: auth-password
+          - name: JWT_SECRET_KEY
+            secretRef: jwt-secret-key
+          - name: ACCESS_TOKEN_EXPIRE_MINUTES
+            value: "60"
+        volumeMounts:
+          - volumeName: data-uploads-vol
+            mountPath: /app/data_uploads
+          - volumeName: output-vol
+            mountPath: /app/output
+          - volumeName: logs-vol
+            mountPath: /app/logs
+        resources:
+          cpu: 0.5
+          memory: 1Gi
+    volumes:
+      - name: data-uploads-vol
+        storageType: AzureFile
+        storageName: data-uploads-storage
+      - name: output-vol
+        storageType: AzureFile
+        storageName: output-storage
+      - name: logs-vol
+        storageType: AzureFile
+        storageName: logs-storage
+    scale:
+      # minReplicas: 1 keeps the container always warm so config.JOBS_DB
+      # (local disk, not one of the Azure Files volumes above) survives
+      # normal idle cycles - it only resets on an actual redeploy.
+      minReplicas: 1
+      maxReplicas: 1

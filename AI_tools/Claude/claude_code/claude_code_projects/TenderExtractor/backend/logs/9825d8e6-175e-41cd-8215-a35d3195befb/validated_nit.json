@@ -1,0 +1,31 @@
+{
+  "NIT Number": {
+    "original": "101/EE(E)/DED-101/2026-27"
+  },
+  "Name Of Work Location": {
+    "original": "MOEI & fans in C/S Bldg. at South Block, New Delhi. (SH: Replacement of existing damaged fire pipe line and accessories and servicing of Fire Pump.)"
+  },
+  "Estimated Cost": {
+    "original": "Rs. 17,73,661/-",
+    "normalized": 1773661.0,
+    "valid": true
+  },
+  "Earnest Money": {
+    "original": "Rs. 35,473/-",
+    "normalized": 35473.0,
+    "valid": true
+  },
+  "Completion Period": {
+    "original": "01 Month"
+  },
+  "Submission Deadline": {
+    "original": "Upto 16:20 on 14.08.2026",
+    "normalized": "2026-08-14",
+    "valid": true
+  },
+  "Bid Opening Date": {
+    "original": "At 16:30 on 14.08.2026",
+    "normalized": "2026-08-14",
+    "valid": true
+  }
+}

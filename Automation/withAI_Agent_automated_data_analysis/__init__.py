@@ -1,0 +1,2 @@
+"""Automated data analysis pipeline."""
+

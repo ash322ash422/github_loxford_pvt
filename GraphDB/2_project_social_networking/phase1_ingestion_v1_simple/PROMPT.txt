@@ -1,0 +1,52 @@
+PROMPT: 
+
+You are an expert python code writer and graphDB and knowledge base expert.  You are given following text:
+
+"""
+TechHub is a major software company managed by its CEO, Alice. The company developed a popular messaging application called ChatApp. Alice closely manages Bob, who works as the Lead Developer for ChatApp. Bob is married to Charlie, a Product Designer who also works at TechHub. Charlie shares an office with Diana, a Data Scientist at the company.
+
+Beyond work, this group forms a tight social circle. Alice, Bob, and Charlie are all members of a professional organization called TechAssociation. Diana recently joined this same organization. Socially, Bob and Diana are co-organizers of a local community group called DataClub. Charlie is also a member of DataClub, where she frequently interacts with Diana.
+
+The team heavily utilizes online platforms. Bob regularly follows Diana on GitHub to review her open-source code. Meanwhile, Diana follows Charlie on Behance to look at her design portfolios. Both Bob and Charlie are active users of LinkedIn for professional networking. Alice also uses LinkedIn, where she frequently views posts by Bob and Charlie. Additionally, TechHub maintains an official corporate profile on LinkedIn to post company updates.
+"""
+
+I want to perform following 4 steps on above data.
+1) Chunking - Semantic type
+2) LLM Extraction - Schema contrained extraction  of entity and relation
+3) JSON validation - ensure strict schema and format compliance
+4) Graph creation - ingestion of above data into neo4j
+
+I think that following nodes should be extracted by the code/or above stepos:
+TechHub (Organization), 
+Alice (Person),
+ChatApp (Product),
+Bob (Person),
+Charlie (Person),
+Diana (Person),
+TechAssociation (Organization),
+DataClub (Group),
+GitHub (Platform),
+LinkedIn (Platform)
+
+Likewise the relation  should be Relationships / Edges
+Alice → MANAGED_BY → TechHub
+TechHub → DEVELOPED → ChatApp
+Alice → MANAGES → Bob
+Bob → WORKS_ON → ChatApp
+Bob → MARRIED_TO → Charlie
+Charlie → WORKS_AT → TechHub
+Charlie → SHARES_OFFICE_WITH → Diana
+and so on
+
+
+I have following package:
+langchain version: 1.3.6
+langchain-community version: 0.4.2
+langchain-openai version: 1.2.2
+langchain-oracledb version: 1.5.0
+langchain-text-splitters version: 1.1.2
+llama-index version: 0.14.21
+langgraph version: 1.2.4
+pypdf version: 6.10.2
+
+Lets work on this step by step. Start with step1

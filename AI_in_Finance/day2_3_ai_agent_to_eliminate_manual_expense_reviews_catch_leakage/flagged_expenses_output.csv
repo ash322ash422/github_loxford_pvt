@@ -1,0 +1,22 @@
+expense_id,employee,amount,rule_triggered,reason
+EXP-1005,P. Verma,49500,Missing receipt above policy limit,"No receipt on file for Rs.49,500 (policy requires receipt above Rs.5,000)"
+EXP-1006,P. Verma,49800,Missing receipt above policy limit,"No receipt on file for Rs.49,800 (policy requires receipt above Rs.5,000)"
+EXP-1012,S. Bhatt,49000,Missing receipt above policy limit,"No receipt on file for Rs.49,000 (policy requires receipt above Rs.5,000)"
+EXP-1013,A. Iyer,7800,Missing receipt above policy limit,"No receipt on file for Rs.7,800 (policy requires receipt above Rs.5,000)"
+EXP-1015,P. Verma,49900,Missing receipt above policy limit,"No receipt on file for Rs.49,900 (policy requires receipt above Rs.5,000)"
+EXP-1019,V. Kulkarni,49700,Missing receipt above policy limit,"No receipt on file for Rs.49,700 (policy requires receipt above Rs.5,000)"
+EXP-1020,A. Iyer,5200,Missing receipt above policy limit,"No receipt on file for Rs.5,200 (policy requires receipt above Rs.5,000)"
+EXP-1005,P. Verma,49500,Threshold shaving (amount just under sign-off limit),"Amount Rs.49,500 sits just under the Rs.50,000 sign-off threshold - classic threshold-shaving signature"
+EXP-1006,P. Verma,49800,Threshold shaving (amount just under sign-off limit),"Amount Rs.49,800 sits just under the Rs.50,000 sign-off threshold - classic threshold-shaving signature"
+EXP-1015,P. Verma,49900,Threshold shaving (amount just under sign-off limit),"Amount Rs.49,900 sits just under the Rs.50,000 sign-off threshold - classic threshold-shaving signature"
+EXP-1019,V. Kulkarni,49700,Threshold shaving (amount just under sign-off limit),"Amount Rs.49,700 sits just under the Rs.50,000 sign-off threshold - classic threshold-shaving signature"
+EXP-1005,P. Verma,49500,Self-approval / segregation-of-duties violation,P. Verma approved their own expense - segregation-of-duties violation
+EXP-1006,P. Verma,49800,Self-approval / segregation-of-duties violation,P. Verma approved their own expense - segregation-of-duties violation
+EXP-1011,S. Bhatt,275000,Self-approval / segregation-of-duties violation,S. Bhatt approved their own expense - segregation-of-duties violation
+EXP-1012,S. Bhatt,49000,Self-approval / segregation-of-duties violation,S. Bhatt approved their own expense - segregation-of-duties violation
+EXP-1015,P. Verma,49900,Self-approval / segregation-of-duties violation,P. Verma approved their own expense - segregation-of-duties violation
+EXP-1017,S. Bhatt,180000,Self-approval / segregation-of-duties violation,S. Bhatt approved their own expense - segregation-of-duties violation
+EXP-1019,V. Kulkarni,49700,Self-approval / segregation-of-duties violation,V. Kulkarni approved their own expense - segregation-of-duties violation
+EXP-1006,P. Verma,49800,Spend structuring across linked transactions,"P. Verma filed 2 transactions with Reliable Traders Pvt Ltd 0 day(s) apart totalling Rs.99,300 - individually under threshold, combined over it (possible invoice/spend splitting)"
+EXP-1015,P. Verma,49900,Shared-vendor / shell-vendor pattern across employees,"Vendor 'New Horizon Supplies' billed by 2 different employees (P. Verma, V. Kulkarni), all near-threshold and missing receipts - recommend vendor master file review for shell-vendor risk"
+EXP-1018,N. Das,14200,Reimbursable spend on personal card (control bypass),"Rs.14,200 routed through a personal card instead of the corporate card - bypasses card-level controls and MCC restrictions"

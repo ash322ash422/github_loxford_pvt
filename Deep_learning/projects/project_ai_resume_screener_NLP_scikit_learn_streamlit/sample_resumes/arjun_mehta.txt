@@ -1,0 +1,23 @@
+Arjun Mehta
+arjun.mehta@gmail.com | +91-9765432100
+
+OBJECTIVE
+Recent Computer Science graduate eager to start a career in software development. Strong foundation in programming and algorithms.
+
+SKILLS
+C++, Java, Python (beginner), HTML, CSS
+Data Structures and Algorithms
+Basic SQL
+
+EDUCATION
+B.Tech in Computer Science — GGSIPU Delhi, 2024
+
+PROJECTS
+- Library Management System: Java-based desktop app with MySQL database
+- Personal Portfolio Website: HTML, CSS, JavaScript
+- Sorting Visualizer: C++ implementation of sorting algorithms
+
+INTERNSHIP
+Software Intern — Local IT Company (2023, 2 months)
+- Assisted in debugging Java code
+- Wrote SQL queries for report generation

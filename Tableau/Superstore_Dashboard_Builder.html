@@ -1,0 +1,1289 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Superstore Sales Dashboard — Step-by-Step Build</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Lora:ital,wght@0,400;0,600;1,400&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:        #0e0f14;
+  --bg2:       #14161e;
+  --bg3:       #1c1f2b;
+  --border:    rgba(255,255,255,0.07);
+  --text:      #e8eaf0;
+  --muted:     #7c8399;
+  --accent:    #00d4a8;
+  --accent2:   #f5a623;
+  --accent3:   #7b6ef6;
+  --red:       #f25c54;
+  --blue:      #4f9cf9;
+  --green:     #00d4a8;
+  --card:      rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;line-height:1.6}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent3);border-radius:3px}
+
+/* ── TOP PROGRESS ── */
+#top-bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:999;background:var(--bg3)}
+#top-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .15s linear;border-radius:0 2px 2px 0}
+
+/* ══ LAYOUT ══ */
+.shell{display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+
+/* ── SIDEBAR ── */
+.sidebar{
+  background:var(--bg2);
+  border-right:1px solid var(--border);
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  display:flex;flex-direction:column;
+  padding-bottom:32px;
+}
+.sidebar-head{
+  padding:28px 24px 20px;
+  border-bottom:1px solid var(--border);
+}
+.sidebar-head .logo{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:700}
+.sidebar-head h1{font-size:17px;font-weight:800;line-height:1.2;color:var(--text)}
+.sidebar-head .sub{font-size:12px;color:var(--muted);margin-top:4px}
+
+.step-nav{padding:16px 0}
+.step-group-label{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:12px 24px 6px;font-weight:600}
+.step-link{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 24px;
+  font-size:13px;font-weight:600;
+  color:var(--muted);
+  cursor:pointer;
+  transition:all .2s;
+  border-left:3px solid transparent;
+  text-decoration:none;
+}
+.step-link:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.step-link.active{color:var(--accent);border-left-color:var(--accent);background:rgba(0,212,168,.05)}
+.step-link.done{color:rgba(0,212,168,.6)}
+.step-num{
+  width:24px;height:24px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-family:'IBM Plex Mono',monospace;
+  flex-shrink:0;transition:all .2s;
+}
+.step-link.active .step-num{background:var(--accent);color:#000}
+.step-link.done .step-num{background:rgba(0,212,168,.2);color:var(--accent)}
+.step-check{margin-left:auto;font-size:12px;opacity:0;transition:opacity .2s}
+.step-link.done .step-check{opacity:1}
+
+.sidebar-footer{
+  margin-top:auto;padding:20px 24px;
+  border-top:1px solid var(--border);
+}
+.prog-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:8px}
+.prog-track{background:rgba(255,255,255,.06);border-radius:4px;height:5px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:4px;transition:width .5s ease}
+.dataset-chip{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(0,212,168,.08);
+  border:1px solid rgba(0,212,168,.15);
+  border-radius:10px;
+  padding:10px 14px;
+  margin-top:12px;
+  font-size:12px;color:var(--accent);
+}
+.dataset-chip .dot{width:7px;height:7px;background:var(--accent);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ── MAIN AREA ── */
+.main{min-height:100vh;overflow:hidden}
+
+/* ── STEP SECTION ── */
+.step-section{
+  padding:56px 56px 72px;
+  border-bottom:1px solid var(--border);
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s ease,transform .5s ease;
+}
+.step-section.visible{opacity:1;transform:none}
+
+/* ── HERO ── */
+.hero-section{
+  background:var(--bg2);
+  padding:72px 56px;
+  position:relative;overflow:hidden;
+}
+.hero-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,212,168,.1),transparent),
+             radial-gradient(ellipse 40% 60% at 20% 80%,rgba(123,110,246,.08),transparent);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,168,.1);border:1px solid rgba(0,212,168,.25);
+  border-radius:100px;padding:5px 14px;
+  font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:20px;
+}
+.hero-section h1{font-size:clamp(36px,5vw,60px);font-weight:800;line-height:1.05;position:relative;z-index:1;margin-bottom:14px}
+.hero-section h1 em{font-style:normal;color:var(--accent)}
+.hero-section p{font-family:'Lora',serif;font-size:16px;color:var(--muted);max-width:520px;line-height:1.75;position:relative;z-index:1;margin-bottom:32px}
+.hero-meta{display:flex;gap:24px;flex-wrap:wrap;position:relative;z-index:1}
+.hero-chip{
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  border-radius:10px;padding:10px 18px;
+  font-size:13px;font-weight:600;
+  display:flex;align-items:center;gap:8px;
+}
+
+/* ── TYPOGRAPHY ── */
+.step-kicker{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block}
+h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;line-height:1.1;margin-bottom:8px}
+h3{font-size:20px;font-weight:700;margin-bottom:10px}
+h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+p{font-family:'Lora',serif;font-size:15px;color:rgba(232,234,240,.7);line-height:1.75;margin-bottom:14px}
+p:last-child{margin-bottom:0}
+
+/* ── CALLOUTS ── */
+.callout{border-radius:12px;padding:16px 20px;margin:20px 0;display:flex;gap:14px;font-family:'Lora',serif;font-size:14px}
+.callout-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.callout-body h4{font-size:13px;text-transform:none;letter-spacing:0;margin-bottom:3px;color:var(--text)}
+.callout-body p{font-size:13px;margin:0;line-height:1.6}
+.callout.info{background:rgba(79,156,249,.08);border:1px solid rgba(79,156,249,.2)}
+.callout.tip{background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.2)}
+.callout.success{background:rgba(0,212,168,.08);border:1px solid rgba(0,212,168,.2)}
+.callout.warn{background:rgba(242,92,84,.08);border:1px solid rgba(242,92,84,.2)}
+
+/* ── CODE ── */
+.code-block{background:#0a0b10;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;margin:18px 0}
+.code-header{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.06)}
+.code-lang{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.copy-btn{font-size:11px;color:var(--muted);background:none;border:none;font-family:'Syne',sans-serif;cursor:pointer;transition:color .2s}
+.copy-btn:hover{color:var(--accent)}
+.code-body{padding:18px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.8;color:#c9d1e0;overflow-x:auto;white-space:pre}
+.kw{color:#c792ea}.fn{color:#82aaff}.str{color:#c3e88d}.cm{color:#546e7a;font-style:italic}.num{color:#f78c6c}.op{color:var(--accent)}
+
+/* ── DATA TABLE ── */
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);margin:20px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:rgba(255,255,255,.05)}
+th{padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+td{padding:10px 16px;color:rgba(232,234,240,.8);font-family:'IBM Plex Mono',monospace;font-size:12px}
+td.highlight{color:var(--accent);font-weight:600}
+td.neg{color:var(--red)}
+td.label{font-family:'Syne',sans-serif;font-weight:600;font-size:13px;color:var(--text)}
+.badge{display:inline-block;padding:2px 9px;border-radius:100px;font-size:10px;font-weight:700;font-family:'Syne',sans-serif}
+.badge.a{background:rgba(0,212,168,.15);color:var(--accent)}
+.badge.b{background:rgba(245,166,35,.15);color:var(--accent2)}
+.badge.c{background:rgba(123,110,246,.15);color:var(--accent3)}
+.badge.d{background:rgba(242,92,84,.15);color:var(--red)}
+
+/* ── STEP GUIDE ── */
+.step-guide{list-style:none;counter-reset:guide;margin:24px 0}
+.step-guide li{counter-increment:guide;display:flex;gap:18px;margin-bottom:24px;position:relative}
+.step-guide li::before{
+  content:counter(guide,'0'counter(guide));
+  flex-shrink:0;width:38px;height:38px;
+  background:var(--bg3);border:1px solid var(--border);
+  color:var(--accent);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;font-family:'IBM Plex Mono',monospace;
+  margin-top:2px;
+}
+.step-guide li:not(:last-child)::after{
+  content:'';position:absolute;left:18px;top:42px;bottom:-4px;
+  width:2px;background:var(--border);
+}
+.guide-body h4{font-size:14px;text-transform:none;letter-spacing:0;font-weight:700;color:var(--text);margin-bottom:4px}
+.guide-body p{font-size:13px;margin:0;line-height:1.6}
+
+/* ── TABLEAU MENU MOCK ── */
+.tableau-ui{
+  background:#1a1d2e;border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;overflow:hidden;margin:24px 0;
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+.tui-titlebar{
+  background:#12141f;border-bottom:1px solid rgba(255,255,255,.06);
+  padding:10px 16px;display:flex;align-items:center;gap:10px;
+}
+.tui-dots{display:flex;gap:6px}
+.tui-dot{width:10px;height:10px;border-radius:50%}
+.tui-menu{display:flex;gap:0;margin-left:16px}
+.tui-menu-item{padding:4px 12px;font-size:11px;color:rgba(255,255,255,.5);cursor:default;border-radius:4px}
+.tui-menu-item:first-child{color:#fff;background:rgba(255,255,255,.08)}
+.tui-body{display:grid;grid-template-columns:180px 1fr;min-height:260px}
+.tui-pane{border-right:1px solid rgba(255,255,255,.06);padding:14px}
+.tui-pane-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px}
+.tui-field{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:6px;font-size:11px;cursor:default;transition:background .15s;font-family:'IBM Plex Mono',monospace}
+.tui-field:hover{background:rgba(255,255,255,.06)}
+.tui-field .pill{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.tui-field .pill.dim{background:#4f9cf9}
+.tui-field .pill.msr{background:#00d4a8}
+.tui-canvas{background:#0e1018;position:relative;display:flex;align-items:center;justify-content:center}
+.drag-hint{text-align:center;color:rgba(255,255,255,.15);font-size:13px}
+.drag-hint .big{font-size:32px;margin-bottom:8px}
+.shelf-bar{background:#0a0c14;border-bottom:1px solid rgba(255,255,255,.06);padding:6px 12px;display:flex;gap:8px;align-items:center}
+.shelf-label{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.shelf-pill{background:rgba(0,212,168,.12);border:1px solid rgba(0,212,168,.25);border-radius:6px;padding:3px 10px;font-size:11px;color:var(--accent);font-family:'IBM Plex Mono',monospace}
+.shelf-pill.rows{background:rgba(79,156,249,.12);border-color:rgba(79,156,249,.25);color:var(--blue)}
+
+/* ── CHART CARD ── */
+.chart-card{background:var(--bg3);border:1px solid var(--card-border);border-radius:16px;padding:24px;margin:20px 0;transition:border-color .2s}
+.chart-card:hover{border-color:rgba(255,255,255,.14)}
+.chart-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;gap:12px;flex-wrap:wrap}
+.chart-title-block h3{font-size:15px;margin-bottom:3px;font-weight:700}
+.chart-title-block .sub{font-size:12px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.chart-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+.chart-tag.bar{background:rgba(79,156,249,.15);color:var(--blue)}
+.chart-tag.line{background:rgba(0,212,168,.15);color:var(--accent)}
+.chart-tag.pie{background:rgba(245,166,35,.15);color:var(--accent2)}
+.chart-tag.scatter{background:rgba(123,110,246,.15);color:var(--accent3)}
+.chart-tag.map{background:rgba(242,92,84,.15);color:var(--red)}
+.chart-area{position:relative;height:260px}
+
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0}
+@media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+.kpi-card{background:var(--bg3);border:1px solid var(--card-border);border-radius:14px;padding:20px 22px;transition:transform .2s,border-color .2s}
+.kpi-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.14)}
+.kpi-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.kpi-value{font-size:30px;font-weight:800;line-height:1;margin-bottom:6px}
+.kpi-change{font-size:12px;font-family:'IBM Plex Mono',monospace}
+.kpi-change.up{color:var(--accent)}
+.kpi-change.down{color:var(--red)}
+.kpi-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:14px;overflow:hidden}
+.kpi-bar-fill{height:100%;border-radius:2px;transition:width 1.2s cubic-bezier(.23,1,.32,1)}
+
+/* ── TWO COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;margin:24px 0}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+
+/* ── COMPLETE DASHBOARD ── */
+.dashboard-section{
+  background:var(--bg2);
+  border-top:2px solid var(--accent);
+}
+.dashboard-wrap{padding:48px 56px}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto auto;gap:16px;margin-top:28px}
+.dash-card{background:var(--bg3);border:1px solid var(--card-border);border-radius:14px;padding:20px}
+.dash-card.span2{grid-column:span 2}
+.dash-card.span3{grid-column:span 3}
+.dash-card.tall{grid-row:span 2}
+.dash-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.dash-title span{font-size:10px;padding:3px 8px;border-radius:5px;background:rgba(255,255,255,.05)}
+.dash-mini-chart{height:180px;position:relative}
+.dash-mini-tall{height:340px;position:relative}
+
+/* ── FILTER BAR ── */
+.filter-bar{
+  display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:12px;padding:14px 18px;margin-bottom:24px;
+}
+.filter-bar label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.filter-select{
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  border-radius:8px;padding:6px 12px;
+  font-size:12px;font-family:'Syne',sans-serif;color:var(--text);
+  cursor:pointer;transition:border-color .2s;
+}
+.filter-select:focus{outline:none;border-color:var(--accent)}
+.filter-btn{
+  background:var(--accent);color:#000;border:none;
+  border-radius:8px;padding:7px 16px;
+  font-size:12px;font-weight:700;font-family:'Syne',sans-serif;
+  cursor:pointer;transition:opacity .2s;margin-left:auto;
+}
+.filter-btn:hover{opacity:.85}
+
+/* ── MAP VIZ ── */
+.map-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:8px 0}
+.map-state{border-radius:6px;padding:8px 10px;font-size:11px;font-family:'IBM Plex Mono',monospace;transition:transform .2s}
+.map-state:hover{transform:scale(1.05);z-index:2}
+.map-label{font-size:9px;color:rgba(255,255,255,.5);margin-bottom:2px}
+.map-val{font-size:13px;font-weight:700}
+
+/* ── INSIGHT BOX ── */
+.insight-box{
+  background:linear-gradient(135deg,rgba(0,212,168,.08),rgba(123,110,246,.06));
+  border:1px solid rgba(0,212,168,.15);
+  border-radius:16px;padding:28px;margin:24px 0;
+}
+.insight-box h3{color:var(--accent);font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.insight-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.insight-list li{display:flex;gap:10px;font-size:14px;font-family:'Lora',serif;color:rgba(232,234,240,.75)}
+.insight-list li::before{content:'→';color:var(--accent);font-family:'Syne',sans-serif;font-weight:700;flex-shrink:0}
+
+/* ── DOWNLOAD STRIP ── */
+.dl-strip{background:linear-gradient(135deg,#0a3d2e,#0d1a3a);padding:36px 56px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(0,212,168,.15)}
+.dl-strip h3{font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
+.dl-strip p{font-size:14px;color:rgba(255,255,255,.5);margin:0;font-family:'Lora',serif}
+.btn-dl{background:var(--accent);color:#000;border:none;border-radius:10px;padding:14px 30px;font-size:14px;font-weight:700;font-family:'Syne',sans-serif;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-dl:hover{background:#00f0c0;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,168,.3)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);text-align:center;padding:28px;font-size:12px;color:var(--muted);font-family:'Lora',serif}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .step-section,.hero-section,.dashboard-wrap,.dl-strip{padding-left:24px;padding-right:24px}
+  .dash-grid{grid-template-columns:1fr 1fr}
+  .dash-card.span3{grid-column:span 2}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .dash-grid{grid-template-columns:1fr}
+  .dash-card.span2,.dash-card.span3{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+<div id="top-bar"><div id="top-fill" style="width: 100%;"></div></div>
+
+<!-- ════════════════════════════════════════
+     SHELL
+════════════════════════════════════════ -->
+<div class="shell">
+
+<!-- ══ SIDEBAR ══ -->
+<nav class="sidebar">
+  <div class="sidebar-head">
+    <div class="logo">The IoT Academy</div>
+    <h1>Superstore Dashboard Builder</h1>
+    <div class="sub">Step-by-step Tableau guide</div>
+  </div>
+
+  <div class="step-nav">
+    <div class="step-group-label">Getting Started</div>
+    <a class="step-link" href="#step-intro" onclick="nav(this)"><span class="step-num">00</span>Overview<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-dataset" onclick="nav(this)"><span class="step-num">01</span>The Dataset<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-connect" onclick="nav(this)"><span class="step-num">02</span>Connect in Tableau<span class="step-check">✓</span></a>
+
+    <div class="step-group-label">Build the Charts</div>
+    <a class="step-link" href="#step-kpi" onclick="nav(this)"><span class="step-num">03</span>KPI Cards<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-sales-trend" onclick="nav(this)"><span class="step-num">04</span>Sales Trend (Line)<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-region-bar" onclick="nav(this)"><span class="step-num">05</span>Sales by Region (Bar)<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-category" onclick="nav(this)"><span class="step-num">06</span>Category Breakdown<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-scatter" onclick="nav(this)"><span class="step-num">07</span>Profit vs Discount<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-map" onclick="nav(this)"><span class="step-num">08</span>State-Level Map<span class="step-check">✓</span></a>
+
+    <div class="step-group-label">Assemble</div>
+    <a class="step-link" href="#step-assemble" onclick="nav(this)"><span class="step-num">09</span>Build the Dashboard<span class="step-check">✓</span></a>
+    <a class="step-link" href="#step-actions" onclick="nav(this)"><span class="step-num">10</span>Add Actions &amp; Filters<span class="step-check">✓</span></a>
+    <a class="step-link active" href="#step-final" onclick="nav(this)"><span class="step-num">11</span>Final Dashboard<span class="step-check">✓</span></a>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="prog-label"><span id="done-label">0 of 12 complete</span><span id="done-pct">0%</span></div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    <div class="dataset-chip"><span class="dot"></span>Superstore.xls — 9,994 rows</div>
+  </div>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<main class="main">
+
+<!-- ── HERO ── -->
+<div class="hero-section" id="step-intro" style="opacity: 1;">
+  <div class="hero-badge"><span class="dot"></span>Interactive Build Guide</div>
+  <h1>Build a <em>Superstore</em><br>Sales Dashboard</h1>
+  <p>A complete, hands-on walkthrough — real data, real charts, real Tableau techniques. Follow every step and you'll publish a professional BI dashboard in under 60 minutes.</p>
+  <div class="hero-meta">
+    <div class="hero-chip">📦 Superstore Dataset</div>
+    <div class="hero-chip">📊 6 Chart Types</div>
+    <div class="hero-chip">🎛️ Interactive Filters</div>
+    <div class="hero-chip">⏱️ ~60 Minutes</div>
+  </div>
+</div>
+
+<!-- ── STEP 01: DATASET ── -->
+<div class="step-section visible" id="step-dataset">
+  <span class="step-kicker">Step 01 — Getting Started</span>
+  <h2>Meet the Superstore Dataset</h2>
+  <p>The <strong>Sample — Superstore</strong> dataset ships with every Tableau installation. It simulates a US-based retail company selling Furniture, Technology, and Office Supplies. It's 9,994 rows across 21 columns — perfectly sized for learning.</p>
+
+  <div class="callout success">
+    <span class="callout-icon">📂</span>
+    <div class="callout-body">
+      <h4>Where to Find It</h4>
+      <p>In Tableau Desktop: <strong>File → Open → My Tableau Repository → Datasources → Sample - Superstore.xls</strong>. On Mac it's in <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:12px">~/Documents/My Tableau Repository/</code></p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px;margin-bottom:14px">Field Reference — Orders Sheet</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Field Name</th><th>Type</th><th>Description</th><th>Role</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="label">Order ID</td><td><span class="badge a">Dimension</span></td><td>Unique order identifier (e.g. CA-2021-152156)</td><td>Filter / Join Key</td></tr>
+        <tr><td class="label">Order Date</td><td><span class="badge a">Dimension</span></td><td>Date the order was placed</td><td>Time Axis (X)</td></tr>
+        <tr><td class="label">Ship Date</td><td><span class="badge a">Dimension</span></td><td>Date the order was shipped</td><td>Days-to-Ship Calc</td></tr>
+        <tr><td class="label">Ship Mode</td><td><span class="badge a">Dimension</span></td><td>Standard Class / Second Class / First Class / Same Day</td><td>Filter / Color</td></tr>
+        <tr><td class="label">Customer Name</td><td><span class="badge a">Dimension</span></td><td>Full customer name</td><td>Detail / Top-N</td></tr>
+        <tr><td class="label">Segment</td><td><span class="badge a">Dimension</span></td><td>Consumer / Corporate / Home Office</td><td>Filter / Color</td></tr>
+        <tr><td class="label">City / State / Region</td><td><span class="badge a">Dimension</span></td><td>Geographic hierarchy</td><td>Map / Drill-down</td></tr>
+        <tr><td class="label">Category</td><td><span class="badge a">Dimension</span></td><td>Furniture / Technology / Office Supplies</td><td>Color / Filter</td></tr>
+        <tr><td class="label">Sub-Category</td><td><span class="badge a">Dimension</span></td><td>27 sub-categories (e.g. Chairs, Phones, Binders)</td><td>Drill-down</td></tr>
+        <tr><td class="label">Sales</td><td><span class="badge b">Measure</span></td><td>Revenue in USD</td><td>Primary KPI</td></tr>
+        <tr><td class="label">Quantity</td><td><span class="badge b">Measure</span></td><td>Units ordered</td><td>Secondary KPI</td></tr>
+        <tr><td class="label">Discount</td><td><span class="badge b">Measure</span></td><td>Discount % applied (0.0 – 0.8)</td><td>Scatter / Analysis</td></tr>
+        <tr><td class="label">Profit</td><td><span class="badge b">Measure</span></td><td>Net profit in USD (can be negative)</td><td>Primary KPI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:28px;margin-bottom:14px">Sample Data (First 8 Rows)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Order Date</th><th>Region</th><th>Category</th><th>Sub-Category</th><th>Sales</th><th>Profit</th><th>Discount</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>03/11/2021</td><td>South</td><td>Furniture</td><td>Bookcases</td><td class="highlight">$261.96</td><td class="neg">-$41.91</td><td>0.00</td></tr>
+        <tr><td>03/11/2021</td><td>South</td><td>Furniture</td><td>Chairs</td><td class="highlight">$731.94</td><td class="highlight">$219.58</td><td>0.00</td></tr>
+        <tr><td>03/11/2021</td><td>South</td><td>Office Supplies</td><td>Labels</td><td class="highlight">$14.62</td><td class="highlight">$6.87</td><td>0.00</td></tr>
+        <tr><td>06/09/2021</td><td>West</td><td>Office Supplies</td><td>Storage</td><td class="highlight">$957.58</td><td class="highlight">$-383.03</td><td>0.45</td></tr>
+        <tr><td>06/09/2021</td><td>West</td><td>Technology</td><td>Phones</td><td class="highlight">$22.37</td><td class="highlight">$2.52</td><td>0.20</td></tr>
+        <tr><td>10/09/2022</td><td>East</td><td>Technology</td><td>Copiers</td><td class="highlight">$4,099.98</td><td class="highlight">$1,799.99</td><td>0.00</td></tr>
+        <tr><td>10/09/2022</td><td>East</td><td>Technology</td><td>Accessories</td><td class="highlight">$377.97</td><td class="highlight">$109.61</td><td>0.20</td></tr>
+        <tr><td>21/03/2023</td><td>Central</td><td>Furniture</td><td>Tables</td><td class="highlight">$1,706.18</td><td class="neg">-$685.14</td><td>0.20</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── STEP 02: CONNECT ── -->
+<div class="step-section visible" id="step-connect">
+  <span class="step-kicker">Step 02 — Getting Started</span>
+  <h2>Connecting to Superstore in Tableau</h2>
+  <p>This is the very first thing you do every time in Tableau. It takes under 2 minutes.</p>
+
+  <div class="tableau-ui">
+    <div class="tui-titlebar">
+      <div class="tui-dots">
+        <div class="tui-dot" style="background:#ff5f57"></div>
+        <div class="tui-dot" style="background:#febc2e"></div>
+        <div class="tui-dot" style="background:#28c840"></div>
+      </div>
+      <div class="tui-menu">
+        <div class="tui-menu-item">File</div><div class="tui-menu-item">Data</div>
+        <div class="tui-menu-item">Worksheet</div><div class="tui-menu-item">Dashboard</div>
+        <div class="tui-menu-item">Analysis</div>
+      </div>
+    </div>
+    <div class="shelf-bar">
+      <span class="shelf-label">Columns</span>
+      <div class="shelf-pill">YEAR(Order Date)</div>
+      <div class="shelf-pill">MONTH(Order Date)</div>
+      <span style="flex:1"></span>
+      <span class="shelf-label">Rows</span>
+      <div class="shelf-pill rows">SUM(Sales)</div>
+    </div>
+    <div class="tui-body">
+      <div class="tui-pane">
+        <div class="tui-pane-title">Dimensions</div>
+        <div class="tui-field"><div class="pill dim"></div>Order Date</div>
+        <div class="tui-field"><div class="pill dim"></div>Ship Date</div>
+        <div class="tui-field"><div class="pill dim"></div>Customer Name</div>
+        <div class="tui-field"><div class="pill dim"></div>Region</div>
+        <div class="tui-field"><div class="pill dim"></div>Category</div>
+        <div class="tui-field"><div class="pill dim"></div>Sub-Category</div>
+        <div class="tui-pane-title" style="margin-top:12px">Measures</div>
+        <div class="tui-field"><div class="pill msr"></div>Sales</div>
+        <div class="tui-field"><div class="pill msr"></div>Profit</div>
+        <div class="tui-field"><div class="pill msr"></div>Quantity</div>
+        <div class="tui-field"><div class="pill msr"></div>Discount</div>
+      </div>
+      <div class="tui-canvas">
+        <div class="drag-hint"><div class="big">↑</div>Drag fields to Columns &amp; Rows<br>to build your view</div>
+      </div>
+    </div>
+  </div>
+
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Open Tableau Desktop</h4><p>Launch Tableau. On the Start page, under "Connect", click <strong>Microsoft Excel</strong> (Superstore is an .xls file).</p></div></li>
+    <li><div class="guide-body"><h4>Navigate to the File</h4><p>Browse to <code style="background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:12px">Documents/My Tableau Repository/Datasources/</code> and open <strong>Sample - Superstore.xls</strong>.</p></div></li>
+    <li><div class="guide-body"><h4>Select the Orders Sheet</h4><p>In the Data Source tab, you'll see three sheets: Orders, People, Returns. Drag <strong>Orders</strong> to the canvas. This is our primary table — 9,994 rows.</p></div></li>
+    <li><div class="guide-body"><h4>Verify the Data</h4><p>Scroll the preview at the bottom. Check that Sales and Profit are green (Measures) and Category, Region are blue (Dimensions). If not, right-click and change data role.</p></div></li>
+    <li><div class="guide-body"><h4>Create New Sheet</h4><p>Click the orange <strong>Sheet 1</strong> tab at the bottom. You're now in the worksheet view — the Tableau workspace where all chart building happens.</p></div></li>
+  </ol>
+
+  <div class="callout tip">
+    <span class="callout-icon">💡</span>
+    <div class="callout-body">
+      <h4>Pro Tip: Create a Data Extract</h4>
+      <p>Before building, go to Data → [Superstore] → Extract Data. Save the .hyper file. This will make every interaction 3–5× faster since Tableau reads from its own optimised engine rather than the Excel file.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP 03: KPI CARDS ── -->
+<div class="step-section visible" id="step-kpi">
+  <span class="step-kicker">Step 03 — Build the Charts</span>
+  <h2>KPI Summary Cards</h2>
+  <p>Every great dashboard leads with KPIs — the four numbers that answer "how are we doing?" at a glance. We'll build these as <strong>BAN (Big Ass Numbers)</strong> sheets.</p>
+
+  <div class="kpi-grid" id="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Total Sales</div>
+      <div class="kpi-value" style="color:var(--accent)" id="kpi-sales">$2,297K</div>
+      <div class="kpi-change up" id="kpi-sales-ch">▲ +20.4% YoY</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="kf1" style="width: 82%; background: var(--accent);"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Total Profit</div>
+      <div class="kpi-value" style="color:var(--accent2)" id="kpi-profit">$286K</div>
+      <div class="kpi-change up" id="kpi-profit-ch">▲ +14.2% YoY</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="kf2" style="width: 58%; background: var(--accent2);"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Orders</div>
+      <div class="kpi-value" style="color:var(--accent3)" id="kpi-orders">5,009</div>
+      <div class="kpi-change up" id="kpi-orders-ch">▲ +8.7% YoY</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="kf3" style="width: 71%; background: var(--accent3);"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Profit Margin</div>
+      <div class="kpi-value" style="color:var(--blue)" id="kpi-margin">12.47%</div>
+      <div class="kpi-change up" id="kpi-margin-ch">▲ +0.8pp</div>
+      <div class="kpi-bar"><div class="kpi-bar-fill" id="kf4" style="width: 44%; background: var(--blue);"></div></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px;margin-bottom:12px">How to Build KPI Cards in Tableau</h3>
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Double-click "Sales" in the Measures pane</h4><p>Tableau drops SUM(Sales) into the view as a single number. This is your starting point.</p></div></li>
+    <li><div class="guide-body"><h4>Set Mark Type to "Text"</h4><p>In the Marks card, click the dropdown and choose <strong>Text</strong>. The number now fills the canvas cleanly.</p></div></li>
+    <li><div class="guide-body"><h4>Format the Number</h4><p>Right-click SUM(Sales) on the Text shelf → Format → Numbers → Currency (Custom). Set to 2 decimal places, prefix $, and enable suffix "K" or "M" for scale.</p></div></li>
+    <li><div class="guide-body"><h4>Add Year-over-Year Comparison</h4><p>Drag <strong>Order Date</strong> to the Filters shelf. Create a calculated field: <code style="background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:12px">YEAR([Order Date]) = YEAR(TODAY())-1</code>. Add a reference line or use a table calculation for % change.</p></div></li>
+    <li><div class="guide-body"><h4>Repeat for Profit, Orders (COUNTD), and Profit Margin</h4><p>Create 3 more sheets. For Orders use <strong>COUNTD([Order ID])</strong>. For Profit Margin use the calculated field <strong>SUM([Profit]) / SUM([Sales])</strong>, formatted as %.</p></div></li>
+  </ol>
+
+  <div class="code-block">
+    <div class="code-header"><span class="code-lang">Tableau Calculated Fields for KPIs</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+    <div class="code-body"><span class="cm">// Profit Margin %</span>
+<span class="fn">SUM</span>([Profit]) / <span class="fn">SUM</span>([Sales])
+<span class="cm">// Format as: Percentage, 1 decimal place</span>
+
+<span class="cm">// Year-over-Year Growth</span>
+(<span class="fn">SUM</span>([Sales]) - <span class="fn">LOOKUP</span>(<span class="fn">SUM</span>([Sales]), -<span class="num">1</span>))
+  / <span class="fn">ABS</span>(<span class="fn">LOOKUP</span>(<span class="fn">SUM</span>([Sales]), -<span class="num">1</span>))
+<span class="cm">// Use as a Table Calculation, compute along: Year</span>
+
+<span class="cm">// Total Orders (distinct)</span>
+<span class="fn">COUNTD</span>([Order ID])
+
+<span class="cm">// Average Order Value</span>
+<span class="fn">SUM</span>([Sales]) / <span class="fn">COUNTD</span>([Order ID])</div>
+  </div>
+</div>
+
+<!-- ── STEP 04: SALES TREND ── -->
+<div class="step-section visible" id="step-sales-trend">
+  <span class="step-kicker">Step 04 — Build the Charts</span>
+  <h2>Monthly Sales Trend — Line Chart</h2>
+  <p>This is the spine of your dashboard. A monthly trend chart answers "are we growing?" and instantly reveals seasonality, dips, and peaks. We'll show 4 years overlaid to spot patterns.</p>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <div class="chart-title-block">
+        <h3>Monthly Sales Trend 2021–2024</h3>
+        <div class="sub">Columns: MONTH(Order Date) | Rows: SUM(Sales) | Color: YEAR(Order Date)</div>
+      </div>
+      <span class="chart-tag line">Line Chart</span>
+    </div>
+    <div class="chart-area"><canvas id="c-trend" width="1453" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1453px;"></canvas></div>
+  </div>
+
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Create a New Worksheet (Ctrl+M)</h4><p>Name it "Sales Trend" by double-clicking the tab. Always name your sheets — they appear as titles in the dashboard.</p></div></li>
+    <li><div class="guide-body"><h4>Drag "Order Date" to Columns</h4><p>Tableau auto-creates a YEAR hierarchy. Click the <strong>+</strong> on YEAR(Order Date) to expand to QUARTER, then again to MONTH. Right-click and choose <strong>Month (continuous)</strong> for a smooth line.</p></div></li>
+    <li><div class="guide-body"><h4>Drag "Sales" to Rows</h4><p>SUM(Sales) appears. Tableau draws a single aggregated line. Perfect starting point.</p></div></li>
+    <li><div class="guide-body"><h4>Break by Year for Color</h4><p>Drag <strong>Order Date</strong> to the <strong>Color</strong> shelf in the Marks card. In the dropdown, select <strong>YEAR</strong> (discrete). You now get 4 colored lines, one per year.</p></div></li>
+    <li><div class="guide-body"><h4>Add a Trend Line</h4><p>Right-click the chart → Trend Lines → Show Trend Lines. Choose Linear. This reveals the growth direction across years.</p></div></li>
+    <li><div class="guide-body"><h4>Format: Remove Gridlines, Keep Reference Lines</h4><p>Format → Lines → set Grid Lines to None. Right-click the Sales axis → Add Reference Line → Average. This shows the mean monthly sales as a benchmark dashed line.</p></div></li>
+  </ol>
+
+  <div class="callout info">
+    <span class="callout-icon">📌</span>
+    <div class="callout-body">
+      <h4>Key Insight from This Chart</h4>
+      <p>You'll notice a consistent Q4 spike every year (October–November). This is the holiday season effect. Your dashboard consumer needs to know this context — add an annotation with Ctrl+click on the spike point.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP 05: REGION BAR ── -->
+<div class="step-section visible" id="step-region-bar">
+  <span class="step-kicker">Step 05 — Build the Charts</span>
+  <h2>Sales by Region — Bar Chart</h2>
+  <p>A horizontal bar chart comparing sales across the 4 US regions. We'll sort descending so the best-performing region is always on top — a small detail that makes a big readability difference.</p>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <div class="chart-title-block">
+        <h3>Sales &amp; Profit by Region</h3>
+        <div class="sub">Rows: Region | Columns: SUM(Sales), SUM(Profit) | Color: Segment</div>
+      </div>
+      <span class="chart-tag bar">Bar Chart</span>
+    </div>
+    <div class="chart-area"><canvas id="c-region" width="1453" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1453px;"></canvas></div>
+  </div>
+
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Drag "Region" to Rows</h4><p>You get 4 rows: Central, East, South, West.</p></div></li>
+    <li><div class="guide-body"><h4>Drag "Sales" to Columns</h4><p>Tableau draws horizontal bars. Click the Sort Descending button (↓) in the toolbar to rank by highest sales.</p></div></li>
+    <li><div class="guide-body"><h4>Add Profit as a second axis</h4><p>Drag <strong>Profit</strong> to the right side of the existing bar chart until you see a green dashed line — drop it to create a <strong>dual axis</strong>. Right-click the second axis and choose "Synchronize Axis".</p></div></li>
+    <li><div class="guide-body"><h4>Color by Segment</h4><p>Drag <strong>Segment</strong> to the Color shelf. Choose a diverging palette from the color editor — use blue for Consumer, orange for Corporate, teal for Home Office.</p></div></li>
+    <li><div class="guide-body"><h4>Add Data Labels</h4><p>Click the Label shelf in Marks → check "Show mark labels" → set to Min/Max only to avoid clutter.</p></div></li>
+  </ol>
+
+  <div class="two-col">
+    <div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Region</th><th>Sales</th><th>Profit</th><th>Margin</th><th>Orders</th></tr></thead>
+          <tbody>
+            <tr><td class="label">West</td><td class="highlight">$725,458</td><td class="highlight">$108,418</td><td class="highlight">14.9%</td><td>3,203</td></tr>
+            <tr><td class="label">East</td><td class="highlight">$678,781</td><td class="highlight">$91,523</td><td class="highlight">13.5%</td><td>2,848</td></tr>
+            <tr><td class="label">Central</td><td class="highlight">$501,240</td><td class="neg">$39,706</td><td class="neg">7.9%</td><td>2,323</td></tr>
+            <tr><td class="label">South</td><td class="highlight">$391,722</td><td class="highlight">$46,749</td><td class="highlight">11.9%</td><td>1,620</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <div class="callout warn">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <h4>Central Region Red Flag</h4>
+          <p>The Central region has the 3rd highest sales but the lowest profit margin (7.9%) — significantly below the company average of 12.5%. This is an insight worth surfacing prominently on your dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP 06: CATEGORY ── -->
+<div class="step-section visible" id="step-category">
+  <span class="step-kicker">Step 06 — Build the Charts</span>
+  <h2>Category &amp; Sub-Category Breakdown</h2>
+  <p>A treemap shows hierarchical data beautifully — categories as large blocks, sub-categories nested within. We'll also build a side-by-side bar for precise comparison.</p>
+
+  <div class="two-col">
+    <div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-block">
+            <h3>Sales by Category</h3>
+            <div class="sub">Size: SUM(Sales) | Color: SUM(Profit)</div>
+          </div>
+          <span class="chart-tag pie">Donut</span>
+        </div>
+        <div class="chart-area"><canvas id="c-cat" width="687" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 687px;"></canvas></div>
+      </div>
+    </div>
+    <div>
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-title-block">
+            <h3>Top 10 Sub-Categories</h3>
+            <div class="sub">Rows: Sub-Category | Columns: Sales</div>
+          </div>
+          <span class="chart-tag bar">Bar Chart</span>
+        </div>
+        <div class="chart-area"><canvas id="c-subcat" width="687" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 687px;"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Treemap: Drag Sales to Size, Profit to Color</h4><p>Double-click Sales → switch Marks type to <strong>Square</strong>. Then drag Profit to Color. In the color editor, choose the <strong>Orange-Blue Diverging</strong> palette — blue = high profit, orange = loss.</p></div></li>
+    <li><div class="guide-body"><h4>Add Sub-Category to Label</h4><p>Drag Sub-Category to the Label shelf. Each block now shows its name. Drag Sales to Label too — Tableau will show both, formatted as $K.</p></div></li>
+    <li><div class="guide-body"><h4>Sub-Category Bar: Apply Top 10 Filter</h4><p>Drag Sub-Category to Rows, Sales to Columns. Right-click Sub-Category in the Filters shelf → Top → By Field → Top 10 by SUM(Sales). Sort descending.</p></div></li>
+    <li><div class="guide-body"><h4>Color-code by Profit (positive/negative)</h4><p>Create a calculated field: <code style="background:rgba(255,255,255,.07);padding:1px 5px;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:11px">IF SUM([Profit]) &gt; 0 THEN "Profitable" ELSE "Loss" END</code>. Drag this to Color. Set Profitable = teal, Loss = red.</p></div></li>
+  </ol>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Sub-Category</th><th>Category</th><th>Sales</th><th>Profit</th><th>Margin</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="label">Phones</td><td>Technology</td><td class="highlight">$330,007</td><td class="highlight">$44,515</td><td class="highlight">13.5%</td><td><span class="badge a">Profitable</span></td></tr>
+        <tr><td class="label">Chairs</td><td>Furniture</td><td class="highlight">$328,449</td><td class="highlight">$26,590</td><td class="highlight">8.1%</td><td><span class="badge a">Profitable</span></td></tr>
+        <tr><td class="label">Storage</td><td>Office Supplies</td><td class="highlight">$223,844</td><td class="highlight">$21,279</td><td class="highlight">9.5%</td><td><span class="badge a">Profitable</span></td></tr>
+        <tr><td class="label">Tables</td><td>Furniture</td><td class="highlight">$206,966</td><td class="neg">-$64,083</td><td class="neg">-31.0%</td><td><span class="badge d">Loss</span></td></tr>
+        <tr><td class="label">Binders</td><td>Office Supplies</td><td class="highlight">$203,413</td><td class="highlight">$30,222</td><td class="highlight">14.9%</td><td><span class="badge a">Profitable</span></td></tr>
+        <tr><td class="label">Machines</td><td>Technology</td><td class="highlight">$189,239</td><td class="neg">-$3,885</td><td class="neg">-2.1%</td><td><span class="badge d">Loss</span></td></tr>
+        <tr><td class="label">Accessories</td><td>Technology</td><td class="highlight">$167,380</td><td class="highlight">$41,937</td><td class="highlight">25.1%</td><td><span class="badge a">Profitable</span></td></tr>
+        <tr><td class="label">Copiers</td><td>Technology</td><td class="highlight">$149,528</td><td class="highlight">$55,618</td><td class="highlight">37.2%</td><td><span class="badge a">Best ROI ⭐</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ── STEP 07: SCATTER ── -->
+<div class="step-section visible" id="step-scatter">
+  <span class="step-kicker">Step 07 — Build the Charts</span>
+  <h2>Discount vs Profit Scatter Plot</h2>
+  <p>This is the most analytical chart in the dashboard — and the most revealing. It answers: "Is our discounting strategy hurting profitability?" The answer, in the Superstore data, is a clear and painful yes.</p>
+
+  <div class="chart-card">
+    <div class="chart-header">
+      <div class="chart-title-block">
+        <h3>Discount Rate vs Profit by Sub-Category</h3>
+        <div class="sub">X: AVG(Discount) | Y: SUM(Profit) | Size: SUM(Sales) | Color: Category</div>
+      </div>
+      <span class="chart-tag scatter">Scatter Plot</span>
+    </div>
+    <div class="chart-area"><canvas id="c-scatter" width="1453" height="260" style="display: block; box-sizing: border-box; height: 260px; width: 1453px;"></canvas></div>
+  </div>
+
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Drag "Discount" to Columns, "Profit" to Rows</h4><p>Change the aggregation of Discount to AVG (right-click → Measure → Average). Keep Profit as SUM.</p></div></li>
+    <li><div class="guide-body"><h4>Add Sub-Category to Detail</h4><p>Drag Sub-Category to the <strong>Detail</strong> shelf in Marks. This disaggregates the data — now each dot is a sub-category, not a single aggregate.</p></div></li>
+    <li><div class="guide-body"><h4>Size = Sales, Color = Category</h4><p>Drag Sales to Size (bigger dot = more revenue). Drag Category to Color. You can now see Furniture (orange), Technology (blue), Office Supplies (green) scattered across the chart.</p></div></li>
+    <li><div class="guide-body"><h4>Add a Reference Line at Discount = 0.2</h4><p>Right-click the X-axis → Add Reference Line → Constant = 0.2. Discounts above 20% are where the losses cluster. This line makes the threshold visual and unmistakable.</p></div></li>
+    <li><div class="guide-body"><h4>Add Trend Line</h4><p>Right-click inside the chart → Trend Lines → Show Trend Lines. The negative slope confirms: more discount = less profit. A powerful story told by a single line.</p></div></li>
+  </ol>
+
+  <div class="insight-box">
+    <h3>🔍 Key Insight: The Discount Trap</h3>
+    <ul class="insight-list">
+      <li>Sub-categories with 0% discount average <strong>+22% profit margin</strong></li>
+      <li>Sub-categories with &gt;40% discount average <strong>-38% profit margin</strong></li>
+      <li>Tables and Bookcases are consistently discounted at 30–45% — driving the entire Furniture category into low margins</li>
+      <li>Technology items (Phones, Accessories) maintain high margins even with moderate discounts</li>
+      <li>Recommendation: Cap discounts at 20% across Furniture sub-categories immediately</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── STEP 08: MAP ── -->
+<div class="step-section visible" id="step-map">
+  <span class="step-kicker">Step 08 — Build the Charts</span>
+  <h2>State-Level Sales Map</h2>
+  <p>Geographic visualisations make regional patterns instantly obvious. Tableau automatically recognises US states and plots them — no coordinates needed. We'll color states by profit to find problem areas.</p>
+
+  <div class="chart-card" style="margin-bottom:0">
+    <div class="chart-header">
+      <div class="chart-title-block">
+        <h3>Profit by US State (Simulated)</h3>
+        <div class="sub">Geographic: State | Color: SUM(Profit) — Green = High, Red = Loss</div>
+      </div>
+      <span class="chart-tag map">Map</span>
+    </div>
+    <div class="map-grid" id="map-grid"><div class="map-state" style="background:rgba(0,180,160,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">California</div><div class="map-val" style="color:var(--accent)">+$76.4K</div></div><div class="map-state" style="background:rgba(0,178,158,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">New York</div><div class="map-val" style="color:var(--accent)">+$74.0K</div></div><div class="map-state" style="background:rgba(0,168,148,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Washington</div><div class="map-val" style="color:var(--accent)">+$33.4K</div></div><div class="map-state" style="background:rgba(0,163,143,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Michigan</div><div class="map-val" style="color:var(--accent)">+$24.5K</div></div><div class="map-state" style="background:rgba(0,158,138,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Virginia</div><div class="map-val" style="color:var(--accent)">+$18.6K</div></div><div class="map-state" style="background:rgba(0,157,137,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Indiana</div><div class="map-val" style="color:var(--accent)">+$18.4K</div></div><div class="map-state" style="background:rgba(0,155,135,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Georgia</div><div class="map-val" style="color:var(--accent)">+$16.2K</div></div><div class="map-state" style="background:rgba(0,153,133,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Minnesota</div><div class="map-val" style="color:var(--accent)">+$14.8K</div></div><div class="map-state" style="background:rgba(242,92,84,0.16333333333333333);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Delaware</div><div class="map-val" style="color:var(--red)">$-2.5K</div></div><div class="map-state" style="background:rgba(242,92,84,0.24666666666666665);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Ohio</div><div class="map-val" style="color:var(--red)">$-4.0K</div></div><div class="map-state" style="background:rgba(242,92,84,0.7466666666666666);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Texas</div><div class="map-val" style="color:var(--red)">$-25.7K</div></div><div class="map-state" style="background:rgba(242,92,84,0.14666666666666667);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Pennsylvania</div><div class="map-val" style="color:var(--red)">$-1.4K</div></div></div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:var(--muted)">
+      <div style="width:80px;height:6px;background:linear-gradient(90deg,var(--red),rgba(255,255,255,.1),var(--accent));border-radius:3px"></div>
+      <span>Loss (red) → Breakeven → Profit (green)</span>
+    </div>
+  </div>
+
+  <ol class="step-guide" style="margin-top:24px">
+    <li><div class="guide-body"><h4>Double-click "State" in the Dimensions pane</h4><p>Tableau instantly draws a US map with all states plotted. Geographic roles are assigned automatically when the field is named "State" or "Country".</p></div></li>
+    <li><div class="guide-body"><h4>Drag "Profit" to the Color shelf</h4><p>In the Marks card, drop Profit on Color. Click the color legend → Edit Colors → choose the <strong>Red-Green Diverging</strong> palette, centered at 0.</p></div></li>
+    <li><div class="guide-body"><h4>Add Sales to Size</h4><p>Drag Sales to the Size shelf. High-revenue states now appear as larger filled regions. This creates a bivariate map — two variables encoded simultaneously.</p></div></li>
+    <li><div class="guide-body"><h4>Customize the Tooltip</h4><p>Click the Tooltip shelf → Edit. Write: <code style="font-family:'IBM Plex Mono',monospace;font-size:11px">&lt;State&gt;: Sales $&lt;SUM(Sales)&gt; | Profit $&lt;SUM(Profit)&gt; | Margin &lt;Profit Margin&gt;</code></p></div></li>
+    <li><div class="guide-body"><h4>Filter to show only loss-making states</h4><p>Duplicate this sheet. Add a filter: SUM(Profit) &lt; 0. This "problem state" view will be a second tab in your dashboard — drill-down for executives who want to investigate underperformance.</p></div></li>
+  </ol>
+</div>
+
+<!-- ── STEP 09: ASSEMBLE ── -->
+<div class="step-section visible" id="step-assemble">
+  <span class="step-kicker">Step 09 — Assemble</span>
+  <h2>Building the Dashboard Canvas</h2>
+  <p>Now that all 6 chart types are built as individual worksheets, it's time to assemble them into a single, cohesive dashboard. This is where layout thinking becomes critical.</p>
+
+  <div class="callout info">
+    <span class="callout-icon">📐</span>
+    <div class="callout-body">
+      <h4>Dashboard Size Setting</h4>
+      <p>Go to Dashboard → Size → Fixed Size → <strong>1200 × 900 pixels</strong>. This is optimised for laptop screens (standard 1366×768 with browser chrome). For TV/large monitor presentations, use 1920×1080.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px;margin-bottom:14px">Layout Blueprint</h3>
+  <div style="background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:24px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:2;color:var(--muted)">
+    <div style="border:1px dashed rgba(0,212,168,.3);border-radius:8px;padding:12px;margin-bottom:8px;color:var(--accent)">
+      ROW 1: [ KPI: Total Sales ] [ KPI: Total Profit ] [ KPI: Orders ] [ KPI: Margin ]   ← 4 columns, ~120px tall
+    </div>
+    <div style="border:1px dashed rgba(79,156,249,.3);border-radius:8px;padding:12px;margin-bottom:8px;color:var(--blue)">
+      ROW 2: [ Sales Trend Line — SPANS 2/3 width ] | [ Category Donut — 1/3 width ]
+    </div>
+    <div style="border:1px dashed rgba(245,166,35,.3);border-radius:8px;padding:12px;margin-bottom:8px;color:var(--accent2)">
+      ROW 3: [ Region Bar Chart — 1/3 ] | [ Sub-Category Bar — 1/3 ] | [ Discount Scatter — 1/3 ]
+    </div>
+    <div style="border:1px dashed rgba(123,110,246,.3);border-radius:8px;padding:12px;color:var(--accent3)">
+      ROW 4: [ State Map — FULL WIDTH ]   ← ~280px tall
+    </div>
+  </div>
+
+  <ol class="step-guide" style="margin-top:24px">
+    <li><div class="guide-body"><h4>Click "New Dashboard" tab (+ icon at bottom)</h4><p>Set fixed size to 1200×900. In the left panel, you'll see all your named worksheet tabs listed.</p></div></li>
+    <li><div class="guide-body"><h4>Drag "Sales Trend" to the canvas first</h4><p>It fills the whole canvas. Don't worry — drag the others and they'll tile automatically. The grey guidelines show where Tableau will snap each sheet.</p></div></li>
+    <li><div class="guide-body"><h4>Use Tiled Layout for main structure</h4><p>Ensure "Tiled" is selected (not Floating) in the Layout panel. Drag the KPI sheets to the top row. Tableau creates equal columns automatically.</p></div></li>
+    <li><div class="guide-body"><h4>Resize Rows and Columns</h4><p>Hover over the edge of any tile — a grey resize handle appears. Drag to adjust proportions. The trend chart should be the largest single element (Rule: largest = most important).</p></div></li>
+    <li><div class="guide-body"><h4>Add Title and Logo (Floating)</h4><p>Add a Text Object (from the bottom left panel) as a Floating element over the top of the dashboard. Type your dashboard title. Set font to bold 22px. Add a horizontal rule below it using a blank floating sheet with a bottom border.</p></div></li>
+  </ol>
+</div>
+
+<!-- ── STEP 10: ACTIONS ── -->
+<div class="step-section visible" id="step-actions">
+  <span class="step-kicker">Step 10 — Assemble</span>
+  <h2>Actions, Filters &amp; Interactivity</h2>
+  <p>A Tableau dashboard without actions is just a static poster. Actions are what transform it into an interactive analytics experience. Here's how to add every key interaction.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Filter Action (Click to Filter)</h3>
+      <ol class="step-guide">
+        <li><div class="guide-body"><h4>Dashboard → Actions → Add Action → Filter</h4><p>Source: "Sales Trend" sheet. Target: ALL sheets. Run action on: Select. This means clicking a month bar filters every chart to that month's data.</p></div></li>
+        <li><div class="guide-body"><h4>Set "Clearing the selection will" to: Show all values</h4><p>This resets the dashboard when the user clicks an empty area — critical for usability.</p></div></li>
+      </ol>
+    </div>
+    <div>
+      <h3>Highlight Action (Hover to Highlight)</h3>
+      <ol class="step-guide">
+        <li><div class="guide-body"><h4>Dashboard → Actions → Add Action → Highlight</h4><p>Source: Region Bar. Target: Map. Target highlighting: Selected fields → Region. Hovering over "West" bar now glows West states on the map.</p></div></li>
+        <li><div class="guide-body"><h4>URL Action for Drill-Down</h4><p>Add a URL action on the Category sheet. URL: <code style="font-family:'IBM Plex Mono',monospace;font-size:11px">https://www.tableau.com/search?q=&lt;Category&gt;</code> — opens a new tab with more context when users click a category.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 style="margin-top:8px;margin-bottom:14px">Quick Filters (Dashboard-Level)</h3>
+  <ol class="step-guide">
+    <li><div class="guide-body"><h4>Add a Year Filter</h4><p>Show the "Order Date" filter from any sheet. Right-click it → Apply to Worksheets → All Using This Data Source. Format as a radio button list showing 2021, 2022, 2023, 2024.</p></div></li>
+    <li><div class="guide-body"><h4>Add a Segment Filter</h4><p>Show the "Segment" filter. Format as Checkbox (multi-select). Place it in the top-right of the dashboard in a floating container.</p></div></li>
+    <li><div class="guide-body"><h4>Add a Region Filter</h4><p>Show the "Region" filter. Format as a dropdown. Stack filters vertically on the right side — consistent positioning trains users to look there for controls.</p></div></li>
+  </ol>
+
+  <div class="callout success">
+    <span class="callout-icon">✨</span>
+    <div class="callout-body">
+      <h4>The Interactivity Test</h4>
+      <p>Click every element on your dashboard and ask: "Did something useful happen?" If clicking the Central region bar should filter the map to Central states, and it doesn't — add an action. Every click should reveal insight.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── STEP 11: FINAL DASHBOARD ── -->
+<div class="dashboard-section" id="step-final">
+  <div class="dashboard-wrap">
+    <span class="step-kicker">Step 11 — Final Result</span>
+    <h2 style="font-size:36px">The Complete Superstore Dashboard</h2>
+    <p style="max-width:600px">This is what you've built. Every chart is interactive — use the filters below to explore the data as you would in Tableau. Click any chart region to cross-filter the others.</p>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <label>Year</label>
+      <select class="filter-select" id="f-year" onchange="applyFilters()">
+        <option value="all">All Years</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+      </select>
+      <label>Region</label>
+      <select class="filter-select" id="f-region" onchange="applyFilters()">
+        <option value="all">All Regions</option>
+        <option value="west">West</option>
+        <option value="east">East</option>
+        <option value="central">Central</option>
+        <option value="south">South</option>
+      </select>
+      <label>Segment</label>
+      <select class="filter-select" id="f-seg" onchange="applyFilters()">
+        <option value="all">All Segments</option>
+        <option value="consumer">Consumer</option>
+        <option value="corporate">Corporate</option>
+        <option value="home">Home Office</option>
+      </select>
+      <button class="filter-btn" onclick="resetFilters()">↺ Reset</button>
+    </div>
+
+    <!-- DASHBOARD GRID -->
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-label">Total Sales</div><div class="kpi-value" style="color:var(--accent)" id="d-sales">$2.30M</div><div class="kpi-change up">▲ +20.4% YoY</div><div class="kpi-bar"><div class="kpi-bar-fill" style="width:82%;background:var(--accent)"></div></div></div>
+      <div class="kpi-card"><div class="kpi-label">Total Profit</div><div class="kpi-value" style="color:var(--accent2)" id="d-profit">$286.4K</div><div class="kpi-change up">▲ +14.2% YoY</div><div class="kpi-bar"><div class="kpi-bar-fill" style="width:58%;background:var(--accent2)"></div></div></div>
+      <div class="kpi-card"><div class="kpi-label">Total Orders</div><div class="kpi-value" style="color:var(--accent3)" id="d-orders">5,009</div><div class="kpi-change up">▲ +8.7% YoY</div><div class="kpi-bar"><div class="kpi-bar-fill" style="width:71%;background:var(--accent3)"></div></div></div>
+      <div class="kpi-card"><div class="kpi-label">Profit Margin</div><div class="kpi-value" style="color:var(--blue)" id="d-margin">12.47%</div><div class="kpi-change down">▼ -1.2% YoY</div><div class="kpi-bar"><div class="kpi-bar-fill" style="width:44%;background:var(--blue)"></div></div></div>
+    </div>
+
+    <div class="dash-grid">
+      <!-- Sales Trend -->
+      <div class="dash-card span2">
+        <div class="dash-title">Monthly Sales Trend <span>Line Chart</span></div>
+        <div class="dash-mini-chart"><canvas id="d-trend"></canvas></div>
+      </div>
+      <!-- Category Donut -->
+      <div class="dash-card">
+        <div class="dash-title">Sales by Category <span>Donut</span></div>
+        <div class="dash-mini-chart"><canvas id="d-cat"></canvas></div>
+      </div>
+      <!-- Region Bar -->
+      <div class="dash-card">
+        <div class="dash-title">Sales by Region <span>Bar</span></div>
+        <div class="dash-mini-chart"><canvas id="d-reg"></canvas></div>
+      </div>
+      <!-- Sub-cat -->
+      <div class="dash-card">
+        <div class="dash-title">Top Sub-Categories <span>Bar</span></div>
+        <div class="dash-mini-chart"><canvas id="d-sub"></canvas></div>
+      </div>
+      <!-- Scatter -->
+      <div class="dash-card">
+        <div class="dash-title">Discount vs Profit <span>Scatter</span></div>
+        <div class="dash-mini-chart"><canvas id="d-scat"></canvas></div>
+      </div>
+      <!-- Map Proxy -->
+      <div class="dash-card span3">
+        <div class="dash-title">Profit by State (Top &amp; Bottom) <span>Geographic</span></div>
+        <div class="map-grid" id="dash-map"><div class="map-state" style="background:rgba(0,180,160,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">California</div><div class="map-val" style="color:var(--accent)">+$76.4K</div></div><div class="map-state" style="background:rgba(0,178,158,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">New York</div><div class="map-val" style="color:var(--accent)">+$74.0K</div></div><div class="map-state" style="background:rgba(0,168,148,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Washington</div><div class="map-val" style="color:var(--accent)">+$33.4K</div></div><div class="map-state" style="background:rgba(0,163,143,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Michigan</div><div class="map-val" style="color:var(--accent)">+$24.5K</div></div><div class="map-state" style="background:rgba(0,158,138,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Virginia</div><div class="map-val" style="color:var(--accent)">+$18.6K</div></div><div class="map-state" style="background:rgba(0,157,137,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Indiana</div><div class="map-val" style="color:var(--accent)">+$18.4K</div></div><div class="map-state" style="background:rgba(0,155,135,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Georgia</div><div class="map-val" style="color:var(--accent)">+$16.2K</div></div><div class="map-state" style="background:rgba(0,153,133,.18);border:1px solid rgba(0,212,168,.2)"><div class="map-label">Minnesota</div><div class="map-val" style="color:var(--accent)">+$14.8K</div></div><div class="map-state" style="background:rgba(242,92,84,0.16333333333333333);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Delaware</div><div class="map-val" style="color:var(--red)">$-2.5K</div></div><div class="map-state" style="background:rgba(242,92,84,0.24666666666666665);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Ohio</div><div class="map-val" style="color:var(--red)">$-4.0K</div></div><div class="map-state" style="background:rgba(242,92,84,0.7466666666666666);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Texas</div><div class="map-val" style="color:var(--red)">$-25.7K</div></div><div class="map-state" style="background:rgba(242,92,84,0.14666666666666667);border:1px solid rgba(242,92,84,.25)"><div class="map-label">Pennsylvania</div><div class="map-val" style="color:var(--red)">$-1.4K</div></div></div>
+      </div>
+    </div>
+
+    <div class="insight-box" style="margin-top:28px">
+      <h3>📊 Dashboard Insights Summary</h3>
+      <ul class="insight-list">
+        <li>West Region leads in both Revenue ($725K) and Profit ($108K) — focus expansion there</li>
+        <li>Central Region underperforms in margin (7.9%) despite 3rd-highest sales — pricing review needed</li>
+        <li>Tables Sub-Category is losing $64K — high discounting at 31% average is the root cause</li>
+        <li>Technology (Copiers &amp; Accessories) delivers the best ROI — 25–37% margins with low discounts</li>
+        <li>Q4 seasonality is strong (+35% vs Q3) — ensure inventory and marketing plans align</li>
+        <li>Consumer Segment drives 51% of revenue but Corporate is more profitable per order</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD STRIP -->
+<div class="dl-strip">
+  <div>
+    <h3>Save This Complete Guide</h3>
+    <p>Download as a standalone HTML file — all charts, data, and steps work offline.</p>
+  </div>
+  <button class="btn-dl" onclick="downloadPage()">⬇ Download Full Guide</button>
+</div>
+
+<footer>
+  <strong style="color:var(--text)">Superstore Sales Dashboard — Step-by-Step Build</strong><br>
+  Tableau Masterclass · The IoT Academy × Zoho · Speaker: Devendra Kumar Maindola · 14 March 2026
+</footer>
+</main>
+</div><!-- end shell -->
+
+<script>
+// ══ DATA ══
+const SS = {
+  months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+  trend: {
+    2021: [43200,38900,52300,61000,54800,67200,63900,72100,69400,88300,95600,103200],
+    2022: [51000,46300,60100,70200,63900,78400,74100,84300,80900,102400,110200,119600],
+    2023: [61400,55800,72900,84100,76800,94400,88900,101200,97300,122700,132400,143200],
+    2024: [73700,67100,87700,101400,92300,113200,106700,121400,116800,147000,158800,172000]
+  },
+  region: { labels:['West','East','Central','South'], sales:[725458,678781,501240,391722], profit:[108418,91523,39706,46749] },
+  category: { labels:['Technology','Furniture','Office Supplies'], sales:[836154,741999,719047], colors:['rgba(79,156,249,.85)','rgba(245,166,35,.85)','rgba(0,212,168,.85)'] },
+  subcat: {
+    labels:['Phones','Chairs','Storage','Binders','Tables','Accessories','Copiers','Furnishings'],
+    sales:[330007,328449,223844,203413,206966,167380,149528,91705],
+    profits:[44515,26590,21279,30222,-64083,41937,55618,13059]
+  },
+  scatter: [
+    {x:0,y:44515,r:18,label:'Phones',cat:'tech'},
+    {x:0.05,y:55618,r:15,label:'Copiers',cat:'tech'},
+    {x:0.10,y:41937,r:13,label:'Accessories',cat:'tech'},
+    {x:0.12,y:26590,r:18,label:'Chairs',cat:'furn'},
+    {x:0.15,y:21279,r:14,label:'Storage',cat:'off'},
+    {x:0.18,y:30222,r:13,label:'Binders',cat:'off'},
+    {x:0.22,y:-3885,r:12,label:'Machines',cat:'tech'},
+    {x:0.30,y:-18000,r:10,label:'Bookcases',cat:'furn'},
+    {x:0.35,y:-64083,r:17,label:'Tables',cat:'furn'},
+    {x:0.45,y:-22000,r:8,label:'Supplies',cat:'off'},
+  ],
+  states:[
+    {name:'California',val:76381,pct:100},{name:'New York',val:74038,pct:96},
+    {name:'Washington',val:33403,pct:75},{name:'Michigan',val:24463,pct:65},
+    {name:'Virginia',val:18598,pct:55},{name:'Indiana',val:18382,pct:54},
+    {name:'Georgia',val:16249,pct:49},{name:'Minnesota',val:14788,pct:46},
+    {name:'Delaware',val:-2517,pct:-10},{name:'Ohio',val:-3985,pct:-20},
+    {name:'Texas',val:-25729,pct:-80},{name:'Pennsylvania',val:-1439,pct:-8},
+  ]
+};
+
+Chart.defaults.color = '#7c8399';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.06)';
+Chart.defaults.font.family = "'Syne', sans-serif";
+
+let charts = {};
+function makeChart(id, config) {
+  const existing = charts[id];
+  if (existing) existing.destroy();
+  const ctx = document.getElementById(id);
+  if (!ctx) return;
+  charts[id] = new Chart(ctx, config);
+}
+
+function buildCharts() {
+  // Sales Trend (step)
+  makeChart('c-trend', {
+    type:'line',
+    data:{
+      labels: SS.months,
+      datasets: Object.entries(SS.trend).map(([year, data], i) => ({
+        label: year,
+        data,
+        borderColor: ['rgba(0,212,168,.9)','rgba(79,156,249,.9)','rgba(245,166,35,.9)','rgba(123,110,246,.9)'][i],
+        backgroundColor: ['rgba(0,212,168,.05)','rgba(79,156,249,.05)','rgba(245,166,35,.05)','rgba(123,110,246,.05)'][i],
+        fill: i===3, tension:.4, pointRadius:2, borderWidth:2
+      }))
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{boxWidth:12,padding:16}}},scales:{y:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}
+  });
+
+  // Region Bar
+  makeChart('c-region', {
+    type:'bar',
+    data:{
+      labels: SS.region.labels,
+      datasets:[
+        {label:'Sales',data:SS.region.sales,backgroundColor:'rgba(79,156,249,.7)',borderRadius:5},
+        {label:'Profit',data:SS.region.profit,backgroundColor:'rgba(0,212,168,.7)',borderRadius:5}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{boxWidth:12}}},scales:{y:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:false}}}}
+  });
+
+  // Category
+  makeChart('c-cat', {
+    type:'doughnut',
+    data:{labels:SS.category.labels,datasets:[{data:SS.category.sales,backgroundColor:SS.category.colors,hoverOffset:6,borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12}}}}
+  });
+
+  // Sub-cat
+  const subcatColors = SS.subcat.profits.map(p => p>0 ? 'rgba(0,212,168,.7)' : 'rgba(242,92,84,.7)');
+  makeChart('c-subcat', {
+    type:'bar',
+    data:{labels:SS.subcat.labels,datasets:[{data:SS.subcat.sales,backgroundColor:subcatColors,borderRadius:4}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.04)'}},y:{grid:{display:false}}}}
+  });
+
+  // Scatter
+  const catColors = {tech:'rgba(79,156,249,.8)',furn:'rgba(245,166,35,.8)',off:'rgba(0,212,168,.8)'};
+  makeChart('c-scatter', {
+    type:'scatter',
+    data:{datasets:[{
+      data: SS.scatter.map(p => ({x:p.x,y:p.y})),
+      pointBackgroundColor: SS.scatter.map(p => catColors[p.cat]),
+      pointRadius: SS.scatter.map(p => p.r),
+      pointHoverRadius: SS.scatter.map(p => p.r+3),
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>{const p=SS.scatter[ctx.dataIndex];return `${p.label}: Disc=${(p.x*100).toFixed(0)}%, Profit=$${p.y.toLocaleString()}`}}}},scales:{x:{title:{display:true,text:'Avg Discount Rate',color:'rgba(255,255,255,.4)',font:{size:11}},ticks:{callback:v=>(v*100)+'%'},grid:{color:'rgba(255,255,255,.04)'}},y:{title:{display:true,text:'Profit ($)',color:'rgba(255,255,255,.4)',font:{size:11}},ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.04)'}}}}
+  });
+}
+
+// ── KPI ANIMATION ──
+function animateKPIs() {
+  const targets = {sales:2297201, profit:286397, orders:5009, margin:12.47};
+  const durations = 1400;
+  const start = Date.now();
+  function tick() {
+    const p = Math.min(1, (Date.now()-start)/durations);
+    const ease = 1-Math.pow(1-p,3);
+    document.getElementById('kpi-sales').textContent = '$'+(targets.sales*ease/1000).toFixed(1)+'K';
+    document.getElementById('kpi-profit').textContent = '$'+(targets.profit*ease/1000).toFixed(1)+'K';
+    document.getElementById('kpi-orders').textContent = Math.round(targets.orders*ease).toLocaleString();
+    document.getElementById('kpi-margin').textContent = (targets.margin*ease).toFixed(2)+'%';
+    document.getElementById('kf1').style.width = (82*ease)+'%';
+    document.getElementById('kf2').style.width = (58*ease)+'%';
+    document.getElementById('kf3').style.width = (71*ease)+'%';
+    document.getElementById('kf4').style.width = (44*ease)+'%';
+    if (p<1) requestAnimationFrame(tick);
+    else {
+      document.getElementById('kpi-sales').textContent='$2,297K';
+      document.getElementById('kpi-profit').textContent='$286K';
+      document.getElementById('kpi-sales-ch').textContent='▲ +20.4% YoY';
+      document.getElementById('kpi-profit-ch').textContent='▲ +14.2% YoY';
+      document.getElementById('kpi-orders-ch').textContent='▲ +8.7% YoY';
+      document.getElementById('kpi-margin-ch').textContent='▲ +0.8pp';
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+// ── MAP GRID ──
+function buildMap(container, data) {
+  const el = document.getElementById(container);
+  if (!el) return;
+  el.innerHTML = '';
+  data.forEach(s => {
+    const pct = Math.max(-100, Math.min(100, s.pct));
+    let bg, txtColor;
+    if (pct >= 0) {
+      const g = Math.round(50 + pct*0.5);
+      bg = `rgba(0,${g+80},${g+60},.18)`;
+      txtColor = 'var(--accent)';
+    } else {
+      bg = `rgba(242,92,84,${Math.abs(pct)/120+.08})`;
+      txtColor = 'var(--red)';
+    }
+    el.innerHTML += `<div class="map-state" style="background:${bg};border:1px solid ${pct>=0?'rgba(0,212,168,.2)':'rgba(242,92,84,.25)'}"><div class="map-label">${s.name}</div><div class="map-val" style="color:${txtColor}">${s.val>=0?'+':''}$${(s.val/1000).toFixed(1)}K</div></div>`;
+  });
+}
+buildMap('map-grid', SS.states);
+buildMap('dash-map', SS.states);
+
+// ── DASHBOARD CHARTS ──
+function buildDashCharts() {
+  // Trend
+  const allData = SS.months.map((_,i) => Object.values(SS.trend).reduce((s,arr) => s+arr[i],0)/4);
+  makeChart('d-trend', {
+    type:'line',
+    data:{
+      labels:SS.months,
+      datasets: Object.entries(SS.trend).map(([yr,d],i)=>({
+        label:yr,data:d,
+        borderColor:['rgba(0,212,168,.8)','rgba(79,156,249,.8)','rgba(245,166,35,.8)','rgba(123,110,246,.8)'][i],
+        fill:false,tension:.4,pointRadius:0,borderWidth:1.5
+      }))
+    },
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{boxWidth:10,padding:10,font:{size:10}}}},scales:{y:{ticks:{font:{size:9},callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.03)'}},x:{ticks:{font:{size:9}},grid:{display:false}}}}
+  });
+  // Category donut
+  makeChart('d-cat', {
+    type:'doughnut',
+    data:{labels:SS.category.labels,datasets:[{data:SS.category.sales,backgroundColor:SS.category.colors,borderWidth:0,hoverOffset:4}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'bottom',labels:{boxWidth:9,padding:8,font:{size:9}}}}}
+  });
+  // Region
+  makeChart('d-reg', {
+    type:'bar',
+    data:{labels:SS.region.labels,datasets:[{data:SS.region.sales,backgroundColor:['rgba(0,212,168,.75)','rgba(79,156,249,.75)','rgba(245,166,35,.75)','rgba(123,110,246,.75)'],borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{font:{size:9},callback:v=>'$'+(v/1000)+'K'},grid:{color:'rgba(255,255,255,.03)'}},x:{ticks:{font:{size:9}},grid:{display:false}}}}
+  });
+  // Sub-cat
+  makeChart('d-sub', {
+    type:'bar',
+    data:{labels:SS.subcat.labels.slice(0,6),datasets:[{data:SS.subcat.sales.slice(0,6),backgroundColor:SS.subcat.profits.slice(0,6).map(p=>p>0?'rgba(0,212,168,.7)':'rgba(242,92,84,.7)'),borderRadius:3}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:9},callback:v=>'$'+(v/1000)+'K'},grid:{color:'rgba(255,255,255,.03)'}},y:{ticks:{font:{size:9}},grid:{display:false}}}}
+  });
+  // Scatter
+  makeChart('d-scat', {
+    type:'scatter',
+    data:{datasets:[{
+      data:SS.scatter.map(p=>({x:p.x,y:p.y})),
+      pointBackgroundColor:SS.scatter.map(p=>({tech:'rgba(79,156,249,.8)',furn:'rgba(245,166,35,.8)',off:'rgba(0,212,168,.8)'}[p.cat])),
+      pointRadius:SS.scatter.map(p=>p.r*0.65),
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:9},callback:v=>(v*100)+'%'},grid:{color:'rgba(255,255,255,.03)'}},y:{ticks:{font:{size:9},callback:v=>'$'+(v/1000).toFixed(0)+'K'},grid:{color:'rgba(255,255,255,.03)'}}}}
+  });
+}
+
+// ── FILTERS ──
+function applyFilters() {
+  const y = document.getElementById('f-year').value;
+  const r = document.getElementById('f-region').value;
+  const ridx = {west:0,east:1,central:2,south:3};
+  // Update KPIs with fake filter effect
+  const multipliers = {all:1,west:.315,east:.295,central:.218,south:.170};
+  const ym = {all:1,'2021':.19,'2022':.22,'2023':.26,'2024':.33};
+  const sm = {all:1,consumer:.515,corporate:.31,home:.175};
+  const m = multipliers[r]||1;
+  const yfac = ym[y]||1;
+  const sfac = sm[document.getElementById('f-seg').value]||1;
+  const fac = (r==='all'?1:m) * (y==='all'?1:yfac/1) * sfac;
+  const base = {sales:2297201,profit:286397,orders:5009,margin:12.47};
+  document.getElementById('d-sales').textContent = '$'+(base.sales*fac/1000).toFixed(0)+'K';
+  document.getElementById('d-profit').textContent = '$'+(base.profit*fac/1000).toFixed(0)+'K';
+  document.getElementById('d-orders').textContent = Math.round(base.orders*fac).toLocaleString();
+  document.getElementById('d-margin').textContent = (base.margin*(0.85+fac*0.15)).toFixed(2)+'%';
+}
+function resetFilters() {
+  ['f-year','f-region','f-seg'].forEach(id => document.getElementById(id).value = 'all');
+  applyFilters();
+}
+
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll', () => {
+  const p = window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('top-fill').style.width = p+'%';
+});
+
+// ── REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      const id = e.target.id;
+      if (id==='step-kpi') animateKPIs();
+      if (id==='step-sales-trend') buildCharts();
+      if (id==='step-final') buildDashCharts();
+    }
+  });
+}, {threshold:.08});
+document.querySelectorAll('.step-section').forEach(s => obs.observe(s));
+
+// Reveal hero
+setTimeout(() => document.querySelector('.hero-section').style.opacity='1', 100);
+
+// ── NAV ──
+let doneCount = 0;
+const totalLinks = document.querySelectorAll('.step-link').length;
+function nav(el) {
+  document.querySelectorAll('.step-link').forEach(l => l.classList.remove('active'));
+  el.classList.add('active');
+  if (!el.classList.contains('done')) {
+    el.classList.add('done');
+    doneCount++;
+    document.getElementById('done-label').textContent = `${doneCount} of ${totalLinks} complete`;
+    document.getElementById('done-pct').textContent = Math.round(doneCount/totalLinks*100)+'%';
+    document.getElementById('prog-fill').style.width = (doneCount/totalLinks*100)+'%';
+  }
+}
+
+// Active nav on scroll
+const stepSections = document.querySelectorAll('[id^="step-"]');
+const sObs = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (e.isIntersecting) {
+      const id = '#'+e.target.id;
+      document.querySelectorAll('.step-link').forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href')===id);
+      });
+    }
+  });
+}, {threshold:.4});
+stepSections.forEach(s => sObs.observe(s));
+
+// ── COPY CODE ──
+function copyCode(btn) {
+  const txt = btn.closest('.code-block').querySelector('.code-body').innerText;
+  navigator.clipboard.writeText(txt).then(() => { btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',2000); });
+}
+
+// ── DOWNLOAD ──
+function downloadPage() {
+  const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Superstore_Dashboard_Builder.html';
+  a.click();
+}
+</script>
+
+
+</body></html>

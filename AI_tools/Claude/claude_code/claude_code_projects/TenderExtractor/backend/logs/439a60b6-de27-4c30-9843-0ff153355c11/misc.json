@@ -1,0 +1,704 @@
+{
+  "terms_and_conditions": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "INFORMATION & INSTRUCTIONS FOR BIDDERS FOR E-TENDERING",
+        "source_pages": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "The work is estimated to cost Rs.58,63,632.00 this estimate, however, is given merely as a rough guide."
+          },
+          {
+            "number": "2.",
+            "text": "Intending bidders is eligible to submit the bid provided he has definite proof from the appropriate authority, which shall be to the satisfaction of the competent authority, of having satisfactorily completed similar works of magnitude specified below:- Should have satisfactorily completed the works as mentioned below during the last 7 years ending last day of the month previous to the one in which tenders are invited. (For this purpose, cost of work shall mean gross value of the completed workincluding cost of material supplied by the Government/Client but excluding those supplied free of cost.) Three similar works each costing not less than 15.63 Lacs, OR Two similar works each costing not less than 23.45 Lacs, OR One similar works each costing not less than 31.27 Lacs, Similar work shall mean 'Maintenance of Fire Alarm System' Note-1: The cost of the work should be certified by an Officer not below the rank of Executive Engineer/ Project Manager or equivalent."
+          },
+          {
+            "number": "3.",
+            "text": "Note-2: The value of executed works shall be brought to current costing level by enhancing the actual value of work at simple rate of 7% per anum; calculated from the date of completion to the last date of submission of bid. Qualified similar work may be physically inspected by CPWD to ascertain the completion, performance on quality of works for finalizing the Eligibility in Technical bid.Note-3: To become eligible for issue of bid, the bidders shall have to furnish an affidavit as under:- I/We undertake and confirm that eligible similar works(s) has/have not been got executed through another contractor on back-to-back basis. Further that, if such a violation comes to the notice of Department, then I/we shall be debarred for bidding in CPWD in future forever. Also, if such a violation comes to the notice of Department before date of start of work, the Engineer-in-Charge shall be free to forfeit the entire amount of Performance Guarantee. (Scanned copy to be uploaded at the time of submission of bid) Note-4: The eligible similar work should be within territory of India only."
+          },
+          {
+            "number": "4.",
+            "text": "b) Turnover: Average annual financial turnover should be at least Rs.17.59 lakh during the immediate last three consecutive financial years ending 31st March, 2024. Scanned copy of certificate from CA to be uploaded."
+          },
+          {
+            "number": "5.",
+            "text": "c) Profit/Loss: The bidder should not have incurred any loss (profit after tax should be positive) in more than two years during the immediate last five consecutive balacesheets dully audited and certified by the Chartered Accountant. (The balance sheet in case of pvt. /Public Ltd. Company means its standalone finance statement and consolidated financial statement both)"
+          },
+          {
+            "number": "6.",
+            "text": "d) Bank Solvency certificate: Should have Bank Solvency certificate of amount Rs.23.45 lakh certified by his banker. (Scanned copy of original solvency to be uploaded). OR Net worth certificate: Networth certificate of amount Rs.5.86 lakh and issued by certified Chartered Accountants. (Scanned copy of original Networth certificate is to be uploaded)."
+          },
+          {
+            "number": "7.",
+            "text": "e) Bidding Capacity: The bidder should have bidding capacity equal to or more than the estimated cost of the work put to tender. The bidding capacity shall be worked out by the following formula: Bidding Capacity = {[AxNx1.5]-B} Where, A = Maximum turnover in construction works executed in any one year during the last seven years taking into account the completed as well as works in progress. The value of completed works shall be brought to current costing level by enhancing at a simple rate of 7% per anum. N = Number of years prescribed for completion of work for which bids have been invited. B = Value of existing commitments and ongoing works to be completed during the period of completion of work for which bids have been invited."
+          },
+          {
+            "number": "8.",
+            "text": "2. The intending bidder must read the terms and conditions of CPWD-6 carefully. He should only submit his bid if he considers himself eligible and he is in possession of all the documents required."
+          },
+          {
+            "number": "9.",
+            "text": "3. This information and instructions for bidders posted on website shall form part of bid document."
+          },
+          {
+            "number": "10.",
+            "text": "4. The bid document consisting of Plans, Specifications, Schedule of quantities of various types of items to be executed and the set of terms and conditions of the contract to be complied with and other Necessary documents can be seen and downloaded from website https://etender.cpwd.gov.in or www.cpwd.gov.in free of cost."
+          },
+          {
+            "number": "11.",
+            "text": "5. But the bid can only be submitted after deposition of original EMD either in the office of Executive Engineer inviting bids or division office of any Executive Engineer, CPWD within the period of bid submission and uploading the mandatory scanned documents such as Insurance Surety Bonds, Account Payee Demand Draft or Bankers Cheque or Fixed Deposit Receipts or/and Bank Guarantee (for balance amount as prescribed) from any of the Commercial Bank towards EMD in favour of Executive Engineer as mentioned in NIT, receipt for deposition of original EMD to division office of any Executive Engineer (including NIT issuing EE/ AE), CPWD and other documents as specified."
+          },
+          {
+            "number": "12.",
+            "text": "6. Those contractors not registered or have not updated their profile on the website mentioned above, are required to get registered / update their profile beforehand. The necessary training materials including the videos with step-to-step process are available on download section of https://etender.cpwd.gov.in"
+          },
+          {
+            "number": "13.",
+            "text": "7. The intending bidder must have valid class-III digital signature certificate with encryption key (combo type) to perform any operation/ transaction on the e tendering portal/web site and the bidder should download and install the e-Messenger on their system as per instructions available on download section of https://etender.cpwd.gov.in."
+          },
+          {
+            "number": "14.",
+            "text": "8. On opening date, the contractor can login and see the bid opening process. After opening of bids, he will receive the competitor bid sheets."
+          },
+          {
+            "number": "15.",
+            "text": "9. Contractor can upload documents in the form of JPG format and PDF format."
+          },
+          {
+            "number": "16.",
+            "text": "10. Certificate of Financial Turn over: At the time of submission of bid contractor may upload Affidavit/Certificate from CA mentioning Financial Turnover of last 7 years or for the period as specified in the bid document and further details if required may be asked from the contractor after opening of technical bids. There is no need to upload entire voluminous balance sheet."
+          },
+          {
+            "number": "17.",
+            "text": "11. Contractor must ensure to quote rate of each item. The column meant for quoting rate in figures appears in yellow colour and the moment rate is entered; it turns sky blue. In addition to this, while selecting any of the cells a warning appears that if any cell is left blank the same shall be treated as \"0\". Therefore, if any cell is left blank and no rate is quoted by the bidder, rate of such item shall be treated as \"0\" (Zero). However, if a tenderer quotes nil rates against each item in item rate tender or does not quote any percentage above/below on the total amount of the tender or any section/sub head in percentage rate tender, the tender shall be treated as invalid and will not be considered as lowest tenderer."
+          },
+          {
+            "number": "18.",
+            "text": "12. The Technical Bid/ Eligibility bid shall be opened first on due date and time as mentioned above. The time and date of opening of financial bid of Bidders qualifying the Technical cum Eligibility Bid shall be uploaded on website only at later date. The department reserves the right to reject any prospective application without assigning any reason and to restrict the list of qualified contractors to any number deemed suitable by it, if too many bids are received satisfying the laid down criterion. The contractor submitting the bid should read the schedule of quantities, Special conditions, additional conditions, particular specifications and other terms and conditions given in the NIT and drawings. The bidder should also read the General Conditions of Contract Maintenance Works 2023 with all correction slips issued up to the last date for submission of bid, which is available as Government of India Publication. However, provisions included in the bid document shall prevail over the provisions contained in the standard form. The set of drawings and NIT will be available with the Executive Engineer (E), President Estate Electrical Division, CPWD, New Delhi-110004. The contractor should also visit the site of work and acquaint himself with the site conditions before tendering. The following conditions, which already form part of the tender conditions, are specially brought to his notice for compliance while filling the tender. They are requested to comply with the following instructions."
+          },
+          {
+            "number": "19.",
+            "text": "13. The existing enlisted contractor either himself or his authorized representative shall take compulsory ERP (Enterprise Resource Planning) training through any of the CPWD Regional Training institutes (RTls) at Delhi, Mumbai, Chennai and Kolkata, National CPWD Academy (NCA) Ghaziabad, Training arranged by Graduates of ERP \"Train the Trainers Programme\" conducted by NCA, Ghaziabad or through any other special training arranged by ERP unit of CPWD before 30.06.2024. Training will be valid only when participants are registered in LMS (Learning Management System) of ERP and certificate is issued through LMS of ERP. From 01.07.2024, the enlisted contractor will not be allowed to participate in tendering process without uploading the certificate of above training. ln case of non-enlisted contractor being first lowest in any of the tender then either contractor himself or his authorized representative shall take compulsory ERP training through any of the CPWD Regional Training Institutes (RTIs) at Delhi, Mumbai, Chennai and Kolkata, National CPWD Academy (NCA) Ghaziabad, Training arranged by Graduates of ERP \"Train the Trainers Programme\" conducted by NCA, Ghaziabad or through any other special training arranged by ERP unit of CPWD within two months from the date of issue of intent letter. Training will be valid only when non enlisted contractor is registered in LMS of ERP and certificate is issued through LMS of ERP. Failure to do so, a recovery of Rs.10,000/- per week shall be made from the R/A bill without giving any show cause notice in this regard. (OM No. DG/Enlist.Rules-2023/ 10 dated 22.04.2024)."
+          }
+        ],
+        "tables": [
+          {
+            "caption": null,
+            "columns": [
+              "NIT No.",
+              "41/EE/E/PEED/2026-2027"
+            ],
+            "rows": [
+              [
+                "Name of Work",
+                "RMO Fire Alarm & Fire Fighting System at Rashtrapati Bhavan, New Delhi. (SH: - Operation & Comprehensive maintenance of Fire Alarm system & Fire Fighting System at different locations in Rashtrapati Bhavan)."
+              ],
+              [
+                "Address of site",
+                "Inside the campus of Rashtrapati Bhavan, New Delhi."
+              ],
+              [
+                "Estimated cost put to bid",
+                "Rs. 58,63,632.00"
+              ],
+              [
+                "Earnest Money",
+                "Rs. 1,17,273.00"
+              ],
+              [
+                "Period of Completion",
+                "12 Months"
+              ],
+              [
+                "Last time & date of submission of bid, other documents as specification Notice Inviting e- Tender.",
+                "13/08/2026 upto 15:00 Hrs."
+              ],
+              [
+                "Eligiblity Bid Opening date",
+                "13/08/2026 upto15:30 Hrs."
+              ],
+              [
+                "Submission of hard copies of EMD.",
+                "13/08/2026 upto15:00 Hrs."
+              ],
+              [
+                "Hard copy of Enlistment order, Affidavit, Undertaking and other Documents to Division Office by the Lowest Tenderer.",
+                "To be submitted during office hours within a week from the date of opening of Financial Bid. In case the last day happens to be closed holiday, these documents shall be Submitted on the Next working day."
+              ]
+            ]
+          }
+        ],
+        "notes": []
+      },
+      {
+        "heading": "Terms & Conditions",
+        "source_pages": [
+          21,
+          22
+        ],
+        "items": [
+          {
+            "number": "6.",
+            "text": "All technical discussions during currency of contract shall be attended by the Associated Specialized Agencies and the Main Contractor. Commercial/Technical submissions for the specialized work(s) shall be signed and submitted by the Associate Specialized Agencies along with the Main Contractor."
+          },
+          {
+            "number": "7.",
+            "text": "The Associated Specialized Agencies and the Main Contractor shall attend the site during inspection of the work by the Engineer-in-Charge or higher authority."
+          },
+          {
+            "number": "8.",
+            "text": "The Main Contractor shall be entirely responsible and answerable for all the works done by his Associated Specialized Agency regarding their quality, adherence to the laid down specification, terms and conditions, warranty/guarantee etc. as per the agreement and he shall be liable to bear any compensation that may be levied by the department under any of the clauses of the agreement."
+          },
+          {
+            "number": "9.",
+            "text": "Experience gained by executing work on back-to-back contract basis is acceptable. Back-to-back contract means work awarded by owner to first agency and then by the first agency to the second agency. The first agency shall not be eligible for work experience in such a case. To get the weightage of experience,\nfollowing conditions must be fulfilled.\na. Work should be actually executed by the second agency with due concurrence of the owner as tri-partite agreement. It should be backed by valid agreement and experience certificate.\nb. Payments received by second agency should be reflected in bank accounts and income tax statements.\nc. Owner of the project and first agency should jointly certify the experience certificate.\nd. The actual amount of payment received by the second agency shall be considered for experience."
+          },
+          {
+            "number": "10.",
+            "text": "In the event of the associated E&M agency not performing satisfactorily or failure of associate agency to complete the E&M work, the main contractor on written directions of the department, shall remove the Associate agency deployed on the work and shall submit proposal for approval of New associate agency without any loss of time or variation in cost to the department after completion of all formalities mentioned as above Such New associate agency shall also give an undertaking along with the main tenderer that both of them shall guarantee for the equipment already supplied for which payment has been released by the department in part. If any equipment supplied for the work, during the currency of the earlier associate agency and paid partly by the department, becomes redundant /not in a position to be installed and commissioned and put to beneficial use due to change in agency for execution of E&M work, the main contractor shall be responsible for replacement of the equipment(s) at no cost to the department. If Main Contractor wants to change the Associated Specialized Agency during the currency of the contract he shall submit name of new Associated Specialized Agency as per eligibility criteria mentioned in the NIT to execute the left over specialized work(s) after completion of all formalities mentioned as above."
+          },
+          {
+            "number": "11.",
+            "text": "No change of associate agency will be allowed without prior approval of the Engineer-in-charge of the work."
+          },
+          {
+            "number": "12.",
+            "text": "The main contractor shall be responsible and liable for proper and complete execution of the Electrical work and ensure coordination and completion of both civil and electrical work."
+          },
+          {
+            "number": "13.",
+            "text": "Running payment for the work shall be made to the Main Contractor. In case, Main Contractor fails to make the payment to the Associated Specialized Agency(s) by him within 12 Months of receipt of each running account payment then on the written complaint of any Associated Specialized Agency(s) for such work, Engineer-in-Charge shall serve the show cause notice to Main Contractor and after considering the reply of the same he may make the payment directly to the concerned Associated Specialized Agency(s) for the work as per the terms & conditions of the agreement/MoU drawn between Main Contractor and Associated Specialized Agency(s) fixed by him, if reply of main contractor either not received or found unsatisfactory. Such payment made to the Associated Specialized Agency(s) shall be recovered by Engineer-in-Charge from the next RA/final bill due to Main Contractor as the case may be."
+          },
+          {
+            "number": "14.",
+            "text": "The associate contractor shall attend the inspection of the work by the Engineer-in- charge of E&M works as and when required."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "Eligibility criteria for execution ofwork",
+        "source_pages": [
+          22
+        ],
+        "items": [],
+        "tables": [
+          {
+            "caption": null,
+            "columns": [
+              "Sl.No.",
+              "Description of E&M works",
+              "Estimated cost in lacs",
+              "Minimum eligibility Criteria"
+            ],
+            "rows": [
+              [
+                "1.",
+                "Maintenance of Fire Fighting System.",
+                "Rs. 19.13 Lacs",
+                "Three similar works each costing not less than 7.82 Lacs, OR"
+              ],
+              [
+                "",
+                "",
+                "",
+                "Two similar works each costing not less than 11.73 Lacs, OR"
+              ],
+              [
+                "",
+                "",
+                "",
+                "One similar work each costing not less than 15.64 Lacs,"
+              ],
+              [
+                "",
+                "",
+                "",
+                "Similar work shall mean \"Maintenance of Fire Fighting System\""
+              ]
+            ]
+          }
+        ],
+        "notes": [
+          "Note: The value of executed works shall be brought to current costing level by enhancing the actual value of work at simple rate of 7% per annum calculated up to previous day date of completion to last date of submission of tender."
+        ]
+      },
+      {
+        "heading": null,
+        "source_pages": [
+          41,
+          42,
+          43
+        ],
+        "items": [
+          {
+            "number": "Clause 1 (i)",
+            "text": "Time allowed for submission of Performance Guarantee, Programme chart (time and progress) and applicable labour licenses, registration with EPFO,\\nESIC, action Plan for Green Rating Certification, BOCW Welfare Board or proof of applying thereof from the date of issue of letter of acceptance."
+          },
+          {
+            "number": "Clause 1 (ii)",
+            "text": "Maximum allowable extension with late fee at 0.1% per day of performance guarantee amount beyond the period\\nprovided in (i) above"
+          },
+          {
+            "number": "Clause 2",
+            "text": "Authority for fixing compensation under clause 2\\nSuperintending Engineer, President Estate Circle, New Delhi- 110004"
+          },
+          {
+            "number": "Clause 2A",
+            "text": "Whether Clause 2A shall be applicable\\nNot Applicable"
+          },
+          {
+            "number": "Clause 5",
+            "text": "Number of days from the date of issue of\\nletter of acceptance for reckoning date of\\nstart\\n7 days after Letter of Acceptance (LOA) or from the date of hand\\nover of site whichever is later."
+          },
+          {
+            "number": "Note",
+            "text": "Note:1. The \\\"L1\\\" can submit milestone as per his programme of work within 2 days of acceptance for approval by Engineer in charge.\\nThe amount so withheld may be released, if specifically requested by the contractor, on submission of Bank Guarantee in prescribed proforma."
+          },
+          {
+            "number": "Time allowed for execution of work from date of start",
+            "text": "Time allowed for execution of work from date of start\\n12 Months"
+          },
+          {
+            "number": "Authority to decide: (i) Extension of time",
+            "text": "(i) Extension of time\\nEE(E), President Estate Electrical Division, CPWD, New Delhi-110004"
+          },
+          {
+            "number": "Authority to decide: (ii) Rescheduling of milestones",
+            "text": "(ii) Rescheduling of milestones\\nSuperintending Engineer, President Estate Circle, New Delhi-110004"
+          },
+          {
+            "number": "Authority to decide: (iii) Shifting of date of start in case of delay in handing over of site",
+            "text": "(iii) Shifting of date of start in case of delay in handing over of site\\nSuperintending Engineer, President Estate Circle, New Delhi-110004"
+          },
+          {
+            "number": "Clause 5A",
+            "text": "Not Applicable"
+          },
+          {
+            "number": "Clause 6",
+            "text": "EMB"
+          },
+          {
+            "number": "Clause 12",
+            "text": "Type of work\\nMaintenance Work"
+          }
+        ],
+        "tables": [
+          {
+            "caption": "Table of Milestone",
+            "columns": [
+              "S.No.",
+              "Physical / Financial Progress",
+              "",
+              "Time allowed (from date of start)",
+              "Amount to be withheld in case of non achievement of milestone."
+            ],
+            "rows": [
+              [
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Clause 1",
+                "",
+                "",
+                "7 Days",
+                ""
+              ],
+              [
+                "(i)Time allowed for submission of Performance Guarantee, Programme chart (time and progress) and applicable labour licenses, registration with EPFO,\nESIC, action Plan for Green Rating Certification, BOCW Welfare Board or proof of applying thereof from the date of issue of letter of acceptance.",
+                "",
+                "7 Days",
+                "",
+                ""
+              ],
+              [
+                "(ii) Maximum allowable extension with late fee at 0.1% per day of performance guarantee amount beyond the period\nprovided in (i) above",
+                "",
+                "3 Days",
+                "",
+                ""
+              ],
+              [
+                "Clause 2",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Authority for fixing compensation under clause 2",
+                "Superintending Engineer, President Estate Circle, New Delhi- 110004",
+                "",
+                "",
+                ""
+              ],
+              [
+                "Clause 2A",
+                "",
+                "",
+                "Not Applicable",
+                ""
+              ],
+              [
+                "Whether Clause 2A shall be applicable",
+                "",
+                "",
+                "Not Applicable",
+                ""
+              ],
+              [
+                "Clause 5",
+                "",
+                "",
+                "7 days after LOA or hand over",
+                ""
+              ],
+              [
+                "",
+                "Table of Milestone",
+                "",
+                "",
+                ""
+              ],
+              [
+                "S.No.",
+                "Physical / Financial Progress",
+                "",
+                "Time allowed (from date of start)",
+                "Amount to be withheld in case of non achievement of milestone."
+              ]
+            ]
+          },
+          {
+            "caption": null,
+            "columns": [
+              "Time allowed for execution of work from date of start",
+              "12 Months"
+            ],
+            "rows": [
+              [
+                "Time allowed for execution of work from date of start",
+                "12 Months"
+              ],
+              [
+                "Authority to decide:",
+                ""
+              ],
+              [
+                "(i) Extension of time",
+                "EE(E), President Estate Electrical Division, CPWD, New Delhi-110004"
+              ],
+              [
+                "(ii) Rescheduling of milestones",
+                "Superintending Engineer, President Estate Circle, New Delhi-110004"
+              ],
+              [
+                "(iii) Shifting of date of start in case of delay in handing over of site",
+                "Superintending Engineer, President Estate Circle, New Delhi-110004"
+              ],
+              [
+                "Clause 5A",
+                "Not Applicable"
+              ],
+              [
+                "Clause 6",
+                "EMB"
+              ],
+              [
+                "Clause 7",
+                ""
+              ]
+            ]
+          }
+        ],
+        "notes": []
+      },
+      {
+        "heading": "Maintenance of Fire-Fighting System",
+        "source_pages": [
+          61,
+          62,
+          63
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "The firm shall submit an undertaking that they shall deploy licensed personal as required under IE Act\n& carry out work on Electrical panel and related Electrical works."
+          },
+          {
+            "number": "2.",
+            "text": "The nature of job is very highly skilled, so the contractor has to employ highly skilled technicians/engineer\nfor fortnightly visit/ As and when required to the system who must be well experienced in the field of Fire -\nFighting system.\n(i)\nIn case the contractor fail to maintained the system properly a recovery @ Rs. 5000/- per event or\nday shall be recovered from him.\n(ii)\nIn case of non-carrying out preventive maintenance as per schedule recovery will be\nmade from the bill of contractor @ Rs. 2000/- each per day or occasion."
+          },
+          {
+            "number": "3.",
+            "text": "The department reserves the right to check control room and connected equipment for this completeness\nand performance as and when required. It will be responsibility of the contractor to keep the system clean\nand in order."
+          },
+          {
+            "number": "4.",
+            "text": "The contractor shall take all precaution as per requirement of I-E rule & regulation 1959. The contractor\nshall be liable to pay compensation to the staff engaged by him in such cases in the event of any accident."
+          },
+          {
+            "number": "5.",
+            "text": "In case of performance of work is found unsatisfactory, the Engineer-in-Charge may terminate the contract\nwithout any notice and no claim shall be allowed after the termination of contract."
+          },
+          {
+            "number": "6.",
+            "text": "The technicians are required to be reported to the Engineer-In charge at scheduled time of his/her duty to\nensure the smooth working of all the Fire-Fighting system equipment's or as per the instructions from\nEngineer in-Charge."
+          },
+          {
+            "number": "7.",
+            "text": "Scope of the work for the contractor shall be as follows: -\na) Cleaning/overhauling and servicing of all equipment's, performing the daily/weekly/monthly/six monthly\nchecks as per manufacturer recommendations/ CPWD specification or as per direction of engineer-in-\ncharge.\nb) The Control Room shall be managed round the clock by the contractor.\nIn case of Fire Fighting System & gas flooding system, Remarks and observations regarding maintenance\n/ malfunctioning of Fire Fighting system & Panel & allied services, Gas flooding system and allied\naccessories recorded in the log book / conveyed through message / letter shall be attended within 24 hrs.\nc) In above system if contractors fails, same shall be got rectified by the department at the risk and cost of\nthe firm without entering into any correspondence and necessary recovery shall be made from the bill of\nthe contractor. The necessary consumable materials & tool items for maintaining the system shall be\narranged by the firm at their own cost and shall be kept ready at site in sufficient quantity under the scope\nof work for which nothing extra shall be paid.\nd) In case fire extinguishers exhausted in the situation of fire or emergency, then refilling will not cover under\nthe scope otherwise refilling and associated accessories of fire extinguisher in case of due date, found\nbelow standard pressure, post conducting mock drills shall be carried by the contractor as per norms or as\nper direction of engineer in charge.\ne) The scope also covers the maintenance of feeder pillars, cubical panels, replacement of defective switch\ngears, repair of underground power cable network, control cable, excavation of existing UG Cable trenches\nfor repair etc.in the area pertaining to Fire Fighting Installation to keep the system functional all the time .\nf) Repair & maintenance of Pump, motors & valves is not cover in this scope.\ng) Tool & plant required to operate, repair servicing and maintain the fire alarm system/fire-fighting system\nlike spanners, goti sets, screwdriver, crow bars, multi meter, blower, crimping tool, and torch hand lamp\nbucket, container, table, chair, almirah & other unforeseen T & P.\nh) Detection of control and power cables faults and it's jointing as per CPWD specifications.\ni) Repair of automatic fire doors i/c control wiring installed at various inside Museum-II building.\nj) All the cleaning material i.e. soap, duster, connectors, leads, cleaner, PCB plates etc. shall be arranged\nby the contractor at his own cost. If cleaning of installation is found unsatisfactory at any time, a recovery\nof Rs.200/- per day shall be made at least for a week i.e. 7days. No mobilization advance shall be paid for\nthe work, unless otherwise stipulated in tender papers for any individual works/ composite work\nk) The staff deployed by the bidder shall carry out rectification works wherever necessary for proper and\nreliable operation of the Fire Fighting installation.\nl) Repair and replacement of flow switch, air release valve, hose reels, hose drums, hose pipes, coupling,\nhose cabinet & associated addressable control panel & fire accessories etc.\nm) Checking of all Fire Extinguishers provided at various locations for their serviceability w.r.t leakage,\nthorough cleaning, due date record, safety seal check, nozzle and hose pipe, hose reel, hose cabinets\nlock checks to keep the entire system in ready to operate state once in a quarter period. Re- filling of the\nfire extinguisher as per standard norms/ due date will be cover under the comprehensive maintenance\nand at no extra cost paid by department.\nn) In case of an emergency hour, if any fault occurs, the agency will have to attend/rectify the same for which\nno additional payment will be made by the department.\no) The firms must have to maintain one First Aid Kit Box with the required medicine etc., which is to be\nverified by the Engineer-in-Charge or his authorized representatives on a regular basis, failing which,\npenal recovery @ Rs 100/-per person per month will be made from bills.\np) In the event of any accident during the operation or maintenance of the equipment leading to injuries,\ndamage to human beings, equipment, or loss of life, the contractor shall be fully responsible for the setting\nclaims and indemnities. In this respect, no compensation shall be made by the department.\nq) In the event of any accident during the operation or maintenance of the equipment leading to injuries,\ndamage to human beings, equipment, or loss of life, the contractor shall be fully responsible for the setting\nclaims and indemnities. In this respect, no compensation shall be made by the department.\nr) All installations shall be kept clean and safe from the risk of fire, theft, accidents, damage etc.\ns) The contractor will keep the department indemnified against all losses, damage or liability arising out of or\nimposed in the context of the staff employment by him.\nt) It shall be entirely the responsibility of the contractor to ensure that no unlawful act is done by his\npersonnel while on duty. In case any theft or loss of department property takes place due to the\nnegligence or carelessness of his personnel, the contractor will be held responsible and shall make good\nthe same."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  },
+  "acceptable_make": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "Annexure - A WILLINGNESS CERTIFICATE",
+        "source_pages": [
+          14
+        ],
+        "items": [
+          {
+            "number": "I.",
+            "text": "We here by give out willingness to support the Main / Associate Agency for comprehensive maintenance of Fire Alarm System for the above work."
+          },
+          {
+            "number": "II.",
+            "text": "We will provide unconditional support to the main / associated agency by the main agency technically throughout the comprehensive maintenance period for the useful life of system."
+          },
+          {
+            "number": "III.",
+            "text": "We will provide all the spares part required for healthy function of the equipments during the comprehensive maintenance period."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "Annexure - B WILLINGNESS CERTIFICATE",
+        "source_pages": [
+          15
+        ],
+        "items": [
+          {
+            "number": "I.",
+            "text": "We here by give out willingness to support the Main / Associate Agency for comprehensive maintenance of Fire Alarm System for the above work."
+          },
+          {
+            "number": "II.",
+            "text": "We will provide unconditional support to the main / associated agency by the main agency technically throughout the comprehensive maintenance period for the useful life of system."
+          },
+          {
+            "number": "III.",
+            "text": "We will provide all the spares part required for healthy function of the equipments during the comprehensive maintenance period."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "Annexure - C WILLINGNESS CERTIFICATE",
+        "source_pages": [
+          16
+        ],
+        "items": [
+          {
+            "number": "I.",
+            "text": "We here by give out willingness to support the Main / Associate Agency for comprehensive maintenance of Fire Alarm System for the above work."
+          },
+          {
+            "number": "II.",
+            "text": "We will provide unconditional support to the main / associated agency by the main agency technically throughout the comprehensive maintenance period for the useful life of system."
+          },
+          {
+            "number": "III.",
+            "text": "We will provide all the spares part required for healthy function of the equipments during the comprehensive maintenance period."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      },
+      {
+        "heading": "Acceptable Make",
+        "source_pages": [
+          47
+        ],
+        "items": [
+          {
+            "number": "1.",
+            "text": "The makes of material will be as per attached list of approved makes against each item of work or as per instructions of Engineer in charge."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  },
+  "documents_to_be_scanned_and_uploaded": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "List of Documents to be scanned and uploaded within the period of bid submission",
+        "source_pages": [
+          8
+        ],
+        "items": [
+          {
+            "number": "(i)",
+            "text": "Letter of Transmittal Duly signed as given in Annexure-III"
+          },
+          {
+            "number": "(ii)",
+            "text": "Copy of receipt for deposition of original EMD (as given in Annexure - I) issued from division office of any Executive Engineer, CPWD. (Including NIT issuing EE/AE, CPWD) deposited in the form of lnsurance Surety Bonds, Account Payee Demand Draft, Fixed Deposit Receipt, Banker's Cheque or Bank Guarantee (For balance amount as prescribed) issued by a Commercial Bank against EMD (Bank Guarantee Format as given in Annxure-II)."
+          },
+          {
+            "number": "(iii)",
+            "text": "Scan copy of the original EMD"
+          },
+          {
+            "number": "(iv)",
+            "text": "CPWD Enlistment order of contractor wherever required as a proof of validity (This is required only for who is registered in CPWD)."
+          },
+          {
+            "number": "(v)",
+            "text": "Permanent Account Number (PAN) Card as issued by the Income Tax Department."
+          },
+          {
+            "number": "(vi)",
+            "text": "GST RegistrationCertificate, if already obtained by the bidder. If the bidder has not obtained GST registration as applicable, then such a case bidder shall furnish undertaking as given in Annxure- IV"
+          },
+          {
+            "number": "(vii)",
+            "text": "Financial information as given in Form-A"
+          },
+          {
+            "number": "(viii)",
+            "text": "Banker's certificate as given in Form-B OR Net worth Certificate issued by certified Chartered Accountants as given in Form-B1"
+          },
+          {
+            "number": "(ix)",
+            "text": "Details of eligible similar nature of works completed during the last seven years ending on the last day of the month previous to one in which bids are invited as given in Form-C"
+          },
+          {
+            "number": "(x)",
+            "text": "Details of Project Under Execution as given Form 'C-1'"
+          },
+          {
+            "number": "(xi)",
+            "text": "Declaration of bidding capacity detail as given Form 'C-3'"
+          },
+          {
+            "number": "(xii)",
+            "text": "Performance report of works as given in Form-D"
+          },
+          {
+            "number": "(xiii)",
+            "text": "Structure & Organization as given in Form-E"
+          },
+          {
+            "number": "(xiv)",
+            "text": "Copy of valid electrical license. The contractors shall be allowed to participate in tender with an undertaking that they will either obtain valid electrical license at the time of execution of electrical work or associates contractors having valid electrical license of eligible class."
+          },
+          {
+            "number": "(xv)",
+            "text": "Undertaking by contractor on his Letter-Head in the following format:\n\"I/We Declare that, I/We have not been Debarred/Blacklisted by Central Government/State Government.\""
+          },
+          {
+            "number": "(xvi)",
+            "text": "Undertaking by Contractor on his letter head in the following format:\n\"In case, I/We become first lowest tenderer and I/We are not eligible agency as per eligibility criteria; I/We will associate eligible agency fulfilling eligibility criteria as per NIT and I/We will submit documents as required.\""
+          },
+          {
+            "number": "(xvii)",
+            "text": "ERP training certificate issued through LMS of ERP."
+          }
+        ],
+        "tables": [],
+        "notes": []
+      }
+    ]
+  },
+  "schedule_of_quantity": {
+    "present": true,
+    "sections": [
+      {
+        "heading": "SCHEDULE OF QUANTITY",
+        "source_pages": [
+          66
+        ],
+        "items": [],
+        "tables": [
+          {
+            "caption": "SCHEDULE OF QUANTITY",
+            "columns": [
+              "Sl.No.",
+              "Bhavan).\\nDescription of Items",
+              "Qty",
+              "",
+              "Rate",
+              "Unit",
+              "Amount"
+            ],
+            "rows": [
+              [
+                "1",
+                "Running, Operation and Routine Maintenance of fire fighting and sprinkler system by deputing the staff as per inventory, terms and conditions attached etc. complete as required.",
+                "12.00",
+                "Month",
+                "162920.00",
+                "Per Month",
+                "19,55,040.00"
+              ],
+              [
+                "2",
+                "Running, Operation and Routine Maintenance of fire Alarm system by deputing the staff as per inventory, terms and conditions attached etc. complete as required.",
+                "12.00",
+                "Month",
+                "235308.00",
+                "Per Month",
+                "28,23,696.00"
+              ],
+              [
+                "3",
+                "Annual comprehensive maintenance of following intelligent addressable fire alarm/ detection & PA system installed at Main building i/c Major/Minor repairing & replacement of all defective detectors, wiring & other accessories etc with upkeep & cleaning the panels, detectors and its accessories complete (Inventory attached) as per terms & conditions enclosed as reqd.",
+                "",
+                "",
+                "",
+                "",
+                ""
+              ],
+              [
+                "a)",
+                "Intelligent addressable fire alarm system (Bosch, Notifier & Edward)",
+                "12.00",
+                "Month",
+                "90408.00",
+                "Per Month",
+                "10,84,896.00"
+              ]
+            ]
+          }
+        ],
+        "notes": []
+      }
+    ]
+  }
+}
