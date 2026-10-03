@@ -1,0 +1,80 @@
+Automated Invoice Processor and Sender
+
+₹1500-12500 INR
+Paid on delivery
+
+Project Title: Automate Invoice Reading and WhatsApp Invoice Sending from PC Folder
+
+Project Description
+
+I need a one-time automation setup for sending invoices to customers through WhatsApp.
+
+Currently, invoices are generated as PDF files and saved in a specific folder on my Windows PC.
+
+I want the following process to be automated:
+
+1. Monitor a specific folder on my PC for new invoice PDF files.
+2. When a new PDF is added, read the first page of the invoice using OCR/Python.
+3. Extract important information from the invoice, such as:
+- Customer Name
+- Mobile Number
+- Invoice Number
+- Invoice Date
+- Invoice Amount
+- Any other required information available on the first page
+4. Prepare a predefined WhatsApp message using the extracted information.
+5. Send the message to the customer's WhatsApp number.
+6. Send the same invoice PDF as a WhatsApp document attachment.
+7. After successful sending, the system should record/mark the invoice as processed so that the same invoice is not sent twice.
+8. If OCR fails or any required information is missing, the system should show/log an error instead of sending an incorrect message.
+
+Example WhatsApp Message
+
+Hi [Customer Name],
+
+Your invoice [Invoice Number] dated [Invoice Date] for ₹[Invoice Amount] has been generated.
+
+Kindly make the payment and share the successful payment screenshot on this same WhatsApp number.
+
+Thank you!
+
+The actual message format can be finalized during development.
+
+Important Requirements
+
+- Windows PC
+- Invoice PDFs are stored in one specific folder.
+- OCR should work with the existing invoice format shown in the attached examples.
+- The system should be reliable and easy to use.
+- Ideally, after the initial setup, I should not need to manually run the process for every invoice.
+- Duplicate sending must be prevented.
+- I need a simple error/log system to know if any invoice was not sent successfully.
+
+WhatsApp
+
+The solution should use the official WhatsApp Business/Meta WhatsApp API or another reliable compliant method.
+
+Please clearly mention:
+
+- What WhatsApp API/method you will use.
+- Whether Meta/WhatsApp approval is required.
+- Whether message templates are required.
+- Any Meta/WhatsApp charges that I will have to pay separately.
+
+One-Time Setup
+
+I am looking for a one-time development/setup, not a monthly maintenance package.
+
+Please provide:
+
+1. One-time development cost.
+2. Any third-party/API charges separately.
+3. Any software/service subscription charges separately.
+4. Estimated development time.
+5. What support/warranty is included after delivery.
+
+Deliverables
+
+I need the complete working automation, source code, setup/configuration instructions and a short handover/training session.
+
+The automation should be installed and tested on my Windows PC using my actual invoice format before final delivery.

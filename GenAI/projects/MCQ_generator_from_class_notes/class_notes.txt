@@ -1,0 +1,7 @@
+Photosynthesis
+- Photosynthesis is the process by which plants, algae, and some bacteria convert light energy into chemical energy stored in glucose.
+- It occurs in chloroplasts, which contain the pigment chlorophyll. Chlorophyll absorbs mostly red and blue light and reflects green light.
+- Light-dependent reactions occur in the thylakoid membranes. They split water, releasing oxygen, and produce ATP and NADPH.
+- The Calvin cycle (light-independent reactions) occurs in the stroma. It uses ATP and NADPH to fix carbon dioxide into glucose.
+- Overall equation: 6CO2 + 6H2O + light energy -> C6H12O6 + 6O2.
+- Factors affecting the rate: light intensity, carbon dioxide concentration, and temperature.
