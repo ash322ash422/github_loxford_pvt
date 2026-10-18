@@ -4,4 +4,4 @@
 
 3)  git commit -m "Updated"  
 
-4) git push -u origin main  
+4)  git push -u origin main  

@@ -1,0 +1,6 @@
+1) Using copilot to draw insights from raw data and putting it in  excel
+2) Taking excel file and generating document
+3) Taking documents and generating powerpoint slides
+4) Generating email from document
+5) final project covering above
+6 and 7)  Using agents for Research and Analysis

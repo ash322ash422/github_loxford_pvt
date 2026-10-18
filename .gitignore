@@ -9,6 +9,10 @@ __pycache__/*
 temp
 temp/
 temp/*
+junk
+junk/
+junk/*
+
 
 public-key.zip
 *.pem
