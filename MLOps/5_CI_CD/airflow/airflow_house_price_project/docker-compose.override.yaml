@@ -1,0 +1,4 @@
+services:
+  airflow-worker:
+    volumes:
+      - ./ml_artifacts:/opt/airflow/ml_artifacts
