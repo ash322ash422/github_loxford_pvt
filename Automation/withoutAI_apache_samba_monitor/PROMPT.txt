@@ -1,0 +1,38 @@
+PROMPT:
+--------------------------------------------------------------------------
+
+**Role:** Act as a Python developer and mentor helping me build a project.
+
+**Task:** Build a simple server log monitoring system that simulates Apache and Samba activity, detects problems, alerts the user, and displays live status.
+
+**Requirements:**
+- Generate sample logs containing normal activity, errors, and crashes.
+- Monitor new log entries and classify each service as OK, Warning, or Critical.
+- Use configurable thresholds to detect repeated errors and missing activity.
+- Print alerts to the console and save them to a file, avoiding repeated alerts too frequently.
+- Show service health and recent alerts in a simple Tkinter dashboard.
+- Keep settings in one configuration file.
+- Include instructions for running the project and triggering a sample failure.
+
+**Restrictions:**
+- Use Python 3.9+ and standard library modules only.
+- Simulate the services; do not require real server installations.
+- Keep log generation, monitoring, and the dashboard separate, exchanging information through files.
+- Keep the code simple, readable, and commented for students.
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+order_id;order_date;category;sales
+A2;2026-01-10;Games;30.00
+A4;2026-02-02;Books;15.50
+A5;2026-02-03;;10.00

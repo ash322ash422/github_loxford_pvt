@@ -1,0 +1,7 @@
+2026-11-04 16:06:19,815 [INFO] populator: Apache log thread started -> writing to C:\Users\Ash\Desktop\educational\play_misc\withoutAI_apache_monitor_automation\logs\apache_access.log
+2026-11-04 16:06:19,815 [INFO] populator: Samba log thread started -> writing to C:\Users\Ash\Desktop\educational\play_misc\withoutAI_apache_monitor_automation\logs\samba.log
+2026-11-04 16:06:24,465 [WARNING] populator: Injected SAMBA crash burst (7 lines)
+2026-11-04 16:08:27,603 [WARNING] populator: Injected APACHE crash burst (6 lines)
+2026-11-04 16:17:34,599 [WARNING] populator: Injected APACHE crash burst (5 lines)
+2026-11-04 16:17:52,517 [WARNING] populator: Injected APACHE crash burst (4 lines)
+2026-11-04 16:18:06,134 [WARNING] populator: Injected SAMBA crash burst (7 lines)

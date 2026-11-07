@@ -1,0 +1,20 @@
+[project]
+name = "mcp-demo-1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ash322ash422", email = "ash322.ash422@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=4.1.4",
+    "tavily-python>=0.8.5",
+]
+
+[project.scripts]
+mcp-demo-1 = "mcp_demo_1:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"

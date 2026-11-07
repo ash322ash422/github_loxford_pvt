@@ -1,0 +1,7 @@
+work/
+__pycache__/
+.venv/
+.python/
+.uv-cache/
+verification_inputs/
+verification_agent_inputs/

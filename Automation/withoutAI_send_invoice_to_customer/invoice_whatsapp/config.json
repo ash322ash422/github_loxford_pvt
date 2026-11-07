@@ -1,0 +1,20 @@
+{
+  "invoice_folder": "invoices",
+  "processed_folder": "invoices_processed",
+  "default_region": "IN",
+  "currency": "INR",
+  "poll_seconds": 5,
+  "stable_seconds": 10,
+  "wait_time": 25,
+  "cooldown_seconds": 30,
+  "tesseract_cmd": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+  "ocr_min_confidence": 85,
+  "patterns": {
+    "customer": "^Customer Name\\s*:\\s*(.+)$",
+    "phone": "^Customer Mobile\\s*:\\s*(.+)$",
+    "number": "^Invoice Number\\s*:\\s*(.+)$",
+    "date": "^Invoice Date\\s*:\\s*(.+)$",
+    "amount": "^Invoice Amount\\s*:\\s*(?:INR\\s*)?([0-9,]+\\.[0-9]{2})$"
+  },
+  "message": "Hi {customer},\n\nYour invoice {number} dated {date} for {currency} {amount} has been generated.\n\nKindly make the payment and share the successful payment screenshot on this same WhatsApp number.\n\nThank you!"
+}

@@ -1,0 +1,31 @@
+Task: Create a plan for following task:
+------------------
+I need a functional e-commerce website where customers can browse my physical products, add items to a shopping cart, and complete checkout through a secure online payment gateway. The site’s sole purpose is to sell tangible goods that will be shipped to buyers, so the flow from product page to payment confirmation must feel seamless on both desktop and mobile.
+
+Core scope
+• Design and develop the storefront, product listings, and responsive layouts.
+• Implement a shopping cart that updates in real time and feeds smoothly into checkout.
+• Integrate online payment (credit/debit cards plus at least one alternative such as PayPal or Stripe) with clear success and failure handling.
+• Provide an easy-to-use admin area for adding products, adjusting inventory, viewing orders, and exporting basic sales data.
+
+Acceptance criteria
+• Customers can add, edit, and remove products from the cart without page reloads.
+• The payment gateway processes test transactions successfully in sandbox mode and live transactions once we switch to production.
+• Order details reach both the customer’s email and the admin panel instantly after payment clears.
+• Pages load quickly and pass standard security checks (HTTPS, PCI-compliant payment flow).
+
+Assets such as logos, product images, and copy are ready to supply. 
+-------------------
+
+Requirements:
+
+- Put the code in directory version1
+- Frontend should be reactive and should use Next.js + React + TypeScript where it is needed.
+- Backend should be Django + Django REST Framework
+- DB should be PostGreSQL
+- Payments and emails should be handled by Django backend
+- Put frontend code in frontend directory
+- Put backend code in backend directory
+- My business country is USA, currency is dollar. (make this changeable)
+
+Do not start writing code yet. First give me your plan of action. I want version 1 to be simple and later would add more stuff as needed.

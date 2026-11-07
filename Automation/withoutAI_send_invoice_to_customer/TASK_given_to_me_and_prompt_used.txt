@@ -1,0 +1,82 @@
+I received following task from someone:
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Project Title: Automate Invoice Reading and WhatsApp Invoice Sending from PC Folder
+
+Project Description
+
+I need a one-time automation setup for sending invoices to customers through WhatsApp.
+
+Currently, invoices are generated as PDF files and saved in a specific folder "invoices" on my Windows PC.
+
+I want the following process to be automated:
+
+1. Monitor a specific folder on my PC for new invoice PDF files.
+2. When a new PDF is added, read the first page of the invoice using OCR/Python depending on the pdf type.
+3. Extract important information from the invoice, such as:
+- Customer Name
+- Mobile Number
+- Invoice Number
+- Invoice Date
+- Invoice Amount
+- Any other required information available on the first page
+4. Prepare a predefined WhatsApp message using the extracted information.
+5. Send the message to the customer's WhatsApp number.
+6. After successful sending, the system should record/mark the invoice as processed so that the same invoice is not sent twice.
+7. If OCR fails or any required information is missing, the system should show/log an error instead of sending an incorrect message.
+
+Example WhatsApp Message
+"""
+Hi [Customer Name],
+
+Your invoice [Invoice Number] dated [Invoice Date] for [Invoice Amount] has been generated.
+
+Kindly make the payment and share the successful payment screenshot on this same WhatsApp number.
+
+Thank you!
+"""
+
+Important Requirements
+- Windows PC and need python program
+- Invoice PDFs are stored in one specific folder "invoices".
+- OCR should work with the existing invoice format shown in the attached examples.
+- The system should be reliable and easy to use.
+- Ideally, after the initial setup, I should not need to manually run the process for every invoice.
+- Duplicate sending must be prevented.
+- I need a simple error/log system to know if any invoice was not sent successfully.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+I gave following prompt to chatGPT Plus:
+"""
+**Role:** You are a Python developer building a simple Windows automation tool.
+
+**Task:** Create a project that monitors an `invoices` folder, reads invoice PDFs, and sends customers a WhatsApp text message using `pywhatkit`.
+
+**Requirements:**
+
+- Read only the first PDF page. Extract text directly when possible; use Tesseract OCR for scanned PDFs.
+- Extract and validate customer name, mobile number, invoice number, date, and amount. Log errors and skip sending when information is missing or unreliable.
+- Use this message template:
+
+  “Hi {customer}, your invoice {number} dated {date} for {currency} {amount} has been generated. Kindly make the payment and share the successful payment screenshot on this same WhatsApp number. Thank you!”
+
+- Store folder paths, extraction rules, and the message template in `config.json`.
+- Support continuous monitoring and a one-time scan. Default to preview mode; require `--send` for real messages.
+- Every valid PDF in `invoices` is eligible, even if previously sent. After the send action completes, move it to `invoices_processed` without overwriting existing files.
+- Retry failed moves without resending during the same run.
+- Print timestamped progress and errors using Python’s logging module. Rotate file logs at approximately 1 KB and retain three backups.
+- Keep processing and send-attempt history in SQLite.
+- Include `requirements.txt`, automated tests with a simulated sender, and a short README covering installation, running, sending, logs, and tests.
+- Put everything in its own directory.
+
+**What not to do:**
+
+- Do not create batch scripts or `setup.py`; document installation with pip.
+- Do not send messages during setup or tests.
+- Do not send the PDF attachment; send only the text message.
+- Do not claim that pywhatkit confirms delivery.
+- Do not add unnecessary features or lengthy documentation.
+"""
+
+
+

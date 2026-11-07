@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+state/
+logs/
+invoices/*.pdf
+invoices_processed/*.pdf
+.test-deps/
+tmp/

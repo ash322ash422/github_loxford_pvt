@@ -1,0 +1,6 @@
+prompt:
+
+I want to create a program that would take input an md file or pdf file that contains notes from a class and then read that file and convert that into a handwritten notes with blue pen and on paper with lines separating. 
+The output file is png or jpg file. I am attaching a png that shows what I want as a sample output. 
+
+Can you write this program and what language would you use ? Do not write program yet, unless i say so.

@@ -1,0 +1,13 @@
+Subject: AI training
+From: {SenderName} <{From}>
+To: {Email}
+Cc:
+Name: {Name}
+
+Dear {Name},
+I hope you are doing well.
+
+Replace this text with the message you want to send.
+
+Thank you
+{SenderName}

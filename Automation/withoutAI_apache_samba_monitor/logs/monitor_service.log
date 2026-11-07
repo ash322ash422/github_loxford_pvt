@@ -1,0 +1,55 @@
+2026-11-04 16:08:20,784 [INFO] monitor: Monitor started. Watching services: apache, samba (every 3s)
+2026-11-04 16:08:20,800 [INFO] monitor: Dispatching alert: [2026-11-04 16:08:20] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:20,800 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:23,832 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:26,859 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:29,876 [INFO] monitor: Dispatching alert: [2026-11-04 16:08:29] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:29,876 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:29,892 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:32,904 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:32,910 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:35,918 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:35,928 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:38,947 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:38,953 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:41,966 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:41,966 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:44,990 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:44,999 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:48,015 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:48,031 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:51,047 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:51,047 [INFO] monitor: Dispatching alert: [2026-11-04 16:08:51] [INFO] Samba recovered - Samba health returned to normal.
+2026-11-04 16:08:54,077 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:08:57,106 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:09:00,127 [INFO] monitor: Dispatching alert: [2026-11-04 16:09:00] [INFO] Apache recovered - Apache health returned to normal.
+2026-11-04 16:17:34,805 [INFO] monitor: Dispatching alert: [2026-11-04 16:17:34] [CRITICAL] Apache CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:34,805 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:37,825 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:40,848 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:43,884 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:46,902 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:49,939 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:52,952 [WARNING] monitor: apache status=CRITICAL reason=2 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:55,967 [WARNING] monitor: apache status=CRITICAL reason=2 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:17:58,996 [WARNING] monitor: apache status=CRITICAL reason=2 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:02,019 [WARNING] monitor: apache status=CRITICAL reason=2 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:05,045 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:08,079 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:08,091 [INFO] monitor: Dispatching alert: [2026-11-04 16:18:08] [CRITICAL] Samba CRASH detected - 1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:08,091 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:11,107 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:11,107 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:14,131 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:14,131 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:17,150 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:17,165 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:20,189 [WARNING] monitor: apache status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:20,197 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:23,207 [INFO] monitor: Dispatching alert: [2026-11-04 16:18:23] [INFO] Apache recovered - Apache health returned to normal.
+2026-11-04 16:18:23,224 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:26,256 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:29,279 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:32,308 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:35,342 [WARNING] monitor: samba status=CRITICAL reason=1 crash marker(s) detected in the last 30s of the log.
+2026-11-04 16:18:38,352 [INFO] monitor: Dispatching alert: [2026-11-04 16:18:38] [INFO] Samba recovered - Samba health returned to normal.

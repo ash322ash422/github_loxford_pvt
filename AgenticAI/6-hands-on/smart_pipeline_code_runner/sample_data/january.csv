@@ -1,0 +1,4 @@
+Order ID,Order Date,Category,Revenue
+A1,2026-01-05,Books,20.00
+A2,2026-01-10,Games,30.00
+A3,not-a-date,Books,12.00

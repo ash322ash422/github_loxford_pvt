@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "processed": [
+    {
+      "source": "sample_finance.csv",
+      "sha256": "6632a215dccc4eefb23219a81f75a0c3d143426a49ec5f87afbbdcdb1b0ceae5",
+      "report": "C:\\Users\\Ash\\Desktop\\educational\\play_misc\\withoutAI\\outgoing\\sample_finance_report.xlsx",
+      "accepted": 20,
+      "rejected": 8,
+      "total_revenue": 1145000.0,
+      "total_profit": 576650.0,
+      "completed_at": "2026-10-28T18:04:28.049379+00:00",
+      "status": "completed"
+    }
+  ]
+}
