@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentiment API CORS Demo</title>
+</head>
+<body>
+  <h1>Sentiment API CORS Demo</h1>
+  <p>Page origin: <code id="origin"></code></p>
+  <p>API: <code>http://127.0.0.1:8000/predict</code></p>
+  <form id="prediction">
+    <label>Review <input name="text" value="I love this course" required></label>
+    <label>Model version
+      <select name="version">
+        <option value="v1">v1 (online)</option>
+        <option value="v2">v2 (offline)</option>
+      </select>
+    </label>
+    <button type="submit">Predict</button>
+  </form>
+  <pre id="result" role="status" aria-live="polite"></pre>
+  <script>
+    const form = document.querySelector("#prediction");
+    const result = document.querySelector("#result");
+    document.querySelector("#origin").textContent = location.origin;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      result.textContent = "Sending request…";
+      try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: data.get("text"),
+            model_version: data.get("version")
+          })
+        });
+        result.textContent = JSON.stringify({
+          status: response.status,
+          request_id: response.headers.get("X-Request-ID"),
+          process_time_ms: response.headers.get("X-Process-Time-Ms"),
+          body: await response.json()
+        }, null, 2);
+      } catch (error) {
+        result.textContent = "Fetch failed. Check the API server and the browser's Network tab. "
+          + error.message;
+      }
+    });
+  </script>
+</body>
+</html>

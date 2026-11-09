@@ -1,0 +1,211 @@
+{
+  "info": {
+    "name": "Student CRUD API",
+    "description": "Run the requests in order with the FastAPI server running.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "student_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "1. List students",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Create student",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Neha Singh\",\n  \"age\": 21,\n  \"course\": \"FastAPI\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 201\", () => pm.response.to.have.status(201));",
+              "if (pm.response.code === 201) pm.collectionVariables.set(\"student_id\", pm.response.json().id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Read student",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students/{{student_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. Replace student",
+      "request": {
+        "method": "PUT",
+        "url": "{{base_url}}/students/{{student_id}}",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Neha Singh\",\n  \"age\": 21,\n  \"course\": \"FastAPI Advanced\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 200\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Verify updated course",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students/{{student_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Updated course is saved\", () => pm.expect(pm.response.json().course).to.eql(\"FastAPI Advanced\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Delete student",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/students/{{student_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 204\", () => pm.response.to.have.status(204));",
+              "pm.test(\"Body is empty\", () => pm.expect(pm.response.text()).to.eql(\"\"));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. Read deleted student",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/students/{{student_id}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 404\", () => pm.response.to.have.status(404));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. Reject invalid age",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Neha Singh\",\n  \"age\": 10,\n  \"course\": \"FastAPI\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Returns 422\", () => pm.response.to.have.status(422));"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
