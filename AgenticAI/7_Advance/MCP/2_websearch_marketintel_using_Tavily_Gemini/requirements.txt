@@ -1,0 +1,4 @@
+fastmcp>=2.14,<3
+tavily-python>=0.7,<1
+python-dotenv>=1,<2
+

@@ -1,0 +1,126 @@
+RUN1:
+---------------------------------------------------------------------------------------
+> python -m client_mcp_gemini
+Ask Gemini: Explain what a percentage is in one sentence.
+Gemini API key:
+
+Discovered 2 MCP tools:
+  calculate_expression: Evaluates basic mathematical expressions precisely to prevent
+       LLM calculation errors.
+
+    Args:
+        expression: A math string containing numbers
+                    and operators +, -, *, /, ** (e.g., '2 * (3 + 4) ** 2')
+
+  get_live_weather: Fetch current weather for a location using latitude and longitude.
+
+    Args:
+        latitude: Decimal latitude, e.g. 40.7128.
+        longitude: Decimal longitude, e.g. -74.0060.
+
+
+Tool activity:
+  No tools called.
+
+Final answer:
+A percentage is a way of expressing a number or ratio as a fraction out of 100.
+---------------------------------------------------------------------------------------
+
+RUN2:
+-----------------------------------------------------------------------------------------
+> python -m client_mcp_gemini
+Ask Gemini: Calculate 12.5 * (40 + 2) ** 2.
+Gemini API key:
+
+Discovered 2 MCP tools:
+  calculate_expression: Evaluates basic mathematical expressions precisely to prevent
+       LLM calculation errors.
+
+    Args:
+        expression: A math string containing numbers
+                    and operators +, -, *, /, ** (e.g., '2 * (3 + 4) ** 2')
+
+  get_live_weather: Fetch current weather for a location using latitude and longitude.
+
+    Args:
+        latitude: Decimal latitude, e.g. 40.7128.
+        longitude: Decimal longitude, e.g. -74.0060.
+
+
+Tool activity:
+  Gemini requested calculate_expression({'expression': '12.5 * (40 + 2) ** 2'})
+  MCP returned: Calculation Successful! Result: 22050.0
+
+Final answer:
+12.5 * (40 + 2) ** 2 = **22,050**
+------------------------------------------------------------------------------------------
+
+RUN3:
+-------------------------------------------------------------------------------------------
+> python -m client_mcp_gemini
+Ask Gemini: Get the current weather at latitude 28.4595 and longitude 77.0266.
+Gemini API key:
+
+Discovered 2 MCP tools:
+  calculate_expression: Evaluates basic mathematical expressions precisely to prevent
+       LLM calculation errors.
+
+    Args:
+        expression: A math string containing numbers
+                    and operators +, -, *, /, ** (e.g., '2 * (3 + 4) ** 2')
+
+  get_live_weather: Fetch current weather for a location using latitude and longitude.
+
+    Args:
+        latitude: Decimal latitude, e.g. 40.7128.
+        longitude: Decimal longitude, e.g. -74.0060.
+
+
+Tool activity:
+  Gemini requested get_live_weather({'latitude': 28.4595, 'longitude': 77.0266})
+  MCP returned: Live Weather Data: Current Temperature: 28.1°C. Wind Speed: 6.4 km/h.
+
+Final answer:
+The current weather at latitude 28.4595, longitude 77.0266 is:
+
+- **Temperature:** 28.1°C
+- **Wind Speed:** 6.4 km/h
+-------------------------------------------------------------------------------------------
+
+RUN4:
+-------------------------------------------------------------------------------------------
+> python -m client_mcp_gemini
+Ask Gemini: Get the current temperature at latitude 28.4595 and longitude 77.0266, then use the calculator to convert it from Celsius to Fahrenheit.
+Gemini API key:
+
+Discovered 2 MCP tools:
+  calculate_expression: Evaluates basic mathematical expressions precisely to prevent
+       LLM calculation errors.
+
+    Args:
+        expression: A math string containing numbers
+                    and operators +, -, *, /, ** (e.g., '2 * (3 + 4) ** 2')
+
+  get_live_weather: Fetch current weather for a location using latitude and longitude.
+
+    Args:
+        latitude: Decimal latitude, e.g. 40.7128.
+        longitude: Decimal longitude, e.g. -74.0060.
+
+
+Tool activity:
+  Gemini requested get_live_weather({'longitude': 77.0266, 'latitude': 28.4595})
+  MCP returned: Live Weather Data: Current Temperature: 28.1°C. Wind Speed: 6.4 km/h.
+  Gemini requested calculate_expression({'expression': '(28.1 * 9 / 5) + 32'})
+  MCP returned: Calculation Successful! Result: 82.58
+
+Final answer:
+The current temperature at latitude 28.4595 and longitude 77.0266 is **28.1°C**.
+
+Using the conversion formula $F = (C \times \frac{9}{5}) + 32$:
+$$(28.1 \times \frac{9}{5}) + 32 = 82.58^\circ\text{F}$$
+
+The temperature in Fahrenheit is **82.58°F**.
+----------------------------------------------------------------------------------------
+
+
